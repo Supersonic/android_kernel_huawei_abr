@@ -1,0 +1,1 @@
+obj-$(CONFIG_RADIO_BUCKBOOST_TPS6381X) += radio_tps6381x.o

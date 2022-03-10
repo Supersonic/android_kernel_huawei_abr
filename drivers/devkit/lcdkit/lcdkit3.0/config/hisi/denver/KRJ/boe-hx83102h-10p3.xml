@@ -1,0 +1,149 @@
+<hwlcd>
+	<PanelEntry>
+		<!--Ldi config start-->
+		<MipiDsiTimingSupport>1</MipiDsiTimingSupport>
+		<!--Mipi Horizontal sync area -->
+		<MipiHSyncArea>7</MipiHSyncArea>
+		<!--Mipi Horizontal back porch -->
+		<MipiHBackPorch>20</MipiHBackPorch>
+		<!--Mipi Horizontal line time -->
+		<MipiHLineTime>951</MipiHLineTime>
+		<!--Mipi Dpi horizontal size -->
+		<MipiDpiHSize>902</MipiDpiHSize>
+		<!--Mipi Vertical sync area -->
+		<MipiVSyncArea>8</MipiVSyncArea>
+		<!--Mipi Vertical back porch -->
+		<MipiVBackPorch>48</MipiVBackPorch>
+		<!--Mipi Vertical front porch -->
+		<MipiVFrontPorch>47</MipiVFrontPorch>
+
+		<!--Panel Model-->
+		<PanelModel>"KRJ_190 502 0 10.3' 1200 x 2000"</PanelModel>
+
+		<PanelBlmin>75</PanelBlmin>
+		<PanelBlmax>3932</PanelBlmax>
+		<!--bl default brightness setting-->
+		<PanelBlDef>1638</PanelBlDef>
+		<!-- <PanelScanSupport>1</PanelScanSupport> -->
+		<!-- <PanelPtTestSupport>1</PanelPtTestSupport> -->
+		<PanelPxlClk>320</PanelPxlClk>
+		<!--Pixel clock division ratio-->
+		<PanelPxlClkDiv>2</PanelPxlClkDiv>
+		<!--Esd enable-->
+		<PanelEsdSupport>1</PanelEsdSupport>
+		<PanelFacEsdSupport>1</PanelFacEsdSupport>
+		<!--Panel type:8-video mode, 16-command mode-->
+		<PanelCmdType>8</PanelCmdType>
+		<!-- mipi check -->
+		<PanelMipiCheckSupport>1</PanelMipiCheckSupport>
+		<!--mipi dsi support-->
+		<MipiDsiUptSupport>1</MipiDsiUptSupport>
+		<!--Mipi dsi default clock-->
+		<MipiDsiBitClk>480</MipiDsiBitClk>
+		<!--Mipi dynamic clk_1-->
+		<MipiDsiBitClkValA>500</MipiDsiBitClkValA>
+		<!--Mipi dynamic clk_2-->
+		<MipiDsiBitClkValB>480</MipiDsiBitClkValB>
+		<!-- <MipiDataTHsTrailAdjust>8</MipiDataTHsTrailAdjust>  -->
+		<!--Mipi lane number:c-phy:0-1port, 1-2port, 2-3port d-phy:0-1lane, 1-2lane, 2-3lane, 3-4lane-->
+		<MipiLaneNums>3</MipiLaneNums>
+		<!--Mipi phy mode:0-D-phy, 1-C-phy-->
+		<MipiPhyMode>0</MipiPhyMode>
+		<!--Mipi clk post adjust-->
+		<MipiClkPostAdjust>0</MipiClkPostAdjust>
+		<!--Full screen set to 0-->
+		<MipiNonContinueEnable>0</MipiNonContinueEnable>
+		<!--Mipi vcm adjust:data&clk hs amplitude-->
+		<MipiRgVcmAdjust>64</MipiRgVcmAdjust>
+		<PanelCheckRegOnSupport>1</PanelCheckRegOnSupport>
+		<PanelCheckRegOnSupportDsmReport>0</PanelCheckRegOnSupportDsmReport>
+		<PanelCheckRegOffSupport>0</PanelCheckRegOffSupport>
+		<PanelCheckRegOffSupportDsmReport>0</PanelCheckRegOffSupportDsmReport>
+		<!-- for mipi check reg on -->
+		<PanelCheckRegOnCommand>"0x06, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x01, 0x0a"</PanelCheckRegOnCommand>
+		<PanelCheckRegOnValue>"0x9d"</PanelCheckRegOnValue>
+		<LcdType>1</LcdType>
+		<SblSupport>0</SblSupport>
+		<!--Mipi burst mode:0-non burst sync pulse, 1-non burst sync event, 2-burst sync pulse1, 3-burst sync pulse2-->
+		<MipiBurstMode>2</MipiBurstMode>
+		<UseGpioBlPower>1</UseGpioBlPower>
+		<PanelBlPwmPreciType>3</PanelBlPwmPreciType>
+		<BlPwmInputDisable>1</BlPwmInputDisable>
+		<!--event send
+		event, data, delay
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI, 7-TS early-event, 8-TS later-event, 9-vdd, 10-AOD, 11-bias
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<!--Power on timming-->
+		<PowerOnStage>"2, 1, 0
+				9, 1, 5
+				3, 1, 4
+				4, 1, 5
+				11, 1, 0"</PowerOnStage>
+		<LPOnStage>"7, 1, 5
+				5, 1, 2
+				5, 0, 2
+				5, 1, 55
+				6, 1, 0"</LPOnStage>
+		<HSOnStage>"8, 1, 0"</HSOnStage>
+		<HSOffStage>"7, 0, 0
+				6, 0, 0
+				8, 0, 0"</HSOffStage>
+		<LPOffStage>"0, 0, 0"</LPOffStage>
+		<PowerOffStage>"5, 0, 2
+				11, 0, 5
+				4, 0, 2
+				3, 0, 2
+				9, 0, 0
+				2, 0, 0"</PowerOffStage>
+		<!--Power timming config end-->
+		<!--event define
+		mode, number, amplitude
+		mode:0-none, 1-regulator, 2-gpio
+		number:gpio num or ldo num
+		amplitude:3100000-3.1v, 1850000-1.85v, 5500000-5.5v
+		-->
+		<LcdVci>"0, 0, 0"</LcdVci>
+		<LcdIovcc>"1, 4, 1900000"</LcdIovcc>
+		<LcdVdd>"0, 0, 0"</LcdVdd>
+		<LcdVsp>"2, 36, 6000000"</LcdVsp>
+		<LcdVsn>"2, 37, 6000000"</LcdVsn>
+		<PowerDownVsp>"2, 36, 5000000"</PowerDownVsp>
+		<PowerDownVsn>"2, 37, 5000000"</PowerDownVsn>
+		<LcdReset>"2, 42, 0"</LcdReset>
+		<TpReset>"2, 187, 0"</TpReset>
+		<LcdBacklight>"2, 69, 0"</LcdBacklight>
+		<!--event send-->
+
+		<!--horizontal line test-->
+		<HorLineSupport>1</HorLineSupport>
+		<HorLineNoReset>1</HorLineNoReset>
+		<HorLineDuration>600</HorLineDuration>
+
+		<!--Effect config start-->
+		<!--Cabc support-->
+		<PanelCabcSupport>0</PanelCabcSupport>
+		<!--Gamma support-->
+		<GammaSupport>1</GammaSupport>
+		<!--Gmp support-->
+		<GmpSupport>1</GmpSupport>
+		<!--Gamma calibration support-->
+		<PanelDynamicGammaSupport>0</PanelDynamicGammaSupport>
+		<!--ComformMode support-->
+		<ComformModeSupport>1</ComformModeSupport>
+		<!--Color temperature support-->
+		<ColorTempSupport>1</ColorTempSupport>
+		<!--for hiace parameter-->
+		<HiaceSupport>1</HiaceSupport>
+		<!--Xcc support-->
+		<XccSupport>1</XccSupport>
+		<Arsr1pSharpnessSupport>1</Arsr1pSharpnessSupport>
+		<!--Post Xcc support-->
+		<PostXccSupport>1</PostXccSupport>
+		<!--prefix 2D sharpness support-->
+		<PrefixSharpTwoDSupport>1</PrefixSharpTwoDSupport>
+		<!--Effect config end-->
+	</PanelEntry>
+
+</hwlcd>

@@ -1,0 +1,29 @@
+#
+# Near Field Communication (NFC) devices
+#
+
+menu "Near Field Communication (NFC) devices"
+#	depends on NFC
+
+# add by huawei
+config NFC_PN533
+	tristate "NXP PN533 USB driver"
+	depends on USB
+	help
+	  NXP PN533 USB driver.
+	  This driver provides support for NFC NXP PN533 devices.
+
+	  Say Y here to compile support for PN533 devices into the
+	  kernel or say M to compile it as module (pn533).
+
+
+# add by huawei
+config NFC_PN547
+	tristate "PN547 NFC driver"
+	depends on I2C
+	help
+	  NXP PN547 driver.
+
+# add by huawei
+source "drivers/nfc/pn547/Kconfig"
+endmenu

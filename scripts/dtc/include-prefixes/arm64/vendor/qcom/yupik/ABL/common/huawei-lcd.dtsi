@@ -1,0 +1,88 @@
+#include "../../../lcdkit3.0/rna/devkit_lcd_kit.dtsi"
+&huawei_lcd_panel {
+	compatible = "huawei,lcd_panel_type";
+	/* auto_key_info @ name: product_id type: uint32 default: 0 */
+	product_id = <6000>;
+	/* auto_key_info @ name: product_type type: uint32 default: 0 */
+	product_type = <0>;
+	detect_type = <2>;
+	/* auto_key_info @ name: gpio_id[2] type: int default: 0 */
+	gpio_id = <14 6>;
+	/* auto_key_info @ name: lcd_kit_power_ctrl type: uint32 default: 0 */
+	lcd_kit_power_ctrl = <0>;
+	/* iovcc_ctrl: byte-1:power mode(1:ldo, 2:gpio), byte-2: pmic id,  byte-3: ldo id, byte-4: ldo value, byte-5: delay */
+	/* auto_key_info @ name: iovcc_ctrl[5] type: uint32 default: 0 */
+	iovcc_ctrl = <0 0 0 0 0>;
+	support_lcd_type = "LCD_KIT";
+};
+
+&huawei_sec_lcd_panel {
+	/* auto_key_info @ name: sec_gpio_id[2] type: int default: 0 */
+	sec_gpio_id = <0 0>;
+	/* auto_key_info @ name: sec_te_gpio type: int default: 0 */
+	sec_te_gpio = <0>;
+	/* auto_key_info @ name: sec_lcd_reset_gpio type: int default: 0 */
+	sec_lcd_reset_gpio = <0>;
+	/* auto_key_info @ name: sec_panel_fb_base type: UINTN default: 0 */
+	sec_panel_fb_base = <0>;
+	/* auto_key_info @ name: sec_iovcc_ctrl[5] type: uint32 default: 0 */
+	sec_iovcc_ctrl = <0 0 0 0 0>;
+};
+&dsi_rna_310_207_6p72_qcom {
+	qcom,mdss-dsi-display-timings {
+		timing@0 {
+			qcom,mdss-mdp-transfer-time-us = <14447>;
+			qcom,mdss-dsc-version = <0x11>;
+			qcom,mdss-dsc-scr-version = <0>;
+		};
+		timing@1 {
+			qcom,mdss-mdp-transfer-time-us = <7223>;
+			qcom,mdss-dsc-version = <0x11>;
+			qcom,mdss-dsc-scr-version = <0>;
+		};
+	};
+};
+&dsi_rna_110_207_6p72_qcom {
+	qcom,mdss-dsi-display-timings {
+		timing@0 {
+			qcom,mdss-mdp-transfer-time-us = <14447>;
+			qcom,mdss-dsc-version = <0x11>;
+			qcom,mdss-dsc-scr-version = <0>;
+		};
+		timing@1 {
+			qcom,mdss-mdp-transfer-time-us = <7223>;
+			qcom,mdss-dsc-version = <0x11>;
+			qcom,mdss-dsc-scr-version = <0>;
+		};
+	};
+};
+&dsi_rna_190_207_6p72_qcom {
+	qcom,mdss-dsi-display-timings {
+		timing@0 {
+			qcom,mdss-mdp-transfer-time-us = <14447>;
+			qcom,mdss-dsc-version = <0x11>;
+			qcom,mdss-dsc-scr-version = <0>;
+		};
+		timing@1 {
+			qcom,mdss-mdp-transfer-time-us = <7223>;
+			com,mdss-dsc-version = <0x11>;
+			qcom,mdss-dsc-scr-version = <0>;
+		};
+	};
+};
+&dsi_rna_310_e00_6p72_qcom {
+	qcom,mdss-dsi-display-timings {
+		timing@0 {
+			qcom,mdss-mdp-transfer-time-us = <13909>;
+		};
+		timing@1 {
+			qcom,mdss-mdp-transfer-time-us = <6955>;
+		};
+	};
+};
+&sde_dsi {
+	vddio-supply = <&L12C>;
+	vdd-supply = <&L13C>;
+	ddic-supply = <&L16B>;
+	qcom,dsi-default-panel = <&dsi_rna_auo_otm1901a_5p2_1080p_video_default>;
+};

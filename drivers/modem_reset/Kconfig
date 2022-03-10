@@ -1,0 +1,6 @@
+#
+# Huawei modem reset
+#
+config MODEM_RESET
+	tristate "Huawei modem reset"
+	default y

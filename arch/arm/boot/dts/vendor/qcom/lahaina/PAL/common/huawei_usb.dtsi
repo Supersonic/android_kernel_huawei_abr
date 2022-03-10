@@ -1,0 +1,4 @@
+&huawei_pd {
+	src_vbus = <3>; /* pmic */
+	cc_dynamic_protect = <2>;
+};

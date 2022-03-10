@@ -1,0 +1,5 @@
+config SND_SOC_CS35LXX
+	tristate "cs35lxx driver"
+	default n
+	help
+		Say Y to enable  cs35lxx driver support

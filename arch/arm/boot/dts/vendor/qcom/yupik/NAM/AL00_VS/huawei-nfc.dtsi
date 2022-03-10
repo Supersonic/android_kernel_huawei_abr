@@ -1,0 +1,19 @@
+&qupv3_se9_i2c {
+	nfc@8 {
+		compatible = "qcom,st21nfc";
+		status = "ok";
+		reg = <0x8>;
+		st_nfc_on_type = "gpio";
+		st,irq_gpio = <&tlmm 41 0x00>;
+		st,reset_gpio = <&tlmm 38 0x00>;
+		pinctrl-names = "default","idle";
+		st_nfc_nxp_name = "libnfc-nxp.conf";
+		st_nfc_brcm_conf_name = "libnfc-brcm.conf";
+		st_nfc_card_num = <0x2>;
+		st_nfc_chip_type = "st21nfc";
+		st_nfc_single_channel = "false";
+		st_nfc_ese_type = "p61";
+		st_nfc_ese_num = <0x2>;
+		st_nfc_qcom_activated = <0x1>;
+	};
+};

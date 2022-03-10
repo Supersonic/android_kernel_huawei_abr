@@ -1,0 +1,26 @@
+config RAINBOW
+    default n
+      bool "rainbow"
+    help
+      rainbow framework.
+
+config RAINBOW_REASON
+    depends on RAINBOW
+    default n
+      bool "rainbow_reason"
+    help
+      rainbow reason record reset reason.
+
+config RAINBOW_HIMNTN
+    depends on RAINBOW
+    default n
+      bool "rainbow_himntn"
+    help
+      rainbow himntn control kernel mntn.
+
+config RAINBOW_TRACE
+    depends on RAINBOW
+    default n
+      bool "rainbow_reason"
+    help
+      rainbow trace will record irq and schedule trace log.

@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: GPL-2.0
+config HUAWEI_POWER_PROXY
+	bool "huawei power proxy"
+	default n
+	help
+	  Say Y here to enable power proxy driver.
+	  This driver provides interfaces to get battery operation
+	  information for platform charger when using tripartite coulometer.

@@ -1,0 +1,5 @@
+config HUAWEI_VIBRATOR
+	tristate "huawei vibrator driver"
+	default y
+	help
+		If you yes here to support the huawei vibrator driver.

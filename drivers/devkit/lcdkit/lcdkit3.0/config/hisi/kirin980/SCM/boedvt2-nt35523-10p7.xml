@@ -1,0 +1,139 @@
+<hwlcd>
+	<PanelEntry>
+		<HBackPorch>80</HBackPorch>
+		<HFrontPorch>116</HFrontPorch>
+		<HPulseWidth>4</HPulseWidth>
+		<HSyncSkew>0</HSyncSkew>
+		<VBackPorch>16</VBackPorch>
+		<VFrontPorch>16</VFrontPorch>
+		<VPulseWidth>74</VPulseWidth>
+
+		<PanelPxlClk>320</PanelPxlClk>
+
+		<PanelDsiUptSupport>0</PanelDsiUptSupport>
+		<MipiDsiUptSupport>1</MipiDsiUptSupport>
+		<MipiDsiBitClk>475</MipiDsiBitClk>
+		<MipiDsiBitClkValA>493</MipiDsiBitClkValA>
+		<MipiDsiBitClkValB>480</MipiDsiBitClkValB>
+		<MipiDsiBitClkValC>475</MipiDsiBitClkValC>
+		<MipiDsiBitClkValD>0</MipiDsiBitClkValD>
+		<MipiDsiBitClkValE>0</MipiDsiBitClkValE>
+		<MipiDsiBitClkUpt>475</MipiDsiBitClkUpt>
+
+		<MipiNonContinueEnable>1</MipiNonContinueEnable>
+		<PanelPxlClkDiv>2</PanelPxlClkDiv>
+
+		<PanelVsynCtrType>0</PanelVsynCtrType>
+		<MipiBurstMode>2</MipiBurstMode>
+		<LdiDpi01SetChange>1</LdiDpi01SetChange>
+		<LdiPipeClkRatePreSet>0x00000000 0x00000280</LdiPipeClkRatePreSet>
+		<LdiDivPreSet>2</LdiDivPreSet>
+		<PxlClkToPll2>1</PxlClkToPll2>
+		<PanelLvDetectSupport>0</PanelLvDetectSupport>
+		<PanelCurrentDetectSupport>0</PanelCurrentDetectSupport>
+		<PanelFpsUpdtSupport>0</PanelFpsUpdtSupport>
+		<PanelChecksumSupport>0</PanelChecksumSupport>
+		<PanelBlmin>75</PanelBlmin>
+		<PanelBlmax>3932</PanelBlmax>
+		<PanelBlDef>1638</PanelBlDef>
+		<PanelCmdType>32</PanelCmdType>
+		<!-- <PanelScanSupport>1</PanelScanSupport> -->
+		<!-- <PanelPtTestSupport>1</PanelPtTestSupport> -->
+
+		<PanelBlIcCtrlType>1</PanelBlIcCtrlType>
+		<PanelBlPwmPreciType>1</PanelBlPwmPreciType>
+		<PanelBlpwmOutDivValue>4</PanelBlpwmOutDivValue>
+
+		<TpColorSupport>1</TpColorSupport>
+		<PanelCabcSupport>0</PanelCabcSupport>
+		<!--blpwm intput disable, used for AP-cabc-->
+		<BlPwmInputDisable>1</BlPwmInputDisable>
+		<PanelCheckRegSupport>0</PanelCheckRegSupport>
+		<PanelDisplayRegionSupport>0</PanelDisplayRegionSupport>
+		<PanelPtTestSupport>0</PanelPtTestSupport>
+		<PanelMipiDetectSupport>0</PanelMipiDetectSupport>
+		<PanelHkadcSupport>0</PanelHkadcSupport>
+		<PanelChecksumSupport>0</PanelChecksumSupport>
+		<PanelFpsFuncSwitch>0</PanelFpsFuncSwitch>
+		<PanelFpsUpdtOnly>0</PanelFpsUpdtOnly>
+		<PanelFpsUpdtSupport>0</PanelFpsUpdtSupport>
+		<PanelSndCmdBeforeFrameSupport>0</PanelSndCmdBeforeFrameSupport>
+		<PanelEsdSupport>0</PanelEsdSupport>
+		<PanelChipEsdDisable>1</PanelChipEsdDisable>
+		<PanelCheckRegOnSupport>1</PanelCheckRegOnSupport>
+		<PanelDsi1SndCmdPanelSupport>1</PanelDsi1SndCmdPanelSupport>
+		<IdPinReadSupport>0</IdPinReadSupport>
+		<SblSupport>0</SblSupport>
+
+
+
+		<!-- Panel dirty region Information -->
+		<!--dynamic gamma support-->
+		<PanelDynamicGammaSupport>0</PanelDynamicGammaSupport>
+
+		<PanelFpsUpdtOnly>0</PanelFpsUpdtOnly>
+		<BiasPowerCtrlMode>2</BiasPowerCtrlMode>
+		<LcdType>0</LcdType>
+
+<!--event send
+		event, data, delay
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI, 7-TS early-event, 8-TS later-event, 9-VDD, 10-AOD, 11-BIAS
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<PowerOnStage>"2, 1, 16
+				5, 1, 1
+				5, 0, 2
+				5, 1, 22
+				3, 1, 2
+				4, 1, 2
+				11, 1, 0"</PowerOnStage>
+		<LPOnStage>"7, 1, 0
+				6, 1, 0"</LPOnStage>
+		<HSOnStage>"8, 1, 0"</HSOnStage>
+
+		<!--Power off timming-->
+		<HSOffStage>"7, 0, 0
+				6, 0, 0
+				8, 0, 0"</HSOffStage>
+		<LPOffStage>"0, 0, 0"</LPOffStage>
+		<PowerOffStage>"5, 0, 1
+				4, 0, 2
+				3, 0, 2
+				2, 0, 2"</PowerOffStage>
+		<!--event define
+		mode, number, amplitude
+		mode:0-none, 1-regulator, 2-gpio
+		number:gpio num or ldo num
+		amplitude:3100000-3.1v, 1850000-1.85v, 5500000-5.5v
+		-->
+		<LcdVci>"2, 0, 0"</LcdVci>
+		<LcdIovcc>"1, 4, 1850000"</LcdIovcc>
+		<LcdVsp>"2, 195, 5800000"</LcdVsp>
+		<LcdVsn>"2, 222, 5800000"</LcdVsn>
+		<LcdReset>"2, 8, 0"</LcdReset>
+		<TpReset>"2, 0, 0"</TpReset>
+		<LcdTe0>"2, 0, 0"</LcdTe0>
+		<LcdBacklight>"2, 10, 0"</LcdBacklight>
+
+		<GammaSupport>1</GammaSupport>
+		<CeSupport>0</CeSupport>
+		<PanelDisplayOnEffectSupport>0</PanelDisplayOnEffectSupport>
+		<SmartColorModeSupport>0</SmartColorModeSupport>
+		<GmpSupport>1</GmpSupport>
+		<ColormodeSupport>1</ColormodeSupport>
+		<ColorTempSupport>1</ColorTempSupport>
+		<ColorTempRectifySupport>0</ColorTempRectifySupport>
+		<XccSupport>1</XccSupport>
+		<ComformModeSupport>1</ComformModeSupport>
+		<CinemaModeSupport>0</CinemaModeSupport>
+		<HiaceSupport>1</HiaceSupport>
+		<PanelEffectSupport>0</PanelEffectSupport>
+		<PrefixCeSupport>0</PrefixCeSupport>
+		<Arsr1pSharpnessSupport>1</Arsr1pSharpnessSupport>
+		<PrefixSharpOneDSupport>0</PrefixSharpOneDSupport>
+		<PrefixSharpTwoDSupport>1</PrefixSharpTwoDSupport>
+
+	</PanelEntry>
+</hwlcd>
+

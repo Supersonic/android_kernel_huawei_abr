@@ -1,0 +1,4 @@
+&huawei_pd {
+	src_vconn = <3>; /* pmic-8350b */
+	src_vbus = <3>; /* pmic-8350b */
+};

@@ -1,0 +1,4 @@
+&lahaina_snd {
+	qcom,model = "lahaina-mtp-snd-card";
+	typec_uart_switch = <&tlmm 25 0>;
+};

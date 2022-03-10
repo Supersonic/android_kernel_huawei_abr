@@ -1,0 +1,5 @@
+config HW_AUDIO_INFO
+    tristate "set audio info for self adapt"
+	default n
+	help
+	  This is used to some audio self adatper configuration.

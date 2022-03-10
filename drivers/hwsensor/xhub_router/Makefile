@@ -1,0 +1,14 @@
+ccflags-y := -I$(srctree)/include/drm -I$(srctree)/techpack/display/msm -I$(srctree)/techpack/display/msm/dsi -I$(srctree)/techpack/display/msm/dp
+ccflags-y += -I$(srctree)/techpack/display/msm/sde
+ccflags-y += -I$(srctree)/techpack/display/rotator
+ccflags-y += -I$(srctree)/techpack/display/hdcp
+ccflags-y += -I$(srctree)/techpack/display/include
+ccflags-y += -I$(srctree)/techpack/display/include/uapi/display
+ccflags-y += -I$(srctree)/drivers/clk/qcom/
+ccflags-y += -I$(srctree)/drivers/dp
+ccflags-y += -Ivendor/huawei/chipset_common/plugins/kernel/include/
+ccflags-y += -I$(srctree)/drivers/devkit/lcdkit/lcdkit3.0/kernel/qcom/common/include
+ccflags-y += -I$(srctree)/drivers/devkit/lcdkit/lcdkit3.0/kernel/qcom/include
+ccflags-y += -I$(srctree)/drivers/devkit/lcdkit/lcdkit3.0/kernel/qcom/adapt
+ccflags-y += -I$(srctree)/drivers/devkit/lcdkit/lcdkit3.0/kernel/common/displayengine/include
+obj-y				+= xhub_pm.o

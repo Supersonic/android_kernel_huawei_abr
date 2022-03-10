@@ -1,0 +1,10 @@
+config SENSORS_COLOR_AP
+	tristate "XYZ Color sensor"
+	depends on I2C && SYSFS && HUAWEI_COLOR_SENSOR
+	default y
+     help
+     Say Y to enable support ap color sensor
+config TCS3430_AMS_DEBUG_LOG
+    bool "Enable debug logging"
+    depends on SENSORS_COLOR_AP
+    default n

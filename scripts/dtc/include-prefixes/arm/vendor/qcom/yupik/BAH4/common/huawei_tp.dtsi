@@ -1,0 +1,221 @@
+/* touch panel config */
+&tlmm {
+	pmx_ts_int_active {
+		ts_int_active: ts_int_active {
+			mux {
+				pins = "gpio81";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio81";
+				drive-strength = <8>;
+				bias-disable;
+			};
+		};
+	};
+
+	pmx_ts_int_suspend {
+		ts_int_suspend: ts_int_suspend {
+			mux {
+				pins = "gpio81";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio81";
+				drive-strength = <2>;
+				bias-disable;
+			};
+		};
+	};
+
+	pmx_ts_cs_high {
+		ts_cs_high: ts_cs_high {
+			mux {
+				pins = "gpio55";
+				function = "qup15";
+			};
+
+			config {
+				pins = "gpio55";
+				drive-strength = <6>;
+				bias-disable;
+			};
+		};
+	};
+
+	pmx_ts_cs_low {
+		ts_cs_low: ts_cs_low {
+			mux {
+				pins = "gpio55";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio55";
+				drive-strength = <6>;
+				bias-pull-down;
+			};
+		};
+	};
+
+	pmx_ts_reset_active {
+		ts_reset_active: ts_reset_active {
+			mux {
+				pins = "gpio105";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio105";
+				drive-strength = <8>;
+				bias-disable;
+			};
+		};
+	};
+
+	pmx_ts_reset_suspend {
+		ts_reset_suspend: ts_reset_suspend {
+			mux {
+				pins = "gpio105";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio105";
+				drive-strength = <2>;
+				bias-disable;
+			};
+		};
+	};
+
+	pmx_ts_release {
+		ts_release: ts_release {
+			mux {
+				pins = "gpio105", "gpio81";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio105", "gpio81";
+				drive-strength = <2>;
+				bias-pull-down;
+			};
+		};
+	};
+};
+
+&qupv3_se13_spi{
+	status = "ok";
+	#address-cells = <1>;
+	#size-cells = <0>;
+	qcom,rt = <1>;
+	huawei_thp@10 {
+		compatible = "huawei,thp";
+		status = "ok";
+		/* SPI Config */
+		spi-max-frequency = <13000000>;
+		spi-bus-id = <13>;
+		spi-mode = <0>;
+		reg = <0>;
+		spi_sync_cs_hi_delay_ns = <200>;
+		spi_sync_cs_low_delay_ns = <10>;
+
+		/* Power Config */
+		not_control_power = <1>;
+
+		/* Timing */
+		boot_reset_hi_delay_ms = <1>;
+		boot_reset_low_delay_ms = <0>;
+		boot_reset_after_delay_ms = <0>;
+		resume_reset_after_delay_ms = <1>;
+		suspend_reset_after_delay_ms = <1>;
+		use_mdelay = <1>;
+
+		/* GPIO Config */
+		irq_flag = <0x00000002>;
+		interrupt-parent = <&tlmm>;
+		interrupts = <81 0>;
+		rst_gpio = <&tlmm 105 0x00>;
+		irq_gpio = <&tlmm 81 0x00>;
+		cs_gpio = <&tlmm 55 0x00>;
+		pinctrl-names = "default", "idle", "state_cs_output1", "state_cs_output0";
+		pinctrl-0 = <&ts_int_active &ts_reset_active>;
+		pinctrl-1 = <&ts_int_suspend &ts_reset_suspend>;
+		pinctrl-2 = <&ts_cs_high>;
+		pinctrl-3 = <&ts_cs_low>;
+		support_no_cs_for_qcom = <1>;
+		support_control_cs_off = <1>;
+
+		/* Feature Config */
+		support_pinctrl = <1>;
+		pinctrl_init_enable = <1>;
+		pt_station_test = <0>;
+		support_gesture_mode = <1>;
+		lcd_gesture_mode_support = <1>;
+		need_enable_irq_wake = <1>;
+		hide_product_info_en = <1>;
+		supported_func_indicater = <0>;
+		pen_supported = <1>;
+		pen_mt_enable_flag = <1>;
+		project_in_tp = <1>;
+		need_notify_to_roi_algo = <1>;
+		supported_charger = <1>;
+		support_vendor_ic_type = <5>;
+		send_bt_status_to_fw = <1>;
+		aptouch_daemon_version = <3>;
+		use_thp_queue = <1>;
+		lcd_esd_event_upload = <1>;
+
+		thp_input_dev {
+			compatible = "huawei,thp_input";
+			abs_max_x = <1200>;
+			abs_max_y = <2000>;
+		};
+		thp_pen_input_dev {
+			compatible = "huawei,thp_pen_input";
+			max_x = <1200>;
+			max_y = <2000>;
+			max_pressure = <4096>;
+		};
+		himax-hx83112 {
+			spi-mode = <0>;
+			spi-max-frequency = <13000000>;
+			irq_flag = <0x00000008>;
+			avoid_low_level_irq_storm = <1>;
+			not_control_irq_in_irq_handler = <1>;
+			spi_sync_cs_hi_delay_ns = <20>;
+			spi_sync_cs_low_delay_ns = <20>;
+			get_frame_optimized_method =<1>;
+			himax_ic_83102_flag = <1>;
+			himax_ic_hispeed_support = <1>;
+			himax_gesture_need_lcd_rst = <1>;
+		};
+		novatech {
+			irq_flag = <0x00000002>;
+			spi-mode = <0>;
+			spi-max-frequency = <16000000>;
+			spi_sync_cs_hi_delay_ns = <1000>;
+			spi_sync_cs_low_delay_ns = <200>;
+			project_in_tp = <0>;
+			support_vendor_ic_type = <5>;
+			need_enable_irq_wake = <1>;
+		};
+		ssl {
+			use_default_configuration = <1>;
+			boot_reset_low_delay_ms = <5>;
+			boot_reset_hi_delay_ms = <5>;
+		};
+		ili {
+			use_default_configuration = <1>;
+			boot_reset_low_delay_ms = <5>;
+			boot_reset_hi_delay_ms = <5>;
+		};
+		novat {
+			use_default_configuration = <1>;
+			boot_reset_low_delay_ms = <5>;
+			boot_reset_hi_delay_ms = <5>;
+		};
+	};
+};

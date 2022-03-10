@@ -1,0 +1,284 @@
+<hwlcd>
+	<PanelEntry>
+		<MipiDsiTimingSupport>1</MipiDsiTimingSupport>
+		<!--Mipi Horizontal sync area -->
+		<MipiHSyncArea>13</MipiHSyncArea>
+		<!--Mipi Horizontal back porch -->
+		<MipiHBackPorch>10</MipiHBackPorch>
+		<!--Mipi Horizontal line time -->
+		<MipiHLineTime>1550</MipiHLineTime>
+		<!--Mipi Dpi horizontal size -->
+		<MipiDpiHSize>644</MipiDpiHSize>
+		<!--Mipi Vertical sync area -->
+		<MipiVSyncArea>20</MipiVSyncArea>
+		<!--Mipi Vertical back porch -->
+		<MipiVBackPorch>80</MipiVBackPorch>
+		<!--Mipi Vertical front porch -->
+		<MipiVFrontPorch>40</MipiVFrontPorch>
+		<!--Kirin 990 Mipi porch config end-->
+		<!--remove porch ratio support-->
+		<TinyPorchRatioSupport>1</TinyPorchRatioSupport>
+		<!--Mipi lp11:0-None, 1-little lp11, 2-no lp11-->
+		<MipiLp11Flag>0</MipiLp11Flag>
+		<!--Panel information config start-->
+		<!--Panel type:8-video mode, 16-command mode-->
+		<PanelCmdType>16</PanelCmdType>
+		<!--Pixel clock-->
+		<PanelPxlClk>118</PanelPxlClk>
+		<!--Pixel clock division ratio-->
+		<PanelPxlClkDiv>1</PanelPxlClkDiv>
+		<!--Ifbc type:0-none, 1-orise2x, 2-orise3x, 3-himax2x,
+		4-rsp2x, 5-rsp3x, 6-vesa2x single, 7-vesa3x single
+		8-vesa2x dual, 9-vesa3x dual, 10-vesa3.75x dual-->
+		<PanelIfbcType>9</PanelIfbcType>
+		<!--Vesa parameters-->
+		<!--bit per pixel 8: DSC_8BPP-->
+		<VesaDscBpp>8</VesaDscBpp>
+		<!--bit per component 8: DSC_8BPC-->
+		<VesaDscBpc>8</VesaDscBpc>
+		<!--line buff depth-->
+		<VesaDscLineBuffDepth>9</VesaDscLineBuffDepth>
+		<!--block pred enable-->
+		<VesaDscBlkPredEn>1</VesaDscBlkPredEn>
+		<VesaSliceWidth>1283</VesaSliceWidth>
+		<VesaSliceHeight>99</VesaSliceHeight>
+		<VesaDscCalcMode>1</VesaDscCalcMode>
+		<!-- daul ic dummy pixel -->
+		<PanelDummyPxl>8</PanelDummyPxl>
+		<!--DSS low power setting:0-close(video mode), 7-open(command mode)-->
+		<PanelVsynCtrType>7</PanelVsynCtrType>
+		<!--Pt station test support-->
+		<PanelPtTestSupport>1</PanelPtTestSupport>
+		<!--Ldo check test-->
+		<LdoCheckSupport>0</LdoCheckSupport>
+		<LdoCheckName>"ldo4"</LdoCheckName>
+		<LdoCheckChannel>2</LdoCheckChannel>
+		<LdoCheckThreshold>250</LdoCheckThreshold>
+		<!--Project id support-->
+		<PanelProjectIdSupport>0</PanelProjectIdSupport>
+		<!--Oem info-->
+		<OemInfoSupport>1</OemInfoSupport>
+		<OemBarcode2DSupport>1</OemBarcode2DSupport>
+		<!--sn code support-->
+		<PanelSnCodeSupport>1</PanelSnCodeSupport>
+		<!--Sensorhub aod support-->
+		<SensorhubAodSupport>0</SensorhubAodSupport>
+		<!--Single Screen Degradation Offset Support-->
+		<SingleDegSupport>0</SingleDegSupport>
+		<DbvstatSupport>1</DbvstatSupport>
+		<MinHbmDbv>1718</MinHbmDbv>
+		<!--Local region update support-->
+		<PanelDirtyRegionSupport>0</PanelDirtyRegionSupport>
+		<!--Left align-->
+		<DirtyLeftAlign>0xffff</DirtyLeftAlign>
+		<!--Right align-->
+		<DirtyRightAlign>0xffff</DirtyRightAlign>
+		<!--Top align-->
+		<DirtyTopAlign>30</DirtyTopAlign>
+		<!--Bottom align-->
+		<DirtyBottAlign>0xffff</DirtyBottAlign>
+		<!--Width align-->
+		<DirtyWidthAlign>0xffff</DirtyWidthAlign>
+		<!--Height align-->
+		<DirtyHeightAlign>30</DirtyHeightAlign>
+		<!--Width Region-->
+		<DirtyWidthMin>1200</DirtyWidthMin>
+		<!--Height Region-->
+		<DirtyHeightMin>30</DirtyHeightMin>
+		<!--Top location-->
+		<DirtyTopStart>0xffff</DirtyTopStart>
+		<!--Bottom location-->
+		<DirtyBottStart>0xffff</DirtyBottStart>
+		<!--Alsc info-->
+		<DirtyAlscEnable>1</DirtyAlscEnable>
+		<DirtyAlscAddr>0</DirtyAlscAddr>
+		<DirtyAlscSize>0</DirtyAlscSize>
+		<!--bl type:1-none, 2-pwm, 4-blpwm, 8-mipi, 16-sh blpwm-->
+		<PanelBlType>8</PanelBlType>
+		<!--bl ic type:1-reg only, 2-pwm only, 3-muti-ramp, 4-ramp-muti, 6-i2c only, 7-blpwm-cabc-->
+		<PanelBlIcCtrlType>1</PanelBlIcCtrlType>
+		<!--bl min brightness setting-->
+		<PanelBlmin>1</PanelBlmin>
+		<!--bl max brightness setting-->
+		<PanelBlmax>10000</PanelBlmax>
+		<PanelDbvmax>2047</PanelDbvmax>
+		<!--bl default brightness setting-->
+		<PanelBlDef>646</PanelBlDef>
+		<!--bl fastboot brightness setting-->
+		<PanelBlBoot>137</PanelBlBoot>
+		<!--Mipi lane number:c-phy:0-1port, 1-2port, 2-3port d-phy:0-1lane, 1-2lane, 2-3lane, 3-4lane-->
+		<MipiLaneNums>3</MipiLaneNums>
+		<!--mipi dsi support-->
+		<MipiDsiUptSupport>0</MipiDsiUptSupport>
+		<!--Mipi dsi default clock-->
+		<MipiDsiBitClk>682</MipiDsiBitClk>
+		<!--Mipi dynamic clk_1-->
+		<MipiDsiBitClkValA>682</MipiDsiBitClkValA>
+		<!--Mipi dynamic clk_2-->
+		<MipiDsiBitClkValB>682</MipiDsiBitClkValB>
+		<!--Mipi phy mode:0-D-phy, 1-C-phy-->
+		<MipiPhyMode>0</MipiPhyMode>
+		<!--Mipi clk post adjust-->
+		<MipiClkPostAdjust>210</MipiClkPostAdjust>
+		<MipiDataTHsPrepareAdjust>30</MipiDataTHsPrepareAdjust>
+		<MipiDataTHsTrailAdjust>0</MipiDataTHsTrailAdjust>
+		<MipiDataLaneLp2HsTimeAdjust>0</MipiDataLaneLp2HsTimeAdjust>
+		<MipiClkTHsTrailAdjust>0</MipiClkTHsTrailAdjust>
+		<MipiMaxTxEscClk>8</MipiMaxTxEscClk>
+		<MipiClkTLpxAdjust>0xFFFFFF96</MipiClkTLpxAdjust>
+		<MipiDataTLpxAdjust>0xFFFFFF94</MipiDataTLpxAdjust>
+		<!--Hbm support-->
+		<PanelHbmCtrlSupport>1</PanelHbmCtrlSupport>
+		<!--Fp Delay Threshold-->
+		<LeftTimeThUs>9000</LeftTimeThUs>
+		<RightTimeThUs>14000</RightTimeThUs>
+		<TeInervalTimeUs>16667</TeInervalTimeUs>
+		<MaskDelayTimeBeforeFp>0</MaskDelayTimeBeforeFp>
+		<MaskDelayTimeAfterFp>0</MaskDelayTimeAfterFp>
+		<!--panel version support-->
+		<PanelVersionSupport>1</PanelVersionSupport>
+		<!--Aod Hbm Wait Te Signal Times-->
+		<AodHbmWaitTeTimes>1</AodHbmWaitTeTimes>
+		<!--Hbm FingerPrint capture support-->
+		<PanelHbmFpCaptureSupport>0</PanelHbmFpCaptureSupport>
+		<PanelHbmFpPrepareSupport>0</PanelHbmFpPrepareSupport>
+		<!--Hbm max level-->
+		<PanelHbmLevelMax>1</PanelHbmLevelMax>
+		<!--checksum support-->
+		<PanelLogoChecksumSupport>0</PanelLogoChecksumSupport>
+		<PanelChecksumSupport>0</PanelChecksumSupport>
+		<ChecksumStressTestSupport>0</ChecksumStressTestSupport>
+		<ChecksumStressTestVdd>1280000</ChecksumStressTestVdd>
+		<ChecksumStressTestMipi>550</ChecksumStressTestMipi>
+		<!--vertical line test-->
+		<VtcLineSupport>0</VtcLineSupport>
+		<!--horizontal line test-->
+		<HorLineSupport>0</HorLineSupport>
+		<HorLineDuration>600</HorLineDuration>
+		<!--ddic low voltage detect test-->
+		<DdicLVDetectSupport>0</DdicLVDetectSupport>
+		<!--event send
+		event, data, delay
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI, 7-TS early-event, 8-TS later-event, 9-vdd
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<!--Power on timming-->
+		<PowerOnStage>"9, 1, 10"</PowerOnStage>
+		<LPOnStage>"7, 1, 5
+				5, 0, 1
+				5, 1, 356"</LPOnStage>
+		<HSOnStage>"6, 1, 20
+				8, 1, 0"</HSOnStage>
+
+		<!--Power off timming-->
+		<HSOffStage>"7, 0, 0
+				6, 0, 100
+				8, 0, 0"</HSOffStage>
+		<LPOffStage>"0, 0, 0"</LPOffStage>
+		<PowerOffStage>"5, 0, 20
+				9, 0, 0"</PowerOffStage>
+		<!--Power timming config end-->
+		<!--Tp color support-->
+		<TpColorSupport>1</TpColorSupport>
+		<!--backlight order-->
+		<BacklightOrder>1</BacklightOrder>
+		<!--delay xx ms after set brightness-->
+		<BacklightSetDelay>12</BacklightSetDelay>
+		<!--Power timming config start-->
+		<!--event define
+		mode, number, amplitude
+		mode:0-none, 1-regulator, 2-gpio
+		number:gpio num or ldo num
+		amplitude:3100000-3.1v, 1850000-1.85v, 5500000-5.5v
+		-->
+		<LcdVci>"0, 0, 0"</LcdVci>
+		<LcdIovcc>"0, 0, 0"</LcdIovcc>
+		<LcdVdd>"2, 4, 3300000"</LcdVdd>
+		<LcdVsp>"0, 0, 0"</LcdVsp>
+		<LcdVsn>"0, 0, 0"</LcdVsn>
+		<LcdReset>"2, 60, 0"</LcdReset>
+		<LcdTe0>"2, 3, 0"</LcdTe0>
+		<LcdPowerIC>"0, 0, 0"</LcdPowerIC>
+		<LcdBacklight>"0, 0, 0"</LcdBacklight>
+		<!--event send-->
+		<!--Effect config start-->
+		<!--Gamma calibration support-->
+		<PanelDynamicGammaSupport>0</PanelDynamicGammaSupport>
+		<!--Gamma support-->
+		<GammaSupport>1</GammaSupport>
+		<!--pcd errflag check support-->
+		<GpioPcdErrflag>0</GpioPcdErrflag>
+		<PanelPcdErrflagCheckSupport>0</PanelPcdErrflagCheckSupport>
+		<!--Gmp support-->
+		<GmpSupport>1</GmpSupport>
+		<!--for hiace parameter-->
+		<HiaceSupport>1</HiaceSupport>
+		<!--Xcc support-->
+		<XccSupport>1</XccSupport>
+		<!--Post Xcc support-->
+		<PostXccSupport>1</PostXccSupport>
+		<Arsr1pSharpnessSupport>1</Arsr1pSharpnessSupport>
+		<!--prefix 2D sharpness support-->
+		<PrefixSharpTwoDSupport>1</PrefixSharpTwoDSupport>
+		<!--EffectColorSupport-->
+		<EffectColorSupport>0</EffectColorSupport>
+		<EffectColorMode>2147483648</EffectColorMode>
+		<!--Effect config end-->
+		<PcdCmdsSupport>0</PcdCmdsSupport>
+		<!--separate transmission-->
+		<PanelSeparateTransmissionSupport>1</PanelSeparateTransmissionSupport>
+		<!--Fps fuction-->
+		<PanelFpsUpdtSupport>1</PanelFpsUpdtSupport>
+		<!--for hwc get panel support fps capacity, e.g. 0:60fps; 1:90fps; 2:120fps-->
+		<FpsDfrSupportValue>2</FpsDfrSupportValue>
+		<!--MMI test fps func switch-->
+		<FpsSwitchTestSupport>0</FpsSwitchTestSupport>
+		<FpsEffectDelayFrameCnt>0</FpsEffectDelayFrameCnt>
+		<FpsNeedHigh60Mode>0</FpsNeedHigh60Mode>
+		<!--bit0:hporch bit1:vporch bit2:clk-->
+		<FpsSwitchMode>1</FpsSwitchMode>
+		<!--send different hbm cmds under different fps-->
+		<HbmFpsCommandSupport>1</HbmFpsCommandSupport>
+		<HbmLevelBase>1</HbmLevelBase>
+		<HbmLevelBias>12</HbmLevelBias>
+		<HbmLevelSkipLow>24</HbmLevelSkipLow>
+		<HbmLevelSkipHigh>109</HbmLevelSkipHigh>
+		<!--panel switch to 60hz code-->
+		<PanelFpsToSixtyCommand>"0x15, 0x01, 0x00, 0x00, 0x14, 0x01, 0x02, 0x60, 0x00"</PanelFpsToSixtyCommand>
+		<FpsTo60CmdState>1</FpsTo60CmdState>
+		<!--panel switch to 120hz code-->
+		<FpsTo120Command>"0x05, 0x01, 0x00, 0x00, 0x0A, 0x00, 0x01, 0x15
+				0x15, 0x01, 0x00, 0x00, 0x0A, 0x00, 0x02, 0x60, 0x20"</FpsTo120Command>
+		<FpsTo120CmdState>1</FpsTo120CmdState>
+		<!--hsa->hbp->dpi_hsize->hline_time->vsa->vbp->vfp->mipi_clk-->
+		<FpsTo60DsiTimming>"13, 10, 644, 1550, 20, 80, 40, 682"</FpsTo60DsiTimming>
+		<!--hsa->hbp->dpi_hsize->hline_time->vsa->vbp->vfp->mipi_clk-->
+		<FpsTo120DsiTimming>"13, 10, 644, 780, 20, 80, 40, 682"</FpsTo120DsiTimming>
+		<!--frame rate 1->delay->...->frame rate n->delay-->
+		<FpsSwitchOrder>"60, 200, 120, 200"</FpsSwitchOrder>
+		<!--frame rate 1->...->frame rate n-->
+		<PanelSupportFpsList>"60, 120"</PanelSupportFpsList>
+		<!--elvdd detect-->
+		<PanelElvddDetectSupport>0</PanelElvddDetectSupport>
+		<!--elvdd detect type-->
+		<ElvddDetectType>1</ElvddDetectType>
+		<!--elvdd detect command-->
+		<ElvddDetectCommand>"0x06, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x01, 0x0a"</ElvddDetectCommand>
+		<ElvddDetectValue>0xb4</ElvddDetectValue>
+		<!-- for mipi check reg on -->
+		<PanelCheckRegOnCommand>"0x06, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x01, 0x0A"</PanelCheckRegOnCommand>
+		<PanelCheckRegOnValue>"0x9c"</PanelCheckRegOnValue>
+		<PanelOnCommandState>1</PanelOnCommandState>
+		<PanelOffCommandState>1</PanelOffCommandState>
+		<PanelBacklightCommandState>1</PanelBacklightCommandState>
+		<PanelCheckRegOnCommandState>1</PanelCheckRegOnCommandState>
+		<PanelCheckRegOffCommandState>1</PanelCheckRegOffCommandState>
+		<PanelAodEnterCommandState>1</PanelAodEnterCommandState>
+		<PanelAodExitCommandState>1</PanelAodExitCommandState>
+		<PanelAodLevel1BlCommandState>1</PanelAodLevel1BlCommandState>
+		<PanelAodLevel2BlCommandState>1</PanelAodLevel2BlCommandState>
+		<PanelAodLevel3BlCommandState>1</PanelAodLevel3BlCommandState>
+		<PanelAodLevel4BlCommandState>1</PanelAodLevel4BlCommandState>
+	</PanelEntry>
+</hwlcd>

@@ -1,0 +1,41 @@
+/* lcd pinctrl config */
+&tlmm {
+	pmx_lcd_pinctrl_default {
+		lcd_pinctrl_default: lcd_pinctrl_default {
+			mux {
+				pins = "gpio7", "gpio155";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio7", "gpio155";
+				drive-strength = <2>;
+				bias-pull-down;
+			};
+		};
+	};
+
+	pmx_lcd_pinctrl_active {
+		lcd_pinctrl_active: lcd_pinctrl_active {
+			mux {
+				pins = "gpio7", "gpio155";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio7", "gpio155";
+				drive-strength = <8>;
+				bias-pull-up;
+			};
+		};
+	};
+};
+
+&soc {
+	huawei_lcd_pinctrl_config: huawei,lcd_pinctrl_config {
+		compatible = "huawei,lcd_pinctrl_config";
+		pinctrl-names = "fpc_default", "fpc_active";
+		pinctrl-0 = <&lcd_pinctrl_default>;
+		pinctrl-1 = <&lcd_pinctrl_active>;
+	};
+};

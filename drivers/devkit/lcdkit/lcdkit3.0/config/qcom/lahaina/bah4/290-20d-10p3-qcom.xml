@@ -1,0 +1,162 @@
+<hwlcd>
+	<PanelEntry>
+		<PanelName>"BAH4_290 20d 0 10.3' 1200 x 2000"</PanelName>
+		<!--Panel type:dsi_video_mode-video mode, dsi_cmd_mode-command mode-->
+		<PanelTypeMode>"dsi_video_mode"</PanelTypeMode>
+		<PanelModeSwitch>0</PanelModeSwitch>
+		<PanelPhyWidth>136</PanelPhyWidth>
+		<PanelPhyHeight>226</PanelPhyHeight>
+
+		<!--Dsi ctrl number:1-one dsi ctrl, 2-two dsi ctrl-->
+		<DsiCtrlNum>0</DsiCtrlNum>
+		<!--Dsi phy number:1-one dsi phy, 2-two dsi phy-->
+		<DsiPhyNum>0</DsiPhyNum>
+
+		<!-- Lane Config -->
+		<PanelDSILaneMap>"lane_map_0123"</PanelDSILaneMap>
+		<PanelLane0State>1</PanelLane0State>
+		<PanelLane1State>1</PanelLane1State>
+		<PanelLane2State>1</PanelLane2State>
+		<PanelLane3State>1</PanelLane3State>
+
+		<!-- MIPI Host Config -->
+		<DsiTClkPost>0x0D</DsiTClkPost>
+		<DsiTClkPre>0x1B</DsiTClkPre>
+		<DsiSelectClocks>"mux_byte_clk0", "mux_pixel_clk0"</DsiSelectClocks>
+
+		<!-- Display dsi timming config -->
+		<DisplayDsiTimmingBegin>1</DisplayDsiTimmingBegin>
+		<DisplayDsiTimming0Begin>1</DisplayDsiTimming0Begin>
+		<DisplayDsiTimming0End>1</DisplayDsiTimming0End>
+		<DisplayDsiTimmingEnd>1</DisplayDsiTimmingEnd>
+
+		<!-- Display dsi timming0 config -->
+		<PanelXres0>1200</PanelXres0>
+		<PanelYres0>2000</PanelYres0>
+		<HFrontPorch0>20</HFrontPorch0>
+		<HBackPorch0>20</HBackPorch0>
+		<HPulseWidth0>4</HPulseWidth0>
+		<VFrontPorch0>26</VFrontPorch0>
+		<VBackPorch0>112</VBackPorch0>
+		<VPulseWidth0>4</VPulseWidth0>
+		<HSyncSkew0>0</HSyncSkew0>
+		<PanelFrameRate0>60</PanelFrameRate0>
+		<PanelPhyTimings0>"00 20 08 08 18 23 08
+			08 08 02 04 00 1B 0D"</PanelPhyTimings0>
+		<!-- Backlight ctrl config -->
+		<BlPmicControlType>"bl_ctrl_i2c_ic"</BlPmicControlType>
+
+		<!--Project id support-->
+		<PanelProjectIdSupport>1</PanelProjectIdSupport>
+		<!--Tp Project Id-->
+		<PanelDefaultTpProjectId>"W1699Z2700"</PanelDefaultTpProjectId>
+
+		<!--OemInfo support-->
+		<OemInfoSupport>0</OemInfoSupport>
+		<!--OemBarcode2DSupport support-->
+		<OemBarcode2DSupport>0</OemBarcode2DSupport>
+		<!--OemBarcode2DNumOffset-->
+		<OemBarcode2DNumOffset>0</OemBarcode2DNumOffset>
+		<!--sn code support-->
+		<PanelSnCodeSupport>0</PanelSnCodeSupport>
+
+		<!--bl max nit-->
+		<PanelBlMaxnit>450</PanelBlMaxnit>
+		<!--bl min brightness setting-->
+		<PanelBlmin>75</PanelBlmin>
+		<!--bl max brightness setting-->
+		<PanelBlmax>3932</PanelBlmax>
+		<!--bl ctrl type setting-->
+		<PanelBlIcCtrlType>0</PanelBlIcCtrlType>
+		<!--bias ctrl type setting-->
+		<PanelBiasIcCtrlType>0</PanelBiasIcCtrlType>
+		<!--Running test config start-->
+		<!--Dot/column inversion test support-->
+		<PanelInversionSupport>0</PanelInversionSupport>
+		<!--Check panel power status test support-->
+		<FactoryCheckRegSupport>0</FactoryCheckRegSupport>
+		<!--Pt station test support-->
+		<PanelPtTestSupport>0</PanelPtTestSupport>
+		<!--gpio offset number setting-->
+		<PanelGpioOffset>336</PanelGpioOffset>
+		<!--PanelOnAlwaysNeedReset-->
+		<PanelOnAlwaysNeedReset>1</PanelOnAlwaysNeedReset>
+		<DoesLcdPowerOnTp>1</DoesLcdPowerOnTp>
+		<TpSuspendBeforeLcd>1</TpSuspendBeforeLcd>
+		<!--Esd id support-->
+		<EsdEnabled>1</EsdEnabled>
+		<EsdCommand>"0x15, 0x01, 0x00, 0x00, 0x0A, 0x00, 0x02, 0xFF, 0x10
+			0x15, 0x01, 0x00, 0x00, 0x0A, 0x00, 0x02, 0xFB, 0x01
+			0x15, 0x01, 0x00, 0x00, 0x0A, 0x00, 0x02, 0xB9, 0x03
+			0x15, 0x01, 0x00, 0x00, 0x0A, 0x00, 0x02, 0xFF, 0x25
+			0x15, 0x01, 0x00, 0x00, 0x0A, 0x00, 0x02, 0xFB, 0x01
+			0x06, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x01, 0xBB
+			0x15, 0x01, 0x00, 0x00, 0x0A, 0x00, 0x02, 0xFF, 0x10
+			0x15, 0x01, 0x00, 0x00, 0x0A, 0x00, 0x02, 0xFB, 0x01
+			0x15, 0x01, 0x00, 0x00, 0x0A, 0x00, 0x02, 0xB9, 0x02
+			0x15, 0x01, 0x00, 0x00, 0x0A, 0x00, 0x02, 0xFF, 0x25
+			0x15, 0x01, 0x00, 0x00, 0x0A, 0x00, 0x02, 0xFB, 0x01
+			0x06, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x01, 0xBB"</EsdCommand>
+		<EsdCommandState>"dsi_lp_mode"</EsdCommandState>
+		<EsdCheckMode>"reg_read"</EsdCheckMode>
+		<EsdReadLength>0 0 0 0 0 1 0 0 0 0 0 1</EsdReadLength>
+		<EsdValues>"0x00", "0x00"</EsdValues>
+		<TpEsdGpioEvent>1</TpEsdGpioEvent>
+		<EsdGpioDetectSupport>1</EsdGpioDetectSupport>
+		<EsdGpioDetectNum0>96</EsdGpioDetectNum0>
+		<EsdGpioNormalValue0>0</EsdGpioNormalValue0>
+		<!--event send
+		event, data, delay
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI, 7-TS early event, 8-TS later event, 9-vdd 10-AOD, 11-BIAS
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<!--Power on timming-->
+		<PowerOnStage>"2, 1, 2
+				3, 1, 5
+				4, 1, 5
+				11, 1, 5
+				5, 2, 5
+				5, 1, 5
+				5, 2, 5
+				5, 1, 55
+				7, 1, 5
+				6, 1, 0
+				8, 1, 0"</PowerOnStage>
+		<LPOnStage>"0, 0, 0"</LPOnStage>
+
+		<!--Power off timming-->
+		<HSOffStage>"7, 0, 0
+				8, 0, 50"</HSOffStage>
+		<PowerOffStage>"6, 0, 5
+				5, 0, 5
+				11, 0, 5
+				4, 0, 5
+				3, 0, 5
+				2, 0, 0"</PowerOffStage>
+		<!--Power timming config end-->
+		<!--Tp color support-->
+		<TpColorSupport>0</TpColorSupport>
+		<!--Backlight max nit-->
+		<!--Power timming config start-->
+		<!--event define
+		when mode is regulate to set min voltage, max voltage, enable load, disable load
+		mode, number, amplitude, min voltage, max voltage, enable load, disable load
+		mode:0-none, 1-regulator, 2-gpio
+		number:gpio num or ldo num
+		amplitude:3100000-3.1v, 1850000-1.85v, 5500000-5.5v
+		min voltage:1850000-1.85v
+		max voltage:5500000-5.5v
+		enable load:62000
+		disable load:80
+		-->
+		<LcdIovcc>"1, 12, 1900000, 1900000, 1900000, 60700, 80"</LcdIovcc>
+		<LcdReset>"2, 44, 0"</LcdReset>
+		<LcdVsp>"2, 46, 6000000"</LcdVsp>
+		<LcdVsn>"2, 62, 6000000"</LcdVsn>
+		<PowerDownVsp>"2, 46, 4700000"</PowerDownVsp>
+		<PowerDownVsn>"2, 62, 4700000"</PowerDownVsn>
+		<IovccName>"vddio"</IovccName>
+		<!--event send-->
+	</PanelEntry>
+</hwlcd>

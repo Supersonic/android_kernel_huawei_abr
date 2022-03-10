@@ -1,0 +1,2 @@
+#include "../../lahainap-mtp.dtsi"
+#include "huawei_dev_detect/huawei_dev_detect.dtsi"

@@ -1,0 +1,1 @@
+obj-$(CONFIG_WIRELESS_STWLC33) += stwlc33/

@@ -1,0 +1,1 @@
+obj-$(CONFIG_SND_SOC_CS35LXX) += cs35l36.o

@@ -1,0 +1,47 @@
+/*
+ * lcd_kit_panel.h
+ *
+ * lcdkit panel head file for lcd driver
+ *
+ * Copyright (c) 2018-2019 Huawei Technologies Co., Ltd.
+ *
+ * This software is licensed under the terms of the GNU General Public
+ * License version 2, as published by the Free Software Foundation, and
+ * may be copied, distributed, and modified under those terms.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ */
+
+#ifndef _LCD_KIT_PANEL_H_
+#define _LCD_KIT_PANEL_H_
+#include "hisi_fb.h"
+
+/*
+ * panel compatible
+ */
+#define PANEL_JDI_NT36860C "jdi_2lane_nt36860_5p88_1440P_cmd"
+
+/*
+ * struct
+ */
+struct lcd_kit_panel_ops {
+	int (*lcd_kit_get_tp_color)(struct hisi_fb_data_type *hisifd);
+};
+
+struct lcd_kit_panel_map {
+	char *compatible;
+	int (*callback)(void);
+};
+
+/*
+ * function declare
+ */
+struct lcd_kit_panel_ops *lcd_kit_panel_get_ops(void);
+int lcd_kit_panel_init(void);
+int lcd_kit_panel_ops_register(struct lcd_kit_panel_ops *ops);
+int lcd_kit_panel_ops_unregister(struct lcd_kit_panel_ops *ops);
+#endif

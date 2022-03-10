@@ -1,0 +1,3 @@
+#include "../../yupik-idp.dtsi"
+#include "huawei_audio.dtsi"
+#include "huawei_dev_detect/huawei_dev_detect.dtsi"

@@ -1,0 +1,15 @@
+#
+# wireless charge ic driver
+#
+
+config WIRELESS_STWLC33
+	bool "wireless stwlc33"
+	depends on WIRELESS_CHARGER
+	default n
+	help
+	  Say Y here to enable stwlc33 driver.
+	  The stwlc33 is an soc for magnetic induction
+	  based wireless power receiver. it is fully compliant
+	  with latest WPC Qi specification of BPP and EPP
+	  and also supports various proprietary fast charging
+	  protocols used by major smart phone OEM.

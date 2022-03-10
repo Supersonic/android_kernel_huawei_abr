@@ -1,0 +1,211 @@
+<hwlcd>
+	<PanelEntry>
+		<!--Ldi config start-->
+		<!--HBP setting-->
+		<HBackPorch>4</HBackPorch>
+		<!--HFP setting-->
+		<HFrontPorch>48</HFrontPorch>
+		<!--HS setting-->
+		<HPulseWidth>12</HPulseWidth>
+		<!--VBP setting-->
+		<VBackPorch>57</VBackPorch>
+		<!--VFP setting-->
+		<VFrontPorch>4</VFrontPorch>
+		<!--VS setting-->
+		<VPulseWidth>10</VPulseWidth>
+		<!--Panel information config start-->
+		<!--Panel Model-->
+		<PanelModel>"TONY_090 701 0 6.39' 1080 x 2340"</PanelModel>
+		<!--Panel type:8-video mode, 16-command mode-->
+		<PanelCmdType>16</PanelCmdType>
+		<!--Pixel clock-->
+		<PanelPxlClk>175</PanelPxlClk>
+		<!--Pixel clock division ratio-->
+		<PanelPxlClkDiv>1</PanelPxlClkDiv>
+		<!--Ifbc type:0-none, 1-orise2x, 2-orise3x, 3-himax2x,
+		4-rsp2x, 5-rsp3x, 6-vesa2x single, 7-vesa3x single
+		8-vesa2x dual, 9-vesa3x dual, 10-vesa3.75x dual-->
+		<PanelIfbcType>0</PanelIfbcType>
+		<!--DSS low power setting:0-close(video mode), 7-open(command mode)-->
+		<PanelVsynCtrType>0</PanelVsynCtrType>
+		<!--Pt station test support-->
+		<PanelPtTestSupport>1</PanelPtTestSupport>
+		<!--Ldo check test-->
+		<LdoCheckSupport>1</LdoCheckSupport>
+		<LdoCheckName>"ldo4"</LdoCheckName>
+		<LdoCheckChannel>2</LdoCheckChannel>
+		<LdoCheckThreshold>250</LdoCheckThreshold>
+		<!--Project id support-->
+		<PanelProjectIdSupport>0</PanelProjectIdSupport>
+		<!--Esd enable-->
+		<PanelEsdSupport>1</PanelEsdSupport>
+		<!--Sensorhub aod support-->
+		<SensorhubAodSupport>1</SensorhubAodSupport>
+		<MaskDelayTimeBeforeFp>32500</MaskDelayTimeBeforeFp>
+		<MaskDelayTimeAfterFp>0</MaskDelayTimeAfterFp>
+		<!--Local region update support-->
+		<PanelDirtyRegionSupport>1</PanelDirtyRegionSupport>
+		<!--Left align-->
+		<DirtyLeftAlign>0xffff</DirtyLeftAlign>
+		<!--Right align-->
+		<DirtyRightAlign>0xffff</DirtyRightAlign>
+		<!--Top align-->
+		<DirtyTopAlign>8</DirtyTopAlign>
+		<!--Bottom align-->
+		<DirtyBottAlign>0xffff</DirtyBottAlign>
+		<!--Width align-->
+		<DirtyWidthAlign>0xffff</DirtyWidthAlign>
+		<!--Height align-->
+		<DirtyHeightAlign>8</DirtyHeightAlign>
+		<!--Width Region-->
+		<DirtyWidthMin>1080</DirtyWidthMin>
+		<!--Height Region-->
+		<DirtyHeightMin>8</DirtyHeightMin>
+		<!--Top location-->
+		<DirtyTopStart>0xffff</DirtyTopStart>
+		<!--Bottom location-->
+		<DirtyBottStart>0xffff</DirtyBottStart>
+		<!--bl type:1-none, 2-pwm, 4-blpwm, 8-mipi, 16-sh blpwm-->
+		<PanelBlType>8</PanelBlType>
+		<!--bl ic type:1-reg only, 2-pwm only, 3-muti-ramp, 4-ramp-muti, 6-i2c only, 7-blpwm-cabc-->
+		<PanelBlIcCtrlType>1</PanelBlIcCtrlType>
+		<!--bl min brightness setting-->
+		<PanelBlmin>24</PanelBlmin>
+		<!--bl max brightness setting-->
+		<PanelBlmax>2047</PanelBlmax>
+		<!--bl default brightness setting-->
+		<PanelBlDef>818</PanelBlDef>
+		<!--Mipi lane number:c-phy:0-1port, 1-2port, 2-3port d-phy:0-1lane, 1-2lane, 2-3lane, 3-4lane-->
+		<MipiLaneNums>3</MipiLaneNums>
+		<!--mipi dsi support-->
+		<MipiDsiUptSupport>1</MipiDsiUptSupport>
+		<!--Mipi dsi default clock-->
+		<MipiDsiBitClk>490</MipiDsiBitClk>
+		<!--Mipi dynamic clk_1-->
+		<MipiDsiBitClkValA>490</MipiDsiBitClkValA>
+		<!--Mipi dynamic clk_2-->
+		<MipiDsiBitClkValB>500</MipiDsiBitClkValB>
+		<!--Mipi phy mode:0-D-phy, 1-C-phy-->
+		<MipiPhyMode>0</MipiPhyMode>
+		<!--Mipi clk post adjust-->
+		<MipiClkPostAdjust>0</MipiClkPostAdjust>
+		<!--Hbm support-->
+		<PanelHbmCtrlSupport>1</PanelHbmCtrlSupport>
+		<!--Hbm 12 bit ctrl support-->
+		<PanelHbmSpecialBitSupport>1</PanelHbmSpecialBitSupport>
+		<!--Hbm FingerPrint capture support-->
+		<PanelHbmFpCaptureSupport>1</PanelHbmFpCaptureSupport>
+		<!--Hbm max level-->
+		<PanelHbmLevelMax>16</PanelHbmLevelMax>
+		<PanelHbmSetElvssDimLp>1</PanelHbmSetElvssDimLp>
+		<PanelHbmElvssDimSupport>1</PanelHbmElvssDimSupport>
+		<PanelHbmElvssDimCmdDelay>35</PanelHbmElvssDimCmdDelay>
+		<!--Oem info-->
+		<OemInfoSupport>1</OemInfoSupport>
+		<OemBarcode2DSupport>1</OemBarcode2DSupport>
+		<EffectColorSupport>1</EffectColorSupport>
+		<!--2147483648 equal 0x80000000,bit31 set 1 for open ddic_oem_info file node-->
+		<EffectColorMode>2147483648</EffectColorMode>
+		<!--pcd errflag check support-->
+		<GpioPcd>222</GpioPcd>
+		<GpioErrflag>186</GpioErrflag>
+		<PanelPcdErrflagCheckSupport>1</PanelPcdErrflagCheckSupport>
+                <!-- <PanelEsdCheckMaxCount>1</PanelEsdCheckMaxCount> -->
+		<!--event send
+		event, data, delay
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI, 7-TS early-event, 8-TS later-event
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<!--Power on timming-->
+		<PowerOnStage>"2, 1, 1
+				1, 1, 12"</PowerOnStage>
+		<LPOnStage>"5, 1, 12
+				7, 1, 0
+				6, 1, 0
+				8, 1, 0"</LPOnStage>
+		<HSOnStage>"0, 0, 0"</HSOnStage>
+
+		<!--Power off timming-->
+		<HSOffStage>"7, 0, 0
+				6, 0, 0
+				8, 0, 0"</HSOffStage>
+		<LPOffStage>"0, 0, 0"</LPOffStage>
+		<PowerOffStage>"5, 0, 10
+				1, 0, 1
+				2, 0, 1"</PowerOffStage>
+		<!--Power timming config end-->
+		<!--Tp color support-->
+		<TpColorSupport>1</TpColorSupport>
+		<!--Backlight max nit-->
+		<!--Power timming config start-->
+		<!--event define
+		mode, number, amplitude
+		mode:0-none, 1-regulator, 2-gpio
+		number:gpio num or ldo num
+		amplitude:3100000-3.1v, 1850000-1.85v, 5500000-5.5v
+		-->
+		<VciRegulator>ldo9</VciRegulator>
+		<LcdVci>"1, 9, 3000000"</LcdVci>
+		<LcdIovcc>"1, 4, 1850000"</LcdIovcc>
+		<LcdVsp>"0, 0, 0"</LcdVsp>
+		<LcdVsn>"0, 0, 0"</LcdVsn>
+		<LcdReset>"2, 8, 0"</LcdReset>
+		<TpReset>"2, 15, 0"</TpReset>
+		<LcdTe0>"2, 3, 0"</LcdTe0>
+		<LcdBacklight>"0, 0, 0"</LcdBacklight>
+		<!--event send-->
+		<!--Effect config start-->
+		<!--Gamma support-->
+		<GammaSupport>1</GammaSupport>
+		<!--Gmp support-->
+		<GmpSupport>1</GmpSupport>
+		<!--for hiace parameter-->
+		<HiaceSupport>1</HiaceSupport>
+		<!--Xcc support-->
+		<XccSupport>1</XccSupport>
+		<Arsr1pSharpnessSupport>1</Arsr1pSharpnessSupport>
+		<!--prefix 2D sharpness support-->
+		<PrefixSharpTwoDSupport>1</PrefixSharpTwoDSupport>
+		<!--Effect config end-->
+
+		<PanelName>"SAMSUNG_EA8076 6.39' CMD TFT 1080 x 2340"</PanelName>
+		<PanelWidth>68</PanelWidth>
+		<PanelHeight>147</PanelHeight>
+
+		<!-- Panel Command information -->
+		<PanelOnCommand>"0x05, 0x01, 0x00, 0x00, 0x0c, 0x01, 0x02, 0x11, 0x00
+				0x39, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x03, 0xF0, 0x5A, 0x5A
+				0x15, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x02, 0x35, 0x00
+				0x39, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x03, 0xB7, 0x01, 0x43
+				0x39, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x03, 0xF0, 0xA5, 0xA5
+				0x39, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x05, 0x2B, 0x00, 0x00, 0x09, 0x23
+				0x15, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x02, 0x53, 0x20
+				0x39, 0x01, 0x00, 0x00, 0x70, 0x01, 0x03, 0x51, 0x00, 0x00
+				0x05, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x02, 0x29, 0x00"</PanelOnCommand>
+
+		<PanelDisplayOnCommand>"0x05, 0x01, 0x00, 0x00, 0x7a, 0x00, 0x02, 0x29, 0x00"</PanelDisplayOnCommand>
+
+		<PanelOffCommand>"0x05, 0x01, 0x00, 0x00, 0x16, 0x01, 0x02, 0x28, 0x00
+				0x05, 0x01, 0x00, 0x00, 0x7a, 0x01, 0x02, 0x10, 0x00"</PanelOffCommand>
+
+		<PanelHbmElvssWriteCommand>"0x15, 0x01, 0x00, 0x00, 0x00, 0x01, 0x02, 0xB7, 0x00"</PanelHbmElvssWriteCommand>
+
+		<PanelHbmEnterCommand>"0x39, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x03, 0x51, 0x07, 0xFF
+				0x15, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x02, 0x53, 0xE8
+				0x39, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x03, 0xF0, 0x5A, 0x5A
+				0x15, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x02, 0xB0, 0x65
+				0x39, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x03, 0xB9, 0x35, 0x00
+				0x39, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x03, 0xF0, 0xA5, 0xA5"</PanelHbmEnterCommand>
+
+		<PanelHbmFpEnterCommand>"0x39, 0x01, 0x00, 0x00, 0x00, 0x00, 0x03, 0x51, 0x07, 0xFF
+				0x15, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x02, 0x53, 0xE0"</PanelHbmFpEnterCommand>
+
+		<!-- for esd check -->
+		<PanelEsdRegCommand>"0x06, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x01, 0x0a"</PanelEsdRegCommand>
+
+		<!-- 2d barcode support -->
+		<Barcode2DCommand>"0x06, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x10, 0xA1, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00"</Barcode2DCommand>
+
+	</PanelEntry>
+</hwlcd>

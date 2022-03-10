@@ -1,0 +1,11 @@
+<hwlcd>
+	<PanelEntry>
+	<PanelCompatible>"teton_tugl_auo_otm1901a_5p2_1080p_video_default"</PanelCompatible>
+	<!--Product type:0-normal type(1 panel), 1-folder type(2 panel) -->
+	<ProductType>1</ProductType>
+	<PanelXres>2480</PanelXres>
+	<PanelYres>2200</PanelYres>
+	<PanelFbXres>2480</PanelFbXres>
+	<PanelFbYres>2700</PanelFbYres>
+</PanelEntry>
+</hwlcd>

@@ -1,0 +1,26 @@
+#include "../../common/common.dtsi"
+#include "huawei_audio.dtsi"
+#include "huawei-lcd.dtsi"
+#include "huawei_tp.dtsi"
+#include "huawei_bsp.dtsi"
+#include "huawei_fp.dtsi"
+#include "huawei_charger.dtsi"
+#include "huawei_ir.dtsi"
+#include "huawei-sensor.dtsi"
+#include "huawei_fac.dtsi"
+#include "huawei_usb.dtsi"
+#include "huawei_mmc.dtsi"
+
+/*
+ * Each set of pins contains the pin number and pins voltage
+ * values, and must end with the names _num and _val.
+ */
+&gpio_check {
+	/* 432 : GPIO124, tlmm BASE = 308 */
+	/* 433 : GPIO125, tlmm BASE = 308 */
+	/* 434 : GPIO126, tlmm BASE = 308 */
+	/* 435 : GPIO127, tlmm BASE = 308 */
+	/* 436 : GPIO128, tlmm BASE = 308 */
+	buckle_num = "432 433 434 435 436";
+	buckle_val = "0 0 0 0 0";
+};

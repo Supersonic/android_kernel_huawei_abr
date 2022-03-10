@@ -1,0 +1,39 @@
+<hwlcd>
+	<PanelEntry>
+		<PanelCompatible>"auo_otm1901a_5p2_1080p_video_default"</PanelCompatible>
+		<PanelName>"AUO_OTM1901A 6.63' VIDEO TFT 1080 x 2400"</PanelName>
+		<!--lcdtype: amoled_2, lcd_1-->
+		<PanelType>0x01</PanelType>
+		<PanelXres>1080</PanelXres>
+		<PanelYres>2400</PanelYres>
+		<PanelWidth>69</PanelWidth>
+		<PanelHeight>154</PanelHeight>
+		<!--bl type:1-none, 2-pwm, 4-blpwm, 8-mipi, 16-sh blpwm-->
+		<PanelBlType>4</PanelBlType>
+		<!--bl ic type:1-reg only, 2-pwm only, 3-muti-ramp, 4-ramp-muti, 6-i2c only, 7-blpwm-cabc-->
+		<PanelBlIcCtrlType>6</PanelBlIcCtrlType>
+		<!--blpwm PreciType setting-->
+		<PanelBlPwmPreciType>1</PanelBlPwmPreciType>
+		<!--blpwm intput disable, used for AP-cabc-->
+		<BlPwmInputDisable>1</BlPwmInputDisable>
+		<!--Bl Ic Ctrl Type: 1-REG_ONLY_MODE, 2-PWM_ONLY_MODE, 3-MUTI_THEN_RAMP_MODE, 4-RAMP_THEN_MUTI_MODE, 6-I2C_ONLY_MODE-->
+		<!--Bl Ic Ctrl Type: 7-BLPWM_AND_CABC_MODE, 8-COMMON_IC_MODE, 9-AMOLED_NO_BL_IC_MODE, 10-BLPWM_MODE-->
+		<PanelBlIcCtrlType>6</PanelBlIcCtrlType>
+		<!--Backlight max nit-->
+		<!--Power timming config start-->
+		<!--event define
+		mode, number, amplitude
+		mode:0-none, 1-regulator, 2-gpio
+		number:gpio num or ldo num
+		amplitude:3100000-3.1v, 1850000-1.85v, 5500000-5.5v
+		-->
+		<LcdIovcc>"1, 4, 1850000"</LcdIovcc>
+		<LcdVsp>"2, 36, 5500000"</LcdVsp>
+		<LcdVsn>"2, 37, 5500000"</LcdVsn>
+		<PowerDownVsp>"2, 36, 4700000"</PowerDownVsp>
+		<PowerDownVsn>"2, 37, 4700000"</PowerDownVsn>
+		<LcdReset>"2, 42, 0"</LcdReset>
+		<TpReset>"2, 187, 0"</TpReset>
+		<LcdTe0>"2, 2, 0"</LcdTe0>
+	</PanelEntry>
+</hwlcd>

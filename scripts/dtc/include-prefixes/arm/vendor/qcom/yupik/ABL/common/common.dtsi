@@ -1,0 +1,2 @@
+#include "../../common/common.dtsi"
+#include "huawei_bsp.dtsi"

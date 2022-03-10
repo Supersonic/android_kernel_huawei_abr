@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: GPL-2.0
+#
+# Huawei Extended Functions
+#
+
+config HWUSB_EXT_FUNC
+	bool "Extended Gadget Function Driver"
+	default n
+	help
+	  Say Y here to enable huawei extended functions.
+
+config HWUSB_F_MTP
+	bool "Gadget Function Driver for MTP"
+	default n
+	depends on HWUSB_EXT_FUNC
+	help
+	  Say Y here to enable f_mtp driver.
+
+config HWUSB_F_PTP
+	bool "Gadget Function Driver for PTP"
+	default n
+	depends on HWUSB_EXT_FUNC
+	help
+	  Say Y here to enable f_ptp driver.

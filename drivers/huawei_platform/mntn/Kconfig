@@ -1,0 +1,13 @@
+config HUAWEI_PLATFORM_MAINTAIN
+	bool "Huawei platform maintain module support"
+	default n
+	help
+	  Say yes here to support the huawei platform maintain module
+
+config HUAWEI_PLATFORM_EASYSHELL
+	bool "Support Huawei Easy Shell"
+	default n
+	help
+	  This driver supports easy shell, etc.
+
+source "drivers/huawei_platform/mntn/blackbox/Kconfig"

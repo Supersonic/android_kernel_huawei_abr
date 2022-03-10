@@ -1,0 +1,11 @@
+#
+# VPU freq scale configuration
+#
+
+config HW_VPU_SCALE
+	bool "huawei vpu freq scale"
+	default y
+	help
+	  Switch to enable the huawei vpu freq scale file
+	  Say Y here to enable vpu freq scale
+

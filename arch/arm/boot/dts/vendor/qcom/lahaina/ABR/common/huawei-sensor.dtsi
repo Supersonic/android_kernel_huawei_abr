@@ -1,0 +1,45 @@
+&qupv3_se0_i2c {
+	status = "ok";
+	ams_as7341@39 {
+		compatible = "ams,as7341";
+		reg = <0x39>;
+		flicker_support = <1>;
+		algo_support = <1>;
+		status = "ok";
+	};
+};
+
+&pm8350b_haptics {
+	vib_f0_ref = <235>;
+	vib_f0_range = <8>;
+	vibrator_effect_support;
+	boost_power_alwayson = <1>;
+};
+
+&tlmm {
+	ak8789_default: ak8789_default {
+		mux {
+			pins = "gpio80";
+			function =  "gpio";
+		};
+		config {
+			pins = "gpio80";
+			drive-strength = <2>;
+			bias-pull-up;
+		};
+	};
+};
+&huawei_hall_sensor {
+	compatible = "huawei,hall-ak8789";
+	status = "ok";
+	pinctrl-names = "default";
+	pinctrl-0 = <&ak8789_default>;
+
+	huawei,hall_0 {
+		huawei,single-n-pole = <&tlmm 80 0>;
+		huawei,id = <0>;
+		huawei,type = <0x01>;
+		huawei,wakeup-flag = <0x4000>;
+		huawei,default-state = "on";
+	};
+};

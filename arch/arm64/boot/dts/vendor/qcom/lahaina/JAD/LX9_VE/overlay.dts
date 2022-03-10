@@ -1,0 +1,85 @@
+/dts-v1/;
+/plugin/;
+
+#include "../common/common.dtsi"
+#include "../common/huawei_dp.dtsi"
+#include "huawei-nfc.dtsi"
+#include "huawei_camera.dtsi"
+#include "huawei_wifi.dtsi"
+#include "huawei_audio.dtsi"
+#include "huawei-bt.dtsi"
+/ {
+    /* bsp_replace_info @ model = "Huawei Technologies, Inc. %product_name%"; */
+    model = "Huawei Technologies, Inc. JAD-LX9";
+    compatible = "qcom,lahaina-qrd", "qcom,lahaina", "qcom,qrd";
+    /* bsp_replace_info @ qcom,board-id = <%boardid% 0>; */
+    qcom,board-id = <8368 0>;
+};
+
+&soc {
+	spi@990000 {
+		huawei_thp@10 {
+			/* Power Config */
+			thp-iovdd-type = <1>;
+			thp-iovdd-supply = <&L2C>;
+			thp-iovdd-value = <1800000>;
+		};
+	};
+};
+
+&rootparam {
+    /* bsp_replace_info @ qcom,boardid = <%boardid_split%>; */
+    /* auto_key_info @ name: boardid type: uint32 default: 0 */
+    qcom,boardid = <8 3 6 8>;
+    /* bsp_replace_info @ qcom,board_name = "%board_name%"; */
+    qcom,board_name = "JAD_LX9_VE";
+    /* bsp_replace_info @ qcom,product_name = "%product_name%"; */
+    qcom,product_name = "JAD_BID2600";
+    /* bsp_replace_info @ hardware_version = "%hardware_version%"; */
+    hardware_version = "HL1JADEM";
+    /* bsp_replace_info @ huawei,modem_id = <%modem_id% 0x0>; */
+    huawei,modem_id = <2600 0>;
+};
+
+&dsi_sw43404_amoled_cmd {
+	qcom,mdss-dsi-panel-name = "sw43404 amoled cmd mode dsi boe panel without DSC jade";
+	qcom,5v-boost-gpio = <&tlmm 197 0>;
+	qcom,mdss-dsi-display-timings {
+		timing@0 {
+			qcom,mdss-dsi-panel-width = <1228>;
+			qcom,mdss-dsi-on-command = [05 01 00 00 05 00 01 35
+		15 01 00 00 05 00 02 53 20
+		39 01 00 00 05 00 05 51 0D BB 0F FE
+		39 01 00 00 05 00 05 2A 00 00 04 CB
+		39 01 00 00 05 00 05 2B 00 00 0A 8B
+		15 01 00 00 05 00 02 90 02
+		05 01 00 00 05 00 01 2C
+		15 01 00 00 05 00 02 82 AB
+		15 01 00 00 05 00 02 2F 01
+		05 01 00 00 C8 00 01 11
+		05 01 00 00 05 00 01 29];
+		};
+	};
+};
+
+&huawei_adsp_power {
+	hiz_suspend_val = <3>;
+};
+
+&boost_5v {
+	boost_5v_use_internal_pmic = <1>;
+};
+
+&wireless_ps {
+	gpio_rxsw = <&tlmm 157 0>; /* GPIO_157 */
+};
+
+&huawei_batt_info {
+	shield_ct_sign = <1>;
+};
+
+&usb_extra_modem {
+	gpio_q4 = <&tlmm 158 0>; /* GPIO_158 */
+	gpio_q5 = <&tlmm 30 0>; /* GPIO_30 */
+	status = "ok";
+};

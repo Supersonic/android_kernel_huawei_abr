@@ -1,0 +1,6 @@
+<hwlcd>
+	<PanelEntry>
+		<LcdReset>"2, 209, 0"</LcdReset>
+	</PanelEntry>
+</hwlcd>
+

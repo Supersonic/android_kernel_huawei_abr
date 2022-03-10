@@ -1,0 +1,5 @@
+&huawei_pd {
+	src_vconn = <2>; /* 5v-boost */
+	src_vbus = <2>; /* 5v-boost */
+	cc_dynamic_protect = <2>;
+};

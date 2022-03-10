@@ -1,0 +1,14 @@
+config HUAWEI_IR_CORE
+	bool "huawei infrared user interface"
+	default n
+	help
+	  Enable this option to enable the infrared user interface
+	  (e.g. /dev/ir). This interface passes infrared CIR data
+	  to or from userspace, which is needed for IR transmitting
+	  (aka "blasting") and for the ir daemon.
+
+config HUAWEI_IR_PWM
+	bool "huawei PWM IR transmitter"
+	depends on PWM && HUAWEI_IR_CORE
+	---help---
+	   Say Y if you want to use a PWM based IR transmitter.

@@ -1,0 +1,48 @@
+/dts-v1/;
+/plugin/;
+
+#include "../common/common.dtsi"
+#include "huawei-nfc.dtsi"
+#include "huawei_camera.dtsi"
+#include "huawei_wifi.dtsi"
+
+/ {
+    /* bsp_replace_info @ model = "Huawei Technologies, Inc. %product_name%"; */
+    model = "Huawei Technologies, Inc. CET-AL00";
+    compatible = "qcom,lahaina-qrd", "qcom,lahaina", "qcom,qrd";
+    /* bsp_replace_info @ qcom,board-id = <%boardid% 0>; */
+    qcom,board-id = <8330 0>;
+};
+
+&rootparam {
+    /* bsp_replace_info @ qcom,boardid = <%boardid_split%>; */
+    /* auto_key_info @ name: boardid type: uint32 default: 0 */
+    qcom,boardid = <8 3 3 0>;
+    /* bsp_replace_info @ qcom,board_name = "%board_name%"; */
+    qcom,board_name = "CET_AN00_VA";
+    /* bsp_replace_info @ qcom,product_name = "%product_name%"; */
+    qcom,product_name = "CET_BID1100";
+    /* bsp_replace_info @ hardware_version = "%hardware_version%"; */
+    hardware_version = "HN0CETUSM";
+    /* bsp_replace_info @ huawei,modem_id = <%modem_id% 0x0>; */
+    huawei,modem_id = <1100 0x0>;
+};
+
+&tlmm {
+	rt9426_irq_pins_default {
+		mux {
+			pins = "gpio67";
+			function = "gpio";
+		};
+		config {
+			pins = "gpio67";
+			drive-strength = <2>;
+			bias-pull-up;
+		};
+	};
+};
+
+&huawei_pd {
+	src_vconn = <2>; /* 5v-boost */
+	src_vbus = <3>; /* pmic */
+};

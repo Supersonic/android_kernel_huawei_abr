@@ -1,0 +1,41 @@
+/dts-v1/;
+/plugin/;
+
+#include "../common/common.dtsi"
+#include "huawei-nfc.dtsi"
+#include "huawei_camera.dtsi"
+#include "huawei_wifi.dtsi"
+#include "huawei-lcd.dtsi"
+#include "huawei-bt.dtsi"
+/ {
+    /* bsp_replace_info @ model = "Huawei Technologies, Inc. %product_name%"; */
+    model = "Huawei Technologies, Inc. BAL-AL00";
+    compatible = "qcom,lahaina-qrd", "qcom,lahaina", "qcom,qrd";
+    /* bsp_replace_info @ qcom,board-id = <%boardid% 0>; */
+    qcom,board-id = <8393 0>;
+};
+
+&soc {
+	spi@990000 {
+		huawei_thp@10 {
+			/* Power Config */
+			thp-iovdd-type = <1>;
+			thp-iovdd-supply = <&L2C>;
+			thp-iovdd-value = <1800000>;
+		};
+	};
+};
+
+&rootparam {
+    /* bsp_replace_info @ qcom,boardid = <%boardid_split%>; */
+    /* auto_key_info @ name: boardid type: uint32 default: 0 */
+    qcom,boardid = <8 3 9 3>;
+    /* bsp_replace_info @ qcom,board_name = "%board_name%"; */
+    qcom,board_name = "BAL_AL00_VD";
+    /* bsp_replace_info @ qcom,product_name = "%product_name%"; */
+    qcom,product_name = "BAL_BID1401";
+    /* bsp_replace_info @ hardware_version = "%hardware_version%"; */
+    hardware_version = "HN2BALIMB";
+    /* bsp_replace_info @ huawei,modem_id = <%modem_id% 0x0>; */
+    huawei,modem_id = <1401 0x0>;
+};

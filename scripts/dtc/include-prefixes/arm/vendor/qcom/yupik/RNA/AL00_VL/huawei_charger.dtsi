@@ -1,0 +1,13 @@
+&qupv3_se3_i2c {
+	rt9426_battery@55{
+		rt_config_ver = <14>;
+		battery0{
+			batt_name = "BCYCAE_3900_4450_v0";
+			#include "../../../huawei_charger/rt9426_0P5mohm_BITCAE_3900mAh_4V45_BT216.dtsi"
+		};
+		battery1{
+			batt_name = "BYTCAE_3900_4450_v0";
+			#include "../../../huawei_charger/rt9426_0P5mohm_BITCAE_3900mAh_4V45_BT216.dtsi"
+		};
+	};
+};

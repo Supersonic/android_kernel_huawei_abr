@@ -1,0 +1,19 @@
+&soc {
+	card_tray_detect: card_tray_detect {
+		compatible = "huawei,card_tray_detect";
+		card_tray_gpio = <400>;
+	};
+};
+
+/*
+ *  * Each set of pins contains the pin number and pins voltage
+ *   * values, and must end with the names _num and _val.
+ *    */
+&gpio_check {
+	sandwich_num= "12";
+	sandwich_val= "0";
+};
+
+&display_panel_avdd {
+	status = "disabled";
+};

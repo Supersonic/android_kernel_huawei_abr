@@ -1,0 +1,104 @@
+&bolero {
+	wcd938x-codec {
+		qcom,cdc-micbias1-mv = <2700>;
+		qcom,cdc-micbias2-mv = <2700>;
+		qcom,cdc-micbias3-mv = <2700>;
+		qcom,cdc-micbias4-mv = <2700>;
+	};
+};
+
+&huawei_audio_info {
+	compatible = "hw,hw_audio_info";
+	product_identifier = "7315";
+	voice_vol_level = "10";
+	pa_identifier = "smartpakit";
+	direct_devices = "0x4000000";
+	status = "ok";
+	hardware_info {
+		get_ec_in_hal = "true";
+		voip_ap_algo_enable = "true";
+		voip_scene_support = "true";
+		status = "ok";
+	};
+
+	audio_channel_rotation_info {
+		angle="270";
+		rotation_support= "true";
+	};
+
+	audio_capability {
+		soundtrigger_version = "2.0";
+	};
+};
+
+&audio_hw_config {
+	asr_enable = "true";
+};
+
+&yupik_snd {
+	qcom,afe-rxtx-lb = <1>;
+	qcom,audio-routing =
+		"AMIC1", "Analog Mic1",
+		"Analog Mic1", "MIC BIAS1",
+		"AMIC2", "Analog Mic2",
+		"Analog Mic2", "MIC BIAS2",
+		"AMIC3", "Analog Mic3",
+		"Analog Mic3", "MIC BIAS3",
+		"AMIC4", "Analog Mic4",
+		"Analog Mic4", "MIC BIAS1",
+		"AMIC5", "Analog Mic5",
+		"Analog Mic5", "MIC BIAS3",
+		"TX DMIC0", "Digital Mic0",
+		"TX DMIC0", "MIC BIAS3",
+		"TX DMIC1", "Digital Mic1",
+		"TX DMIC1", "MIC BIAS3",
+		"TX DMIC2", "Digital Mic2",
+		"TX DMIC2", "MIC BIAS1",
+		"TX DMIC3", "Digital Mic3",
+		"TX DMIC3", "MIC BIAS1",
+		"TX DMIC4", "Digital Mic4",
+		"TX DMIC4", "MIC BIAS1",
+		"TX DMIC5", "Digital Mic5",
+		"TX DMIC5", "MIC BIAS1",
+		"IN1_HPHL", "HPHL_OUT",
+		"IN2_HPHR", "HPHR_OUT",
+		"IN3_AUX", "AUX_OUT",
+		"RX_TX DEC0_INP", "TX DEC0 MUX",
+		"RX_TX DEC1_INP", "TX DEC1 MUX",
+		"RX_TX DEC2_INP", "TX DEC2 MUX",
+		"RX_TX DEC3_INP", "TX DEC3 MUX",
+		"TX SWR_INPUT", "WCD_TX_OUTPUT",
+		"VA SWR_INPUT", "VA_SWR_CLK",
+		"VA SWR_INPUT", "WCD_TX_OUTPUT",
+		"VA_AIF1 CAP", "VA_SWR_CLK",
+		"VA_AIF2 CAP", "VA_SWR_CLK",
+		"VA_AIF3 CAP", "VA_SWR_CLK",
+		"VA DMIC0", "Digital Mic0",
+		"VA DMIC1", "Digital Mic1",
+		"VA DMIC2", "Digital Mic2",
+		"VA DMIC3", "Digital Mic3",
+		"VA DMIC4", "Digital Mic4",
+		"VA DMIC5", "Digital Mic5",
+		"VA DMIC0", "VA MIC BIAS3",
+		"VA DMIC1", "VA MIC BIAS3",
+		"VA DMIC2", "VA MIC BIAS1",
+		"VA DMIC3", "VA MIC BIAS1",
+		"VA DMIC4", "VA MIC BIAS1",
+		"VA DMIC5", "VA MIC BIAS1";
+	qcom,msm-mbhc-anahs-cmos = <0>;
+	fsa4480-i2c-handle = <&fsa4480>;
+	qcom,msm-mbhc-btn-threshold = /bits/ 16 <75 138 237 500 500 500 500 500>;
+};
+
+&qupv3_se3_i2c {
+	status = "ok";
+	fsa4480: fsa4480@42 {
+		compatible = "qcom,fsa4480-i2c";
+		reg = <0x42>;
+		status = "ok";
+	};
+};
+
+&wsa_spkr_en2 {
+	status = "disabled";
+};

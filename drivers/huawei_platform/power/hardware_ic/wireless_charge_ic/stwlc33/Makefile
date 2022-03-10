@@ -1,0 +1,5 @@
+obj-$(CONFIG_WIRELESS_STWLC33) += stwlc33.o
+
+ifeq ($(TARGET_VERSION_MODE), factory)
+ccflags-y += -DWIRELESS_CHARGER_FACTORY_VERSION
+endif

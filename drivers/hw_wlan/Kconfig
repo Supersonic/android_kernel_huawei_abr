@@ -1,0 +1,3 @@
+config HUAWEI_WIFI
+	bool "qca huawei wifi extension"
+	default n

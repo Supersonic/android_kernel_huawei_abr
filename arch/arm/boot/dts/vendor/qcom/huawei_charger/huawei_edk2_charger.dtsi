@@ -1,0 +1,6 @@
+/ {
+	huawei_edk2_charger: huawei_edk2_charger {
+		poweron_charger_enable = <1>;
+		status = "ok";
+	};
+};

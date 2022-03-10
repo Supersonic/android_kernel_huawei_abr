@@ -1,0 +1,15 @@
+&apps_rsc{
+         rpmh-regulator-ldoc9 {
+                L9C:
+                pm8350c_l9: regulator-pm8350c-l9 {
+                        regulator-min-microvolt = <2704000>;
+                        regulator-max-microvolt = <3008000>;
+                        qcom,init-voltage = <2704000>;
+                };
+        };
+};
+&sdhc_2{
+        cd-gpios = <&tlmm 91 GPIO_ACTIVE_HIGH>;
+        sd-sim-mux = <0>;
+        status = "ok";
+};

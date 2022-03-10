@@ -1,0 +1,1 @@
+source "drivers/card_tray/card_tray_detect/Kconfig"

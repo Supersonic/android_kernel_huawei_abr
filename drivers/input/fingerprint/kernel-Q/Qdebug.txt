@@ -1,0 +1,65 @@
+JQ DTS:
+http://mgit-tm.rnd.huawei.com/11114969
+
+
+./build_release.sh target=bengal variant=user arch=arm64 linux_version=msm-4.19 export_para=TARGET_CHIPSET_WORKAROUND:true export_para=USE_EROFS:true update_api=no export_para=TARGET_CHIPSET_ENABLEWIDEVINE:false export_para=TARGET_CHIPSET_ENABLEMULTIDRM:true export_para=SET_SYSTEM_PARTITION:oversea bootimage dtboimage -j8
+
+
+邓泽怀(00281482)2020-09-24 11:52
+调试分支
+
+拆分编译的分支（emui 调试分支）： 
+芯片组件：
+repo init -u http://mgit-tm.rnd.huawei.com/platform/manifest.git -b platform/qcom/debug_compile_20200806_from_trunk -m vendor_qcom.xml --no-repo-verify --repo-branch=stable
+编译命令：
+./build_release.sh target=bengal variant=user arch=arm64 linux_version=msm-4.19 export_para=TARGET_CHIPSET_WORKAROUND:true export_para=USE_EROFS:true update_api=no export_para=TARGET_CHIPSET_ENABLEWIDEVINE:false export_para=TARGET_CHIPSET_ENABLEMULTIDRM:true export_para=SET_SYSTEM_PARTITION:oversea
+编译root包命令：
+./build_release.sh target=bengal variant=user arch=arm64 linux_version=msm-4.19 export_para=TARGET_CHIPSET_WORKAROUND:true export_para=USE_EROFS:true update_api=no export_para=TARGET_CHIPSET_ENABLEWIDEVINE:false export_para=TARGET_CHIPSET_ENABLEMULTIDRM:true export_para=SET_SYSTEM_PARTITION:oversea root_perf_main=root
+
+
+
+今天的烧片版本：
+\\10.119.80.188\factory\KON\20200922_04\5489722\KON_Factory\config_factory_EMUI11.0.1_PK_trunk
+
+case账号：
+chenqian71@huawei.com
+Gq09180919!
+
+
+邓泽怀(00281482)2020-10-12 17:47
+adb wait-for-device && adb shell cat d/tzdbg/qsee_log > d:\pk_log\qsee_log_01
+
+adb wait-for-device && adb shell cat d/tzdbg/qsee_log > d:\pk\log
+
+adb wait-for-device && adb shell cat d/tzdbg/log > d:\pk_log\tzbsp_log_01
+邓泽怀(00281482)2020-10-12 17:48
+139|HWKON-Q:/ # qseecom_sample_client v smplap32 19 3 5 
+
+adb shell setenforce 0
+adb shell getenforce
+
+泽怀服务器：
+10.187.74.245
+d00281482 hw281482	
+
+
+胡大帅(00512929)2020-09-24 17:50
+h00512929 2020@gogogo
+
+邓泽怀(00281482)2020-09-23 09:52
+PK ap侧代码提交：
+kernel：
+http://mgit-tm.rnd.huawei.com/#/c/10687699/
+http://mgit-tm.rnd.huawei.com/#/c/10687795/
+dts：
+http://mgit-tm.rnd.huawei.com/#/c/10687779/
+
+2020.09.13 HIDL 2.2
+http://mgit-tm.rnd.huawei.com/#/c/10794613/    GP接口切换pick
+http://mgit-tm.rnd.huawei.com/10794170    manifest
+http://mgit-tm.rnd.huawei.com/10794250    mk
+
+2020.09.19 删除原生指纹驱动
+http://mgit-tm.rnd.huawei.com/#/c/10859058/
+
+http://mgit-tm.rnd.huawei.com/#/c/10688703/  DMD宏修改

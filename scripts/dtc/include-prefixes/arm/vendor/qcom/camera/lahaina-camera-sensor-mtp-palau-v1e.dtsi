@@ -1,0 +1,226 @@
+#include "lahaina-camera-sensor-mtp-palau.dtsi"
+
+
+&tlmm {
+
+
+	mcam_avdd_active {
+		mux {
+			pins = "gpio9";
+			function = "gpio";
+		};
+
+		config {
+			pins = "gpio9";
+			bias-disable; /* No PULL */
+			drive-strength = <2>; /* 2 MA */
+		};
+	};
+
+	mcam_avdd_suspend {
+		mux {
+			pins = "gpio9";
+			function = "gpio";
+		};
+
+		config {
+			pins = "gpio9";
+			bias-pull-down; /* PULL DOWN */
+			drive-strength = <2>; /* 2 MA */
+			output-low;
+		};
+	};
+};
+
+&cam_cci0 {
+	qcom,actuator0 {
+
+		gpios = <&tlmm 74 0>,
+			<&tlmm 25 0>; /* iovdd */
+		gpio-mixed1 = <0>;
+		gpio-mixed2 = <1>;
+		gpio-custom1 = <0>; /* not use */
+		gpio-req-tbl-num = <0 1>;
+		gpio-req-tbl-flags = <0 0>;
+		gpio-req-tbl-label = "CAM_MIXED1",
+					"CAM_MIXED2";
+
+	};
+	qcom,eeprom0 {
+
+		gpios = <&tlmm 100 0>, /* mclk */
+			<&tlmm 16 0>, /* rst1 */
+			<&tlmm 9 0>, /* avdd */
+			<&tlmm 37 0>, /* dvdd */
+			<&tlmm 25 0>, /* iovdd */
+			<&tlmm 74 0>; /* afvdd */
+		gpio-reset = <1>;
+		gpio-custom1 = <0>; /* not use */
+		gpio-mixed3 = <2>;
+		gpio-mixed2 = <3>;
+		gpio-mixed1 = <4>;
+		gpio-mixed4 = <5>;
+		gpio-req-tbl-num = <0 1 2 3 4 5>;
+		gpio-req-tbl-flags = <1 0 0 0 0 0>;
+		gpio-req-tbl-label = "CAMIF_MCLK0",
+					"CAM_RESET0",
+					"CAM_MIXED3",
+					"CAM_MIXED2",
+					"CAM_MIXED1",
+					"CAM_MIXED4";
+
+	};
+	qcom,cam-sensor0 {
+
+		gpios = <&tlmm 100 0>, /* mclk */
+			<&tlmm 16 0>, /* rst1 */
+			<&tlmm 9 0>, /* avdd */
+			<&tlmm 37 0>, /* dvdd */
+			<&tlmm 25 0>, /* iovdd */
+			<&tlmm 74 0>; /* afvdd */
+		gpio-reset = <1>;
+		gpio-custom1 = <0>; /* not use */
+		gpio-mixed1 = <2>;
+		gpio-mixed2 = <3>;
+		gpio-mixed3 = <4>;
+		gpio-mixed4 = <5>;
+		gpio-req-tbl-num = <0 1 2 3 4 5>;
+		gpio-req-tbl-flags = <1 0 0 0 0 0>;
+		gpio-req-tbl-label = "CAMIF_MCLK0",
+					"CAM_RESET0",
+					"CAM_MIXED1",
+					"CAM_MIXED2",
+					"CAM_MIXED3",
+					"CAM_MIXED4";
+
+	};
+
+	qcom,actuator2 {
+		gpios = <&tlmm 74 0>,
+			<&tlmm 25 0>;
+		gpio-mixed1 = <0>;
+		gpio-mixed2 = <1>;
+		gpio-custom1 = <0>; /* not use */
+		gpio-req-tbl-num = <0 1>;
+		gpio-req-tbl-flags = <0 0>;
+		gpio-req-tbl-label = "CAM_MIXED1",
+					"CAM_MIXED2";
+	};
+
+	qcom,eeprom2 {
+
+		gpios = <&tlmm 101 0>,
+			<&tlmm 25 0>;
+		gpio-custom1 = <0>; /* not use */
+		gpio-mixed1 = <1>;
+		gpio-req-tbl-num = <0 1>;
+		gpio-req-tbl-flags = <1 0>;
+		gpio-req-tbl-label = "CAMIF_MCLK1",
+					"CAM_MIXED1";
+	};
+	qcom,cam-sensor2 {
+		gpios = <&tlmm 101 0>,
+			<&tlmm 106 0>,
+			<&tlmm 9 0>,
+			<&tlmm 37 0>,
+			<&tlmm 74 0>,
+			<&tlmm 25 0>;
+		gpio-reset = <1>;
+		gpio-custom1 = <0>; /* not use */
+		gpio-mixed1 = <2>;
+		gpio-mixed2 = <3>;
+		gpio-mixed3 = <4>;
+		gpio-mixed4 = <5>;
+		gpio-req-tbl-num = <0 1 2 3 4 5>;
+		gpio-req-tbl-flags = <1 0 0 0 0 0>;
+		gpio-req-tbl-label = "CAMIF_MCLK1",
+					"CAM_RESET2",
+					"CAM_MIXED1",
+					"CAM_MIXED2",
+					"CAM_MIXED3",
+					"CAM_MIXED4";
+	};
+};
+&cam_cci1 {
+	qcom,eeprom3 {
+		gpios = <&tlmm 102 0>, /* mclk */
+			<&tlmm 117 0>, /* rst1 */
+			<&tlmm 25 0>, /* iovdd */
+			<&tlmm 97 0>, /* avdd */
+			<&tlmm 37 0>, /* dvdd */
+			<&tlmm 74 0>, /* afvdd */
+			<&tlmm 84 0>; /* drvdd */
+		gpio-reset = <1>;
+		gpio-custom1 = <0>; /* not use */
+		gpio-mixed1 = <2>;
+		gpio-mixed2 = <3>;
+		gpio-mixed3 = <4>;
+		gpio-mixed4 = <5>;
+		gpio-custom2 = <6>;
+		gpio-req-tbl-num = <0 1 2 3 4 5 6>;
+		gpio-req-tbl-flags = <1 0 0 0 0 0 0>;
+		gpio-req-tbl-label = "CAMIF_MCLK2",
+					"CAM_RESET3",
+					"CAM_MIXED1",
+					"CAM_MIXED2",
+					"CAM_MIXED3",
+					"CAM_MIXED4",
+					"CAM_TELE_CUSTOM2";
+	};
+
+	qcom,cam-sensor3 { /* tele */
+		gpios = <&tlmm 102 0>, /* mclk */
+			<&tlmm 117 0>, /* rst */
+			<&tlmm 25 0>, /* iovdd */
+			<&tlmm 97 0>, /* avdd */
+			<&tlmm 37 0>, /* dvdd */
+			<&tlmm 74 0>, /* afvdd */
+			<&tlmm 84 0>; /* drvdd */
+		gpio-reset = <1>;
+		gpio-custom1 = <0>; /* not use */
+		gpio-mixed1 = <2>;
+		gpio-mixed2 = <3>;
+		gpio-mixed3 = <4>;
+		gpio-mixed4 = <5>;
+		gpio-custom2 = <6>;
+		gpio-req-tbl-num = <0 1 2 3 4 5 6>;
+		gpio-req-tbl-flags = <1 0 0 0 0 0 0>;
+		gpio-req-tbl-label = "CAMIF_MCLK2",
+					"CAM_RESET3",
+					"CAM_MIXED1",
+					"CAM_MIXED2",
+					"CAM_MIXED3",
+					"CAM_MIXED4",
+					"CAM_TELE_CUSTOM2";
+	};
+
+	qcom,eeprom1 {
+		gpios = <&tlmm 103 0>;
+		gpio-custom1 = <0>; /* not use */
+		gpio-req-tbl-num = <0>;
+		gpio-req-tbl-flags = <1>;
+		gpio-req-tbl-label = "CAMIF_MCLK3";
+	};
+	qcom,cam-sensor1 { /* front */
+		gpios = <&tlmm 103 0>, /* mclk */
+			<&tlmm 17 0>, /* rst */
+			<&tlmm 9 0>, /* avdd */
+			<&tlmm 97 0>, /* avdd1 */
+			<&tlmm 128 0>, /* dvdd */
+			<&tlmm 72 0>;  /* ponv */
+		gpio-reset = <1>;
+		gpio-custom1 = <0>; /* not use */
+		gpio-mixed1 = <2>;
+		gpio-mixed2 = <3>;
+		gpio-mixed3 = <4>;
+		gpio-custom2 = <5>;
+		gpio-req-tbl-num = <0 1 2 3 4 5>;
+		gpio-req-tbl-flags = <1 0 0 0 0 0>;
+		gpio-req-tbl-label = "CAMIF_MCLK3",
+					"CAM_RESET1",
+					"CAM_mixed1",
+					"CAM_mixed2",
+					"CAM_mixed3",
+					"CAM_FONT_CUSTOM2";
+	};
+};

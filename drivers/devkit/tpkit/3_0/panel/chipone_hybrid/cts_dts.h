@@ -1,0 +1,56 @@
+#ifndef __CTS_DTS_H__
+#define __CTS_DTS_H__
+
+#include <linux/i2c.h>
+
+#define CTS_CHIP_NAME                    "chipone"
+#define HUAWEI_TS_KIT                    "huawei,ts_kit"
+#define CTS_USE_PINCTRL                  "use-pinctrl"
+#define CTS_USE_CHARER_DETECT            "use-huawei-charger-detect"
+#define CTS_RAWDATA_PROC_PRINTF          "is_ic_rawdata_proc_printf"
+#define CTS_HIDE_FW_NAME                 "hide_fw_name"
+#define CTS_TP_TEST_TYPE                 "tp_test_type"
+#define CTS_IS_PARADE_SOLUTION           "parade,is_parade_solution"
+#define CTS_DIRECT_PROC_CMD              "parade,direct_proc_cmd"
+#define CTS_IS_IIC_ONE_BYTE              "is_i2c_one_byte"
+#define CTS_RAWDATA_NEWFORMAT            "rawdata_newformatflag"
+#define CTS_TOUCH_SWITCH_FLAG            "touch_switch_flag"
+#define CTS_GET_BRIGHTNESS_INFO          "get_brightness_info_flag"
+#define CTS_WD_CHECK_STATUS              "need_wd_check_status"
+#define CTS_CHECK_STATUS_TIMEOUT         "check_status_watchdog_timeout"
+
+#define CTS_SLAVE_ADDR                   "slave_addr"
+#define CTS_X_MAX                        "x_max"
+#define CTS_Y_MAX                        "y_max"
+#define CTS_X_MAX_MT                     "x_max_mt"
+#define CTS_Y_MAX_MT                     "y_max_mt"
+#define CTS_PROJECT_ID                   "default_project_id"
+#define CTS_PRODUCER                     "producer"
+#define CTS_BOOT_RESET_TIMING            "boot-hw-reset-timing"
+#define CTS_RESUME_RESET_TIMING          "resume-hw-reset-timing"
+#define CTS_IC_TYPE                      "ic-type"
+#define CTS_ALGO_ID                      "algo_id"
+#define CTS_IRQ_CONFIG                   "irq_config"
+#define CTS_IRQ_GPIO                     "int_gpio"
+#define CTS_RESET_GPIO                   "reset_gpio"
+#define CTS_ENABLE_TEST_RESET            "test-reset-pin"
+#define CTS_ENABLE_TEST_INT              "test-int-pin"
+#define CTS_ENABLE_TEST_RAWDATA          "test-rawdata"
+#define CTS_RAWDATA_TEST_FRAMES          "rawdata-test-frames"
+#define CTS_RAWDATA_TEST_MIN             "rawdata-test-min"
+#define CTS_RAWDATA_TEST_MAX             "rawdata-test-max"
+#define CTS_SELF_RAWDATA_TEST_MIN        "self_rawdata-test-min"
+#define CTS_SELF_RAWDATA_TEST_MAX        "self_rawdata-test-max"
+#define CSVFILE_USE_PRODUCT_SYSTEM_TYPE  "huawei,csvfile_use_product_system"
+#define TEST_CAPACITANCE_VIA_CSVFILE     "huawei,test_capacitance_via_csvfile"
+
+#define CTS_ENABLE_TEST_SHORT            "test-short"
+#define CTS_SHORT_TEST_MIN               "Short test min"
+
+#define CTS_DUMP_TEST_DATA_TO_CONSOLE    "dump-factory-test-data-to-console"
+#define CTS_DUMP_TEST_DATA_TO_BUF        "dump-factory-test-data-to-buffer"
+#define CTS_DUMP_TEST_DATA_TO_FILE       "dump-factory-test-data-to-file"
+#define CTS_PRINT_TEST_DATA_ONLY_FAIL    "print-factory-test-data-only-fail"
+#define CTS_TEST_DATA_DIRECTORY          "factory-test-data-directory"
+
+#endif

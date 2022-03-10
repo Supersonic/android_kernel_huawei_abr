@@ -1,0 +1,2 @@
+# SPDX-License-Identifier: GPL-2.0
+source "drivers/huawei_platform/hwpower/hardware_ic/switch_capacitor/Kconfig"

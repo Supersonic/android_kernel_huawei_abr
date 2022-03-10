@@ -1,0 +1,34 @@
+#include "../../common/common.dtsi"
+#include "huawei_audio.dtsi"
+#include "huawei-lcd.dtsi"
+#include "huawei_tp.dtsi"
+#include "huawei_bsp.dtsi"
+#include "huawei_fp.dtsi"
+#include "huawei_charger.dtsi"
+#include "huawei_dp.dtsi"
+#include "huawei_fac.dtsi"
+#include "huawei-sensor.dtsi"
+#include "huawei_usb.dtsi"
+#include "huawei_mmc.dtsi"
+
+/*
+ * Each set of pins contains the pin number and pins voltage
+ * values, and must end with the names _num and _val.
+ */
+&gpio_check {
+	/* 432 : GPIO124, tlmm BASE = 308 */
+	/* 433 : GPIO125, tlmm BASE = 308 */
+	/* 317 : GPIO9, tlmm BASE = 308 */
+	buckle_num = "432 433 317";
+	buckle_val = "0 0 0";
+};
+
+&als_after_sale_TCS3718ALSPRX {
+	compatible = "TCS3718ALSPRX";
+	als_after_sale_product = <21>;
+	als_after_sale_xl = <715>;
+	als_after_sale_yl = <115>;
+	als_after_sale_xr = <815>;
+	als_after_sale_yr = <215>;
+	als_after_sale_gamma = <0>;
+};

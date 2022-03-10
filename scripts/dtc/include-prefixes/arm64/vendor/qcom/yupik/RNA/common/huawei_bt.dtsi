@@ -1,0 +1,8 @@
+&huawei_bt_info{
+	compatible = "huawei,hw_bt_info";
+	status = "ok";
+	bt,fw_ver = "QCOM_WCN6750_1.1.0-00286";
+	bt,chiptype = "BT_FM_QUALCOMM_WCN6750";
+	bt,nv_path = "rna_msnv11.bin";
+    gnss,chiptype = "qcom";
+};

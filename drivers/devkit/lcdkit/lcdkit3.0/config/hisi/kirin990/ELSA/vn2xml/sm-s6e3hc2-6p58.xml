@@ -1,0 +1,10 @@
+<hwlcd>
+	<PanelEntry>
+		<!--bl min brightness setting-->
+		<PanelBlmin>8</PanelBlmin>
+		<!--bl max brightness setting-->
+		<PanelBlmax>4095</PanelBlmax>
+		<!--bl default brightness setting-->
+		<PanelBlDef>1638</PanelBlDef>
+	</PanelEntry>
+</hwlcd>

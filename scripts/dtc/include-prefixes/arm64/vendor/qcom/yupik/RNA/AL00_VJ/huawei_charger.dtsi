@@ -1,0 +1,46 @@
+&tlmm {
+	bq25970_third_irq_pins_default {
+		mux {
+			pins = "gpio91";
+			function = "gpio";
+		};
+		config {
+			pins = "gpio91";
+			drive-strength = <2>;
+			bias-pull-up;
+			input-enable;
+		};
+	};
+};
+
+&direct_charger_sc {
+	current_ratio = "0";
+	vbat_error = "0";
+};
+
+&direct_charger_sc4 {
+	current_ratio = "0";
+	vbat_error = "0";
+};
+
+&qupv3_se2_i2c {
+	charge_pump_hl1512_aux@5B {
+		vbus_pmid_input = <1>;
+	};
+};
+
+&qupv3_se3_i2c {
+	bq25970@65 {
+		gpio_int = <&tlmm 91 0>;
+		status = "ok";
+	};
+};
+
+&qupv3_se15_i2c {
+	protocol_ic_stm32g031_i2c@56 {
+		gpio_enable = <&tlmm 68 0>;
+	};
+	charge_pump_hl1512@5B {
+		vbus_pmid_input = <1>;
+	};
+};

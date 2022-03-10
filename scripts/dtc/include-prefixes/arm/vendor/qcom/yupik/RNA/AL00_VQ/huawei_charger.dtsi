@@ -1,0 +1,76 @@
+&direct_charge_ic {
+	ic_para2 =
+		"0", "0", "8000", "0", "0",
+		"1", "1", "5000", "1", "1",
+		"2", "1", "8000", "1", "1";
+	ic_para3 =
+		"0", "0", "9000", "0", "0",
+		"1", "1", "5000", "1", "1",
+		"2", "1", "8000", "1", "1";
+	use_coul_vbat = <0>;
+};
+
+&direct_charger {
+	compensate_r = <0>;
+	all_stage_compensate_r_en = <0>;
+	vbat_comp_para =
+		"default", "0", "0";
+};
+
+&direct_charger_sc {
+	compensate_r = <0>;
+	all_stage_compensate_r_en = <0>;
+	vbat_comp_para =
+		"default", "15", "15",
+		"bq25970", "10", "10",
+		"rt9759", "15", "15";
+};
+
+&direct_charger_sc4 {
+	compensate_r = <0>;
+	all_stage_compensate_r_en = <0>;
+	vbat_comp_para =
+		"default", "15", "15",
+		"bq25970", "10", "10",
+		"rt9759", "15", "15";
+};
+
+&qupv3_se2_i2c {
+	bq25970@65 {
+		ic_role = <2>;
+		status = "disabled";
+	};
+
+	sm5450@6F{
+		ic_role = <2>;
+		status = "ok";
+	};
+};
+
+&qupv3_se3_i2c {
+	rt9426_battery@55{
+		rt_config_ver = <13>;
+		battery0{
+			batt_name = "BCYCAE_3900_4450_v0";
+			#include "../../../huawei_charger/rt9426_0P5mohm_BITCAE_3900mAh_4V45_BT216.dtsi"
+		};
+		battery1{
+			batt_name = "BYTCAE_3900_4450_v0";
+			#include "../../../huawei_charger/rt9426_0P5mohm_BITCAE_3900mAh_4V45_BT216.dtsi"
+		};
+	};
+
+	bq25970@65 {
+		ic_role = <1>;
+	};
+};
+
+&qupv3_se15_i2c {
+	protocol_ic_stm32g031_i2c@56 {
+		status = "disabled";
+	};
+
+	protocol_ic_hc32l110_i2c@57 {
+		status = "disabled";
+	};
+};

@@ -1,0 +1,64 @@
+<hwlcd>
+	<PanelEntry>
+		<!--event send
+		event, data, delay
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI, 7-TS early-event, 8-TS later-event, 9-vdd, 10-AOD
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<!--Power on timming-->
+		<PowerOnStage>"2, 1, 2
+				9, 1, 2
+				1, 1, 10"</PowerOnStage>
+		<LPOnStage>"5, 1, 1
+				5, 0, 1
+				5, 1, 10
+				7, 1, 0
+				8, 1, 0
+				6, 1, 0"</LPOnStage>
+		<HSOnStage>"0, 0, 0"</HSOnStage>
+
+		<!--Power off timming-->
+		<HSOffStage>"7, 0, 0
+				8, 0, 0
+				6, 0, 0"</HSOffStage>
+		<LPOffStage>"0, 0, 0"</LPOffStage>
+		<PowerOffStage>"5, 0, 0
+				1, 0, 2
+				9, 0, 2
+				2, 0, 1"</PowerOffStage>
+		<!--Power timming config end-->
+		<!--Backlight max nit-->
+		<!--Power timming config start-->
+		<!--event define
+		mode, number, amplitude
+		mode:0-none, 1-regulator, 2-gpio
+		number:gpio num or ldo num
+		amplitude:3100000-3.1v, 1850000-1.85v, 5500000-5.5v
+		-->
+		<LcdVci>"2, 259, 0"</LcdVci>
+		<LcdIovcc>"1, 4, 1850000"</LcdIovcc>
+		<LcdVdd>"1, 29, 1235000"</LcdVdd>
+		<LcdVsn>"0, 0, 0"</LcdVsn>
+		<LcdReset>"2, 276, 0"</LcdReset>
+		<LcdTe0>"2, 3, 0"</LcdTe0>
+		<LcdBacklight>"0, 0, 0"</LcdBacklight>
+		<LcdPowerIC>"2, 181, 2"</LcdPowerIC>
+		<VddRegulator>ldo29</VddRegulator>
+		<!--event send-->
+		<!--Effect config start-->
+		<!--Gamma support-->
+		<GammaSupport>1</GammaSupport>
+		<!--Gmp support-->
+		<GmpSupport>1</GmpSupport>
+		<!--for hiace parameter-->
+		<HiaceSupport>1</HiaceSupport>
+		<!--prefix 2D sharpness support-->
+		<PrefixSharpTwoDSupport>1</PrefixSharpTwoDSupport>
+		<!--Effect config end-->
+		<!--panel version support-->
+		<PanelVersionSupport>1</PanelVersionSupport>
+		<!--ddic low voltage detect test-->
+		<DdicLVDetectSupport>1</DdicLVDetectSupport>
+	</PanelEntry>
+</hwlcd>

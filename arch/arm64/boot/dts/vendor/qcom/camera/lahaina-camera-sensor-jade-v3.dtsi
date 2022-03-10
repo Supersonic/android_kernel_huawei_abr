@@ -1,0 +1,50 @@
+#include "lahaina-camera-sensor-jade.dtsi"
+
+&cam_cci0 {
+	/* back wide sensor */
+	qcom,cam-sensor3 {
+		cam_vana-supply = <&pm8008i_l7>; /* AVDD pm8008i_l6 -> pm8008i_l7 */
+	};
+
+	/* back tele sensor */
+	qcom,cam-sensor4 {
+		cell-index = <5>;
+		compatible = "qcom,cam-sensor";
+		sensor-mixed-pin = <1>; /* AVDD gpio99 -> pm8008i_l7 */
+		cam_mixed1-supply = <&pm8008i_l7>; /* AVDD 2.85V */
+		regulator-names = "cam_vio", "cam_mixed1", "cam_vdig", "cam_vaf", "cam_clk";
+		rgltr-min-voltage = <1800000 2850000 3140000 3200000 0>;
+		rgltr-max-voltage = <1900000 2950000 3200000 3200000 0>;
+		rgltr-load-current = <74000 103000 103000 103000 0>;
+	};
+};
+
+&cam_cci1 {
+	qcom,actuator2 {
+		sensor-mixed-pin = <1>; /* AFVDD gpio49 -> pm8008i_l6 */
+		cam_mixed1-supply = <&pm8008i_l6>;
+		regulator-names = "cam_mixed1";
+		rgltr-min-voltage = <2850000>;
+		rgltr-max-voltage = <2904000>;
+		rgltr-load-current = <200000>;
+	};
+
+	/* back mono sensor */
+	qcom,cam-sensor1 {
+		cam_vana-supply = <&pm8008i_l7>; /* AVDD pm8008i_l6 -> pm8008i_l7 */
+		regulator-names = "cam_vio", "cam_vana", "cam_vdig", "cam_vaf", "cam_clk";
+		rgltr-min-voltage = <1800000 2850000 3140000 3200000 0>;
+		rgltr-max-voltage = <1900000 2900000 3200000 3200000 0>;
+		rgltr-load-current = <74000 103000 103000 103000 0>;
+	};
+
+	/* front main sensor */
+	qcom,cam-sensor2 {
+		sensor-mixed-pin = <1>; /* AVDD gpio99 -> pm8008i_l7 */
+		cam_mixed1-supply = <&pm8008i_l7>; /* AVDD 2.85V */
+		regulator-names = "cam_vdig", "cam_mixed1", "cam_clk";
+		rgltr-min-voltage = <1100000 2850000 0>;
+		rgltr-max-voltage = <1104000 2950000 0>;
+		rgltr-load-current = <150000 103000 0>;
+	};
+};

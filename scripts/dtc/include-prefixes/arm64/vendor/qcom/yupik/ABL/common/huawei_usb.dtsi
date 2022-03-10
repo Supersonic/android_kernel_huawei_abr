@@ -1,0 +1,4 @@
+&huawei_pd {
+	otg_ocp_check_enable = <1>;
+	cc_dynamic_protect = <2>;
+};

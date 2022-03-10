@@ -1,0 +1,4 @@
+source "sound/smartpa/aw882xx/Kconfig"
+source "sound/smartpa/aw882xx_v2/Kconfig"
+source "sound/smartpa/cs35lxx/Kconfig"
+source "sound/smartpa/tfa98xx/Kconfig"

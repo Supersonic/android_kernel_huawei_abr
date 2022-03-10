@@ -1,0 +1,27 @@
+&soc {
+	huawei_fingerprint {
+		compatible = "fpc,fingerprint";
+		fingerprint,reset_gpio = <&tlmm 39 0>;
+		fingerprint,avdd_en_gpio = <&tlmm 198 0>;
+		fingerprint,navigation_adjust1 = <0>;
+		fingerprint,navigation_adjust2 = <90>;
+		fingerprint,custom_timing_scheme = <2>; /* 1:vdd->1ms->rst/cs; 2:vdd->10ms->rst/cs; 3:vdd->10ms->cs->600us->rst; 4:vdd->rst1/cs1/rst/cs0 */
+		fingerprint,poweroff_scheme = <1>; /* 1:close ldo ;2:close loadswitch(gpio) */
+		fingerprint,use_tp_irq = <1>; /* 0:using self irq pin; 1:use tp irq pin */
+		status = "ok";
+	};
+};
+
+&fingerprint {
+	spi-max-frequency = <5000000>;
+	fingerprint,product = "jade";
+	fingerprint,force_storage_type = <1>;
+	fingerprint,sensor_type = <516>;
+
+	fingerprint,top_left_corner_x = <480>; /* only for UD */
+	fingerprint,top_left_corner_y = <888>; /* only for UD */
+	fingerprint,bottom_right_corner_x = <520>; /* only for UD */
+	fingerprint,bottom_right_corner_y = <928>; /* only for UD */
+	fingerprint,tp_hover_support = <0>;
+	fingerprint,radius = <98>;
+};

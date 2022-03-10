@@ -1,0 +1,10 @@
+#
+#  gpu opp stat
+#
+
+config HUAWEI_GPU_OPP_STATS
+	bool "huawei gpu opp stats"
+	default n
+	help
+	  Switch to enable huawei gpu opp stats
+

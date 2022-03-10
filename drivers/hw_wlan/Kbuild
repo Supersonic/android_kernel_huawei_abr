@@ -1,0 +1,1 @@
+obj-$(CONFIG_HUAWEI_WIFI) += hw_wlan_dsm.o hw_wlan_feature.o

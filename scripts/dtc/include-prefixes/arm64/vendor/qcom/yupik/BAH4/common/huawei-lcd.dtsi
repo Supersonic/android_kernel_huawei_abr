@@ -1,0 +1,293 @@
+#include "../../../lcdkit3.0/bah4/devkit_lcd_kit.dtsi"
+&huawei_lcd_panel {
+	compatible = "huawei,lcd_panel_type";
+	/* auto_key_info @ name: product_id type: uint32 default: 0 */
+	product_id = <9000>;
+	detect_type = <2>;
+	/* auto_key_info @ name: gpio_id[2] type: int default: 0 */
+	gpio_id = <14 6>;
+	/* auto_key_info @ name: bias_ctrl_type type: uint32 default: 0 */
+	bias_ctrl_type = <3>;
+	/* auto_key_info @ name: vsp_gpio_id type: uint32 default: 0 */
+	vsp_gpio_id = <46>;
+	/* auto_key_info @ name: vsn_gpio_id type: uint32 default: 0 */
+	vsn_gpio_id = <62>;
+	/* auto_key_info @ name: tp_reset_gpio type: uint32 default: 0 */
+	tp_reset_gpio = <105>;
+	/* auto_key_info @ name: bl_en_gpio type: uint32 default: 0 */
+	bl_en_gpio = <11>;
+	support_lcd_type = "LCD_KIT";
+};
+
+&sde_dsi {
+	vddio-supply = <&L12C>;
+	vdd-supply = <&L13C>;
+	ddic-supply = <&L16B>;
+	qcom,dsi-default-panel = <&dsi_bah4_auo_otm1901a_5p2_1080p_video_default>;
+};
+
+&qupv3_se2_i2c {
+	status = "ok";
+
+	rt4801h@73 {
+		compatible = "rt4801h_phy";
+		reg = <0x73>;
+		gpio_vsp_enable = <&tlmm 46 0x00>;
+		gpio_vsn_enable = <&tlmm 62 0x00>;
+	};
+
+	icn68116@3f {
+		compatible = "icn68116_phy";
+		reg = <0x3f>;
+		gpio_vsp_enable = <&tlmm 46 0x00>;
+		gpio_vsn_enable = <&tlmm 62 0x00>;
+	};
+
+	tps65132@3e {
+		compatible = "ti,tps65132";
+		reg = <0x3e>;
+		gpio_vsp_enable = <&tlmm 46 0x00>;
+		gpio_vsn_enable = <&tlmm 62 0x00>;
+	};
+
+	hw_backlight@2c {
+		status = "ok";
+		compatible = "huawei,hw_lp855x";
+		reg = <0x2c>;
+		bl_type_string = "8556";
+
+		hw_lp855x,hw_enable = <1>;
+		hw_lp855x,hw_en_gpio = <11>;
+		hw_lp855x,gpio_offset = <336>;
+		hw_lp855x,before_bl_on_mdelay = <45>;
+		hw_lp855x,bl_on_mdelay = <10>;
+		hw_lp855x,hw_en_pull_low = <1>;
+		hw_lp855x,backlight_ic_only_backlight = <1>;
+		hw_lp855x,backlight_ic_backlight_level = <3932>;
+		hw_lp855x,backlight_ic_kernel_ctrl_mode = <0>;
+		hw_lp855x,backlight_ic_level_10000 = <0>;
+		hw_lp855x,backlight_ic_bits_compatible = <1>;
+		hw_lp855x,backlight_ic_level_lsb_cmd = <0x08 0x10 0x00 0xff>;
+		hw_lp855x,backlight_ic_level_msb_cmd = <0x04 0x11 0x00 0x0f>;
+		hw_lp855x,backlight_ic_pull_boost_support = <0>;
+		hw_lp855x,backlight_ic_pull_boost_delay = <0>;
+		hw_lp855x,backlight_ic_pull_down_vsp_cmd = <0x01 0x0d 0x00 0xff 0x00>;
+		hw_lp855x,backlight_ic_pull_down_vsn_cmd = <0x01 0x0e 0x00 0xff 0x00>;
+		hw_lp855x,backlight_ic_pull_down_boost_cmd = <0x01 0x0c 0x14 0xff 0x00>;
+		hw_lp855x,backlight_ic_fault_check_support = <0>;
+		hw_lp855x,backlight_ic_ocp_flag_cmd = <0x00 0x02 0x04 0x14 0x00>;
+		hw_lp855x,backlight_ic_kernel_init_cmd = <0x01 0x01 0x85 0xff 0x00
+						0x01 0xa0 0xff 0xff 0x00
+						0x01 0xa1 0xcf 0xff 0x00
+						0x01 0xa2 0x28 0xff 0x00
+						0x01 0xa3 0x52 0xff 0x00
+						0x01 0xa4 0x12 0xff 0x00
+						0x01 0xa5 0x00 0xff 0x00
+						0x01 0xa6 0x40 0xff 0x00
+						0x01 0xa7 0xf7 0xff 0x00
+						0x01 0xa9 0x80 0xff 0x00
+						0x01 0xaa 0x0f 0xff 0x00
+						0x01 0xae 0x0e 0xff 0x00
+						0x01 0x9e 0x22 0xff 0x00>;
+		hw_lp855x,backlight_ic_num_of_kernel_init_cmd = <13>;
+		hw_lp855x,backlight_ic_init_vsp_index = <14>;
+		hw_lp855x,backlight_ic_init_vsn_index = <15>;
+	};
+
+	hw_rt8555@31 {
+		status = "ok";
+		compatible = "huawei,hw_rt8555";
+		reg = <0x31>;
+		bl_type_string = "8555";
+
+		hw_rt8555,hw_enable = <1>;
+		hw_rt8555,hw_en_gpio = <11>;
+		hw_rt8555,gpio_offset = <336>;
+		hw_rt8555,before_bl_on_mdelay = <45>;
+		hw_rt8555,bl_on_mdelay = <10>;
+		hw_rt8555,hw_en_pull_low = <1>;
+		hw_rt8555,backlight_ic_only_backlight = <1>;
+		hw_rt8555,backlight_ic_backlight_level = <910>;
+		hw_rt8555,backlight_ic_kernel_ctrl_mode = <0>;
+		hw_rt8555,backlight_ic_level_10000 = <0>;
+		hw_rt8555,backlight_ic_bits_compatible = <1>;
+		hw_rt8555,backlight_ic_level_lsb_cmd = <0x08 0x04 0x00 0xff>;
+		hw_rt8555,backlight_ic_level_msb_cmd = <0x02 0x05 0x00 0x03>;
+		hw_rt8555,dimming_support = <1>;
+		hw_rt8555,dimming_config_reg = <0x08>;
+		hw_rt8555,dimming_config = <0x70>;
+		hw_rt8555,backlight_ic_pull_boost_support = <0>;
+		hw_rt8555,backlight_ic_pull_boost_delay = <0>;
+		hw_rt8555,backlight_ic_pull_down_vsp_cmd = <0x01 0x0d 0x00 0xff 0x00>;
+		hw_rt8555,backlight_ic_pull_down_vsn_cmd = <0x01 0x0e 0x00 0xff 0x00>;
+		hw_rt8555,backlight_ic_pull_down_boost_cmd = <0x01 0x0c 0x14 0xff 0x00>;
+		hw_rt8555,backlight_ic_fault_check_support = <0>;
+		hw_rt8555,backlight_ic_ovp_flag_cmd = <0x00 0x0f 0x02 0x02 0x00>;
+		hw_rt8555,backlight_ic_ocp_flag_cmd = <0x00 0x0f 0x01 0x01 0x00>;
+		hw_rt8555,backlight_ic_tsd_flag_cmd = <0x00 0x0f 0x40 0x40 0x00>;
+		hw_rt8555,backlight_ic_kernel_init_cmd = <0x01 0x00 0xC3 0xff 0x00
+						0x01 0x01 0xD3 0xff 0x00
+						0x01 0x02 0xA8 0xff 0x00
+						0x01 0x03 0x00 0xff 0x00
+						0x01 0x08 0x10 0xff 0x00
+						0x01 0x09 0x7F 0xff 0x00
+						0x01 0x0a 0x04 0xff 0x00
+						0x01 0x0b 0x00 0xff 0x00
+						0x01 0x0d 0x00 0xff 0x00
+						0x01 0x0e 0x00 0xff 0x00
+						0x01 0x50 0x01 0xff 0x00>;
+		hw_rt8555,backlight_ic_num_of_kernel_init_cmd = <11>;
+		hw_rt8555,backlight_ic_init_vsp_index = <14>;
+		hw_rt8555,backlight_ic_init_vsn_index = <15>;
+	};
+
+	hw_syh62758@2e {
+		status = "ok";
+		compatible = "huawei,hw_syh62758";
+		reg = <0x2e>;
+		bl_type_string = "62758";
+
+		hw_syh62758,hw_enable = <1>;
+		hw_syh62758,hw_en_gpio = <11>;
+		hw_syh62758,gpio_offset = <336>;
+		hw_syh62758,before_bl_on_mdelay = <45>;
+		hw_syh62758,bl_on_mdelay = <10>;
+		hw_syh62758,hw_en_pull_low = <1>;
+		hw_syh62758,backlight_ic_only_backlight = <1>;
+		hw_syh62758,backlight_ic_backlight_level = <3932>;
+		hw_syh62758,backlight_ic_kernel_ctrl_mode = <0>;
+		hw_syh62758,backlight_ic_level_10000 = <0>;
+		hw_syh62758,backlight_ic_bits_compatible = <1>;
+		hw_syh62758,backlight_ic_level_lsb_cmd = <0x08 0x10 0x00 0xff>;
+		hw_syh62758,backlight_ic_level_msb_cmd = <0x04 0x11 0x00 0x0f>;
+		hw_syh62758,backlight_ic_pull_boost_support = <0>;
+		hw_syh62758,backlight_ic_pull_boost_delay = <0>;
+		hw_syh62758,backlight_ic_pull_down_vsp_cmd = <0x01 0x0d 0x00 0xff 0x00>;
+		hw_syh62758,backlight_ic_pull_down_vsn_cmd = <0x01 0x0e 0x00 0xff 0x00>;
+		hw_syh62758,backlight_ic_pull_down_boost_cmd = <0x01 0x0c 0x14 0xff 0x00>;
+		hw_syh62758,backlight_ic_fault_check_support = <0>;
+		hw_syh62758,backlight_ic_ovp_flag_cmd = <0x00 0x0f 0x02 0x02 0x00>;
+		hw_syh62758,backlight_ic_ocp_flag_cmd = <0x00 0x0f 0x01 0x01 0x00>;
+		hw_syh62758,backlight_ic_tsd_flag_cmd = <0x00 0x0f 0x40 0x40 0x00>;
+		hw_syh62758,backlight_ic_kernel_init_cmd = <0x01 0x01 0x85 0xff 0x00
+						0x01 0xa2 0x20 0xff 0x00
+						0x01 0xa0 0xff 0xff 0x00
+						0x01 0xa1 0xcf 0xff 0x00
+						0x01 0xa3 0x52 0xff 0x00
+						0x01 0xa4 0x02 0xff 0x00
+						0x01 0xa5 0x00 0xff 0x00
+						0x01 0xa6 0x40 0xff 0x00
+						0x01 0xa7 0xf7 0xff 0x00
+						0x01 0xa9 0x80 0xff 0x00
+						0x01 0xaa 0x0f 0xff 0x00
+						0x01 0xae 0x0e 0xff 0x00
+						0x01 0x9e 0x22 0xff 0x00
+						0x01 0x16 0x3f 0xff 0x00
+						0x01 0x01 0x84 0xff 0x00>;
+		hw_syh62758,backlight_ic_num_of_kernel_init_cmd = <15>;
+		hw_syh62758,backlight_ic_init_vsp_index = <14>;
+		hw_syh62758,backlight_ic_init_vsn_index = <15>;
+	};
+
+	hw_rt4539@3c {
+		status = "ok";
+		compatible = "huawei,hw_rt4539";
+		reg = <0x3c>;
+		bl_type_string = "4539";
+
+		hw_rt4539,hw_enable = <1>;
+		hw_rt4539,hw_en_gpio = <11>;
+		hw_rt4539,gpio_offset = <336>;
+		hw_rt4539,before_bl_on_mdelay = <45>;
+		hw_rt4539,bl_on_mdelay = <10>;
+		hw_rt4539,hw_en_pull_low = <1>;
+		hw_rt4539,backlight_ic_only_backlight = <1>;
+		hw_rt4539,backlight_ic_backlight_level = <3932>;
+		hw_rt4539,backlight_ic_kernel_ctrl_mode = <0>;
+		hw_rt4539,backlight_ic_level_10000 = <0>;
+		hw_rt4539,backlight_ic_bits_compatible = <1>;
+		hw_rt4539,backlight_ic_level_lsb_cmd = <0x08 0x05 0x00 0xff>;
+		hw_rt4539,backlight_ic_level_msb_cmd = <0x04 0x04 0x00 0x0f>;
+		hw_rt4539,backlight_ic_set_msb_before_lsb = <1>;
+		hw_rt4539,dimming_support = <0>;
+		hw_rt4539,dimming_config_reg = <0x08>;
+		hw_rt4539,dimming_config = <0x70>;
+		hw_rt4539,backlight_ic_pull_boost_support = <0>;
+		hw_rt4539,backlight_ic_pull_boost_delay = <0>;
+		hw_rt4539,backlight_ic_pull_down_vsp_cmd = <0x01 0x0d 0x00 0xff 0x00>;
+		hw_rt4539,backlight_ic_pull_down_vsn_cmd = <0x01 0x0e 0x00 0xff 0x00>;
+		hw_rt4539,backlight_ic_pull_down_boost_cmd = <0x01 0x0c 0x14 0xff 0x00>;
+		hw_rt4539,backlight_ic_fault_check_support = <0>;
+		hw_rt4539,backlight_ic_ovp_flag_cmd = <0x00 0x0f 0x02 0x02 0x00>;
+		hw_rt4539,backlight_ic_ocp_flag_cmd = <0x00 0x0f 0x01 0x01 0x00>;
+		hw_rt4539,backlight_ic_tsd_flag_cmd = <0x00 0x0f 0x40 0x40 0x00>;
+		hw_rt4539,backlight_ic_kernel_init_cmd = <0x01 0x00 0x24 0xff 0x00
+						0x01 0x01 0x18 0xff 0x00
+						0x01 0x02 0x9B 0xff 0x00
+						0x01 0x03 0x24 0xff 0x00
+						0x01 0x06 0x98 0xff 0x00
+						0x01 0x07 0x01 0xff 0x00
+						0x01 0x08 0x02 0xff 0x00
+						0x01 0x09 0x78 0xff 0x00
+						0x01 0x0a 0x0F 0xff 0x00
+						0x01 0x0b 0xFE 0xff 0x00
+						0x01 0xff 0x00 0xff 0x00>;
+		hw_rt4539,backlight_ic_num_of_kernel_init_cmd = <11>;
+		hw_rt4539,backlight_ic_init_vsp_index = <14>;
+		hw_rt4539,backlight_ic_init_vsn_index = <15>;
+	};
+
+	hw_mp3314@28 {
+		status = "ok";
+		compatible = "huawei,hw_mp3314";
+		reg = <0x28>;
+		bl_type_string = "3314";
+
+		hw_mp3314,hw_enable = <1>;
+		hw_mp3314,hw_en_gpio = <11>;
+		hw_mp3314,gpio_offset = <336>;
+		hw_mp3314,before_bl_on_mdelay = <45>;
+		hw_mp3314,bl_on_mdelay = <10>;
+		hw_mp3314,hw_en_pull_low = <1>;
+		hw_mp3314,backlight_ic_only_backlight = <1>;
+		hw_mp3314,backlight_ic_backlight_level = <62914>;
+		hw_mp3314,backlight_ic_kernel_ctrl_mode = <0>;
+		hw_mp3314,backlight_ic_level_10000 = <0>;
+		hw_mp3314,backlight_ic_bits_compatible = <1>;
+		hw_mp3314,backlight_ic_set_msb_before_lsb = <1>;
+		hw_mp3314,backlight_ic_level_lsb_cmd = <0x08 0x01 0x00 0xff>;
+		hw_mp3314,backlight_ic_level_msb_cmd = <0x08 0x00 0x00 0xff>;
+		hw_mp3314,backlight_ic_pull_boost_support = <0>;
+		hw_mp3314,backlight_ic_pull_boost_delay = <0>;
+		hw_mp3314,backlight_ic_pull_down_vsp_cmd = <0x01 0x0d 0x00 0xff 0x00>;
+		hw_mp3314,backlight_ic_pull_down_vsn_cmd = <0x01 0x0e 0x00 0xff 0x00>;
+		hw_mp3314,backlight_ic_pull_down_boost_cmd = <0x01 0x0c 0x14 0xff 0x00>;
+		hw_mp3314,backlight_ic_fault_check_support = <0>;
+		hw_mp3314,backlight_ic_ovp_flag_cmd = <0x00 0x0f 0x02 0x02 0x00>;
+		hw_mp3314,backlight_ic_ocp_flag_cmd = <0x00 0x0f 0x01 0x01 0x00>;
+		hw_mp3314,backlight_ic_tsd_flag_cmd = <0x00 0x0f 0x40 0x40 0x00>;
+		hw_mp3314,backlight_ic_kernel_init_cmd = <0x01 0x02 0x9a 0xff 0x00
+						0x01 0x00 0x00 0xff 0x00
+						0x01 0x01 0x00 0xff 0x00
+						0x01 0x03 0x7f 0xff 0x00
+						0x01 0x04 0xa0 0xff 0x00
+						0x01 0x05 0x00 0xff 0x00
+						0x01 0x06 0xff 0xff 0x00
+						0x01 0x07 0x4f 0xff 0x00
+						0x01 0x08 0xa0 0xff 0x00
+						0x01 0x09 0xd2 0xff 0x00
+						0x01 0x0a 0x90 0xff 0x00
+						0x01 0x0b 0x67 0xff 0x00
+						0x01 0x0c 0x00 0xff 0x00
+						0x01 0x0d 0x00 0xff 0x00
+						0x01 0x0e 0x00 0xff 0x00
+						0x01 0x0f 0x2f 0xff 0x00
+						0x01 0x10 0xc0 0xff 0x00
+						0x01 0x11 0x00 0xff 0x00
+						0x01 0x1d 0x11 0xff 0x00
+						0x01 0x02 0x9B 0xff 0x00>;
+		hw_mp3314,backlight_ic_num_of_kernel_init_cmd = <20>;
+		hw_mp3314,backlight_ic_init_vsp_index = <14>;
+		hw_mp3314,backlight_ic_init_vsn_index = <15>;
+	};
+};

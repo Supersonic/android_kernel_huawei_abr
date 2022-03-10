@@ -1,0 +1,4 @@
+&huawei_is_sm5450 {
+	is_sm5450 = <1>;
+	status = "ok";
+};

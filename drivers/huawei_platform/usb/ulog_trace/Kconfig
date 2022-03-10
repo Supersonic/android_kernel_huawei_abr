@@ -1,0 +1,5 @@
+config ULOG_TRACE
+	bool "huawei ulog trace driver"
+	default n
+	help
+	  Enable this option to trace adsp log.

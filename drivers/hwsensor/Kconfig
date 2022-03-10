@@ -1,0 +1,72 @@
+config HUAWEI_HALL_SENSORS
+        bool "huawei hall sensors"
+		default n
+        help
+          Say Y here if you want to build the huawei hall sensor drivers.
+		  If unsure, say N here.
+
+config HUAWEI_LP_SENSORS
+        bool "huawei als and proximity sensors"
+		default n
+        help
+          Say Y here if you want to build the huawei als and proximity sensor drivers.
+		  If unsure, say N here.
+
+source "drivers/hwsensor/lpsensor/Kconfig"
+config SENSOR_DEVELOP_TEST
+        bool "Support for sensor develop selftest"
+		default n
+        help
+          Say Y here if you want to build develop test sensor connected with ap side.
+		  If unsure, say N here.
+
+config HUAWEI_SENSOR_INFO
+        tristate "Support for sensor self_adapt"
+        default n
+        help
+          Say Y to enable support self-adapt
+
+config HUAWEI_PS_SENSOR
+        bool "huawei ps sensor"
+		default n
+        help
+          Say Y here if you want to build the huawei thp sensor drivers.
+		  If unsure, say N here.
+
+source "drivers/hwsensor/pssensor/Kconfig"
+
+config HUAWEI_SAR_SENSOR
+        bool "huawei sar sensor"
+		default y
+        help
+          Say Y here if you want to build the huawei sar sensor drivers.
+		  If unsure, say N here.
+
+source "drivers/hwsensor/sarsensor/Kconfig"
+
+config HUAWEI_EXTRA_IR_MODE
+        bool "huawei extra ir mode"
+		default n
+        help
+          Say Y here if you want to build the huawei thp sensor drivers.
+		  If unsure, say N here.
+
+source "drivers/hwsensor/extra_ir_mode/Kconfig"
+
+config HUAWEI_HORIZONTAL_MODE
+        bool "huawei horizontal mode"
+		default n
+        help
+          Say Y here if you want to build the huawei thp sensor drivers.
+		  If unsure, say N here.
+
+source "drivers/hwsensor/acc_horizontal_mode/Kconfig"
+
+config HUAWEI_COLOR_SENSOR
+        bool "huawei color sensor"
+		default y
+        help
+          Say Y here if you want to build the huawei color sensor drivers.
+		  If unsure, say N here.
+
+source "drivers/hwsensor/color_sensor/Kconfig"

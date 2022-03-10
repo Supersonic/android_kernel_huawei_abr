@@ -1,0 +1,13 @@
+#obj-y			+= log/
+#obj-$(CONFIG_LOGGER_EXTEND) += log/
+obj-$(CONFIG_PROC_IO_INFO)   += ioinfo/
+obj-y += net/
+obj-y += power/
+obj-y += hwpower/
+obj-y   += usb/
+obj-$(CONFIG_RADIO_BUCKBOOST)			+= radiobuckboost/
+obj-y += comb_key/
+obj-$(CONFIG_HUAWEI_PLATFORM_MAINTAIN) += mntn/
+obj-y += hwthermal/
+obj-$(CONFIG_HUAWEI_GPU_OPP_STATS) += gpu_stats/
+obj-$(CONFIG_DRG) += hw_drg/

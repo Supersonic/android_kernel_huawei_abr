@@ -1,0 +1,8 @@
+&sde_dp{
+	status = "ok";
+	qcom,dp-aux-switch = <&fsa4480>;
+};
+
+&mdss_mdp {
+	connectors = <&smmu_sde_unsec &smmu_sde_sec &sde_wb &sde_dsi &sde_rscc &sde_dp>;
+};

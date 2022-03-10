@@ -1,0 +1,6 @@
+#
+# Huawei modem interface
+#
+config HUAWEI_MODEM_CRASH_LOG
+	tristate "modem crash exception for apr"
+	default y

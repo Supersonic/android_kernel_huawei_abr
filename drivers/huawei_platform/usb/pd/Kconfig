@@ -1,0 +1,3 @@
+config HUAWEI_PD
+        bool "huawei_pd"
+        default n

@@ -1,0 +1,5 @@
+<hwlcd>
+	<PanelEntry>
+		<MipiDsiTimingSupport>1</MipiDsiTimingSupport>
+	</PanelEntry>
+</hwlcd>

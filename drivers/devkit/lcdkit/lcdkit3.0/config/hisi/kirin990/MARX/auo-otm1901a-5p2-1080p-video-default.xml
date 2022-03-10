@@ -1,0 +1,11 @@
+<hwlcd>
+	<PanelEntry>
+	<PanelCompatible>"marx_auo_otm1901a_5p2_1080p_video_default"</PanelCompatible>
+	<PanelXres>1600</PanelXres>
+	<PanelYres>2560</PanelYres>
+	<PanelBlType>4</PanelBlType>
+	<PanelBlIcCtrlType>7</PanelBlIcCtrlType>
+	<LcdVsp>"2, 202, 5500000"</LcdVsp>
+	<LcdVsn>"2, 203, 5500000"</LcdVsn>
+	</PanelEntry>
+</hwlcd>

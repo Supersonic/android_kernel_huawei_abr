@@ -1,0 +1,149 @@
+<hwlcd>
+	<Version>1.1</Version>
+
+	<!-- any supported lcd Panel, add it here! very important -->
+	<lcdlist>
+		<!-- format: -->
+		<!-- panel-name, gpio, brdid(product_id), product_name, product_floder, version_floder -->
+		<!-- panel-name : must same with panel xml file name 								                   -->
+		<!-- product & version folder: must same with the folder name or 'def'   	             -->
+	<lcd>auo-nt36572a-6p3,                          0x00,   1003,    med,    med,  def     </lcd>
+        <lcd>inx-ili9881h-6p3,                          0x01,   1003,    med,    med,  def     </lcd>
+        <lcd>txd-ili9881h-6p3,                          0x04,   1003,    med,    med,  def     </lcd>
+        <lcd>boe-nt36525b-6p3,                          0x05,   1003,    med,    med,  def     </lcd>
+        <lcd>auo-otm1901a-5p2-1080p-video-default,      0x0A,   1003,    med,    med,  def     </lcd>
+        <lcd>auo-nt36572a-6p3,                          0x00,   1004,    moa,    moa,  def     </lcd>
+        <lcd>inx-ili9881h-6p3,                          0x01,   1004,    moa,    moa,  def     </lcd>
+        <lcd>txd-ili9881h-6p3,                          0x04,   1004,    moa,    moa,  def     </lcd>
+        <lcd>boe-nt36525b-6p3,                          0x05,   1004,    moa,    moa,  def     </lcd>
+        <lcd>auo-otm1901a-5p2-1080p-video-default,      0x0A,   1004,    moa,    moa,  def     </lcd>
+        <lcd>boe-ft8201-8p1,                            0x04,   1005,    kob2,   kob2, def     </lcd>
+        <lcd>inx-ft8201-8p1,                            0x05,   1005,    kob2,   kob2, def     </lcd>
+        <lcd>auo-otm1901a-5p2-1080p-video-default,      0x0A,   1005,    kob2,   kob2, def     </lcd>
+	</lcdlist>
+
+	<PanelEntry>
+		<!-- PanelDensity -->
+		<PanelDensity>320</PanelDensity>
+		<!-- 0:DBI,1:DPI,2:DSI -->
+        <LdiLcmType>2</LdiLcmType>
+		<!-- 0:cmd,1:plus-vdo,2:event-mode,3:burst-vdo -->
+        <LdiDsiMode>1</LdiDsiMode>
+		<!-- 0:cmd,1:plus-vdo,2:event-mode,3:burst-vdo -->
+        <LdiDsiSwitchMode>0</LdiDsiSwitchMode>
+		<!-- 0:disable,1:enable -->
+        <LdiDsiSwitchModeEnable>0</LdiDsiSwitchModeEnable>
+		<!-- 0:MSB,1:LSB -->
+        <LdiTransSeq>0</LdiTransSeq>
+		<!-- 0:LSB,1:MSB -->
+        <LdiDataPadding>0</LdiDataPadding>
+		<!--   -->
+        <LdiPacketSize>256</LdiPacketSize>
+		<!--0:16bitRGB565,1:18BITRGB666,2:24bitRGB888,3:18bitRGB666 -->
+        <LdiPs>2</LdiPs>
+		<!--VFP setting-->
+		<VFrontPorchForLP>0</VFrontPorchForLP>
+		<!-- -->
+		<Dsifbkdiv>1</Dsifbkdiv>
+		<!-- Panel information config start -->
+		<!-- panel orietation -->
+		<PanelOrientation>1</PanelOrientation>
+		<!--panel bpp:0-rgb565, 1-rgb666, 2-rgb888-->
+		<PanelBpp>2</PanelBpp>
+		<!--panel rgb order:0-rgb, 1-bgr-->
+		<PanelBgrfmt>0</PanelBgrfmt>
+		<!--Panel type:8-video mode, 16-command mode-->
+		<PanelCmdType>8</PanelCmdType>
+		<!--Pixel clock-->
+		<PanelPxlClk>166</PanelPxlClk>
+		<!--Pixel clock division ratio-->
+		<PanelPxlClkDiv>1</PanelPxlClkDiv>
+		<!--mipi data rate pixel clock * 2-->
+		<PanelDataRate>332</PanelDataRate>
+
+		<!--Esd enable-->
+		<PanelEsdSupport>0</PanelEsdSupport>
+
+		<!--Round Corner enable-->
+		<PanelRoundCornerEnable>0</PanelRoundCornerEnable>
+		<!--Round Corner full content-->
+		<PanelRoundCornerFullContent>0</PanelRoundCornerFullContent>
+		<!--Round Corner TOP height-->
+		<PanelRoundCornerH>0</PanelRoundCornerH>
+		<!--Round Corner bottom height-->
+		<PanelRoundCornerHBot>0</PanelRoundCornerHBot>
+
+		<!--Ldi config start-->
+		<!--HBP setting-->
+		<HBackPorch>10</HBackPorch>
+		<!--HFP setting-->
+		<HFrontPorch>32</HFrontPorch>
+		<!--HS setting-->
+		<HPulseWidth>10</HPulseWidth>
+		<!--VBP setting-->
+		<VBackPorch>60</VBackPorch>
+		<!--VFP setting-->
+		<VFrontPorch>14</VFrontPorch>
+		<!--VS setting-->
+		<VPulseWidth>30</VPulseWidth>
+		<!--Mipi config start-->
+		<!--Mipi clk dynamic update support-->
+		<MipiDsiUptSupport>0</MipiDsiUptSupport>
+		<!--Mipi lane number:c-phy:0-1port, 1-2port, 2-3port d-phy:0-1lane, 1-2lane, 2-3lane, 3-4lane-->
+		<MipiLaneNums>3</MipiLaneNums>
+
+		<!--Mipi non continue enable:0-continue mode, 1-non continue mode-->
+		<MipiNonContinueEnable>1</MipiNonContinueEnable>
+
+		<!--Mipi lp11:0-None, 1-little lp11, 2-no lp11-->
+		<MipiLp11Flag>0</MipiLp11Flag>
+
+		<!--ssc function:0-open, 1-close-->
+		<SSCDisable>1</SSCDisable>
+
+		<!--bl max type:0-not support, 1-ddic ytpe-->
+		<PanelGetBlMaxNitType>0</PanelGetBlMaxNitType>
+		<PanelGetBlMaxNitOffset>400</PanelGetBlMaxNitOffset>
+		<!--bl max nit-->
+		<PanelBlMaxnit>0</PanelBlMaxnit>
+		<!--bl min brightness setting-->
+		<PanelBlmin>4</PanelBlmin>
+		<!--bl max brightness setting-->
+		<PanelBlmax>255</PanelBlmax>
+		<!--bl ctrl type setting-->
+		<PanelBlIcCtrlType>0</PanelBlIcCtrlType>
+		<!--bias ctrl type setting-->
+		<PanelBiasIcCtrlType>0</PanelBiasIcCtrlType>
+		<!--gpio offset number setting-->
+		<PanelGpioOffset>0</PanelGpioOffset>
+		<!--Running test config start-->
+		<!--Dot/column inversion test support-->
+		<PanelInversionSupport>0</PanelInversionSupport>
+		<!--Forward/reverse scan test support-->
+		<PanelScanSupport>0</PanelScanSupport>
+		<!--Check panel power status test support-->
+		<PanelCheckRegSupport>0</PanelCheckRegSupport>
+		<!--Panel quickly sleep out support-->
+		<PanelQuicklySleepOutSupport>0</PanelQuicklySleepOutSupport>
+		<PanelQuicklySleepOutInterval>0</PanelQuicklySleepOutInterval>
+		<!--event send
+		event, data, delay/sync, no-sync
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI init code, 7-TS early-event, 8-TS later-event, 9-VDD, 10-AOD, 11-BIAS
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<!--Power on timming-->
+		<PowerOnStage>"3, 1, 0
+				4, 1, 0
+				11, 1, 0"</PowerOnStage>
+		<LPOnStage>"0, 0, 0"</LPOnStage>
+		<HSOnStage>"0, 0, 0"</HSOnStage>
+
+		<!--Power off timming-->
+		<HSOffStage>"0, 0, 0"</HSOffStage>
+		<LPOffStage>"0, 0, 0"</LPOffStage>
+		<PowerOffStage>"4, 0, 0
+				3, 0, 0"</PowerOffStage>
+
+	</PanelEntry>
+</hwlcd>

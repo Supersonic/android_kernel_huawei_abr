@@ -1,0 +1,3 @@
+# SPDX-License-Identifier: GPL-2.0
+obj-$(CONFIG_ADAPTER_PROTOCOL_UFCS) += adapter_protocol_ufcs.o
+obj-$(CONFIG_ADAPTER_PROTOCOL_UFCS) += adapter_protocol_ufcs_auth.o

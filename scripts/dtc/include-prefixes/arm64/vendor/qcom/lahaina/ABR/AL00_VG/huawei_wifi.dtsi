@@ -1,0 +1,6 @@
+&huawei_wifi_info{
+    compatible = "huawei,hw_wifi_info";
+    status = "ok";
+    wifi,pubfile_id = "amber_al00_vb";
+    wifi,chiptype = "WIFI_QUALCOMM_WCN6851";
+};

@@ -1,0 +1,6 @@
+config SND_SOC_AW882XX_V2
+    tristate "set audio info for self adapt"
+	default n
+    help
+      aw882xx_v2 driver.
+

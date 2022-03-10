@@ -1,0 +1,5 @@
+config CUST_ATTR_GLINK
+	bool "huawei custom attributes glink driver"
+	default n
+	help
+	  Enable this option to tranfer custom attributes to adsp.

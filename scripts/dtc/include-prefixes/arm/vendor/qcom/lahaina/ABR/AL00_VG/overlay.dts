@@ -1,0 +1,55 @@
+/dts-v1/;
+/plugin/;
+
+#include "../common/common.dtsi"
+#include "huawei-nfc.dtsi"
+#include "huawei-camera.dtsi"
+#include "huawei_wifi.dtsi"
+#include "huawei_audio.dtsi"
+#include "huawei-bt.dtsi"
+/ {
+    /* bsp_replace_info @ model = "Huawei Technologies, Inc. %product_name%"; */
+    model = "Huawei Technologies, Inc. ABR-AL00";
+    compatible = "qcom,lahaina-qrd", "qcom,lahaina", "qcom,qrd";
+    /* bsp_replace_info @ qcom,board-id = <%boardid% 0>; */
+    qcom,board-id = <8309 0>;
+};
+
+&soc {
+	spi@990000 {
+		huawei_thp@10 {
+			/* Power Config */
+			thp-iovdd-type = <1>;
+			thp-iovdd-supply = <&L2C>;
+			thp-iovdd-value = <1800000>;
+		};
+	};
+};
+
+&rootparam {
+    /* bsp_replace_info @ qcom,boardid = <%boardid_split%>; */
+    /* auto_key_info @ name: boardid type: uint32 default: 0 */
+    qcom,boardid = <8 3 0 9>;
+    /* bsp_replace_info @ qcom,board_name = "%board_name%"; */
+    qcom,board_name = "ABR_AL00_VG";
+    /* bsp_replace_info @ qcom,product_name = "%product_name%"; */
+    qcom,product_name = "ABR_BID1502";
+    /* bsp_replace_info @ hardware_version = "%hardware_version%"; */
+    hardware_version = "HL1ABRM";
+    /* bsp_replace_info @ huawei,modem_id = <%modem_id% 0x0>; */
+    huawei,modem_id = <1502 0>;
+};
+
+&boost_5v {
+	boost_5v_use_internal_pmic = <1>;
+};
+
+&huawei_batt_info {
+	shield_ct_sign = <1>;
+};
+
+&usb_extra_modem {
+	gpio_q4 = <&tlmm 99 0>; /* GPIO_99 */
+	gpio_q5 = <&tlmm 30 0>; /* GPIO_30 */
+	status = "ok";
+};

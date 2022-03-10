@@ -1,0 +1,6 @@
+&huawei_pd {
+	src_vconn = <1>; /* 5v-boost */
+	src_vbus = <3>; /* pmic-8350b */
+	otg_ocp_check_enable = <1>;
+	cc_dynamic_protect = <2>;
+};

@@ -1,0 +1,23 @@
+/ {
+	huawei-drg {
+		compatible = "huawei,qcom-drg";
+		huawei-drg0 {
+			huawei,divider-cells = <1>;
+			huawei,drg-master = <&CPU7 2380800>;
+			huawei,drg-slave = <&CPU0 1708800
+					    &CPU4 2342400>;
+			up_limit_enable;
+			thermal_enable;
+		};
+		huawei-drg1 {
+			huawei,divider-cells = <1>;
+			huawei,drg-master = <&CPU4 2342400>;
+			huawei,drg-slave = <&CPU0 1708800>;
+
+			user_mode_enable;
+			up_limit_enable;
+			thermal_enable;
+		};
+
+	};
+};

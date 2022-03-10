@@ -1,0 +1,22 @@
+&tlmm {
+	btb_int_active: btb_int_active {
+		mux {
+			pins = "gpio180";
+			function = "gpio";
+		};
+
+		config {
+			pins = "gpio180";
+			bias-disable;
+		};
+	};
+};
+&soc {
+	card_tray_detect: card_tray_detect {
+		compatible = "huawei,card_tray_detect";
+		card_tray_gpio = <400>;
+		btb_60pin_gpio = <488>;
+		pinctrl-names = "btb_default";
+		pinctrl-0 = <&btb_int_active>;
+	};
+};

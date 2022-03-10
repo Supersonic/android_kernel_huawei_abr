@@ -1,0 +1,59 @@
+<hwlcd>
+	<PanelEntry>
+		<MipiDsiUptSupport>1</MipiDsiUptSupport>
+		<MipiDsiBitClk>449</MipiDsiBitClk>
+		<MipiDsiBitClkValA>898</MipiDsiBitClkValA>
+		<MipiDsiBitClkValB>449</MipiDsiBitClkValB>
+
+		<!--Kirin 990 Mipi porch config begin-->
+		<!--Kirin 990 Mipi Dsi Timing Support -->
+		<MipiDsiTimingSupport>1</MipiDsiTimingSupport>
+		<!--Mipi Horizontal sync area -->
+		<MipiHSyncArea>10</MipiHSyncArea>
+		<!--Mipi Horizontal back porch -->
+		<MipiHBackPorch>10</MipiHBackPorch>
+		<!--Mipi Horizontal line time -->
+		<MipiHLineTime>1120</MipiHLineTime>
+		<!--Mipi Dpi horizontal size -->
+		<MipiDpiHSize>962</MipiDpiHSize>
+		<!--Mipi Vertical sync area -->
+		<MipiVSyncArea>20</MipiVSyncArea>
+		<!--Mipi Vertical back porch -->
+		<MipiVBackPorch>40</MipiVBackPorch>
+		<!--Mipi Vertical front porch -->
+		<MipiVFrontPorch>20</MipiVFrontPorch>
+		<!--Kirin 990 Mipi porch config end-->
+		<PanelPxlClk>120</PanelPxlClk>
+		<!--Pixel clock division ratio-->
+		<PanelPxlClkDiv>1</PanelPxlClkDiv>
+		<PanelCmdType>32</PanelCmdType>
+		<!--Mipi vcm adjust:data&clk hs amplitude-->
+		<MipiRgVcmAdjust>57</MipiRgVcmAdjust>
+
+		<MipiNonContinueEnable>0</MipiNonContinueEnable>
+		<MipiLp11Flag>1</MipiLp11Flag>
+		<!--Mipi burst mode:0-non burst sync pulse, 1-non burst sync event, 2-burst sync pulse1, 3-burst sync pulse2-->
+		<MipiBurstMode>0</MipiBurstMode>
+
+		<PanelVsynCtrType>0</PanelVsynCtrType>
+		<MipiBurstMode>2</MipiBurstMode>
+		<LdiPipeClkRatePreSet>640</LdiPipeClkRatePreSet>
+		<LdiDivPreSet>2</LdiDivPreSet>
+
+		<PanelBlmin>35</PanelBlmin>
+		<PanelBlmax>3560</PanelBlmax>
+		<PanelBlDef>1638</PanelBlDef>
+
+		<PanelBlType>4</PanelBlType>
+		<PanelBlIcCtrlType>1</PanelBlIcCtrlType>
+		<PanelBlPwmPreciType>3</PanelBlPwmPreciType>
+		<BlPwmOutDiv>10</BlPwmOutDiv>
+
+		<!--blpwm intput disable, used for AP-cabc-->
+		<BlPwmInputDisable>1</BlPwmInputDisable>
+
+		<BiasPowerCtrlMode>2</BiasPowerCtrlMode>
+		<LcdType>0</LcdType>
+		<!--event send-->
+	</PanelEntry>
+</hwlcd>

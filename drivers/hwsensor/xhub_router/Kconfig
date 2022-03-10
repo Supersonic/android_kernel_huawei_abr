@@ -1,0 +1,6 @@
+config HUAWEI_XHUB_ROUTER
+    tristate "huawei xhub router"
+	default y
+	help
+	  Say Y here.
+

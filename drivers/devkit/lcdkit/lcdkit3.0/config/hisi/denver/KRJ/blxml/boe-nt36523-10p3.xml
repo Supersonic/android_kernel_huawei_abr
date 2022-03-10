@@ -1,0 +1,8 @@
+<hwlcd>
+	<PanelEntry>
+		<!--bl ic type:1-reg only, 2-pwm only, 3-muti-ramp, 4-ramp-muti, 6-i2c only, 7-blpwm-cabc-->
+                <PanelBlIcCtrlType>7</PanelBlIcCtrlType>
+		<BlPwmOutDiv>10</BlPwmOutDiv>
+	</PanelEntry>
+
+</hwlcd>

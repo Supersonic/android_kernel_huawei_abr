@@ -1,0 +1,7 @@
+config SENSORS
+  bool "Sensors Class Support"
+  depends on HUAWEI_EXTRA_IR_MODE
+  default y
+  help
+    This option enables the sensor sysfs class in /sys/class/sensors.
+    You'll need this to do anything useful with sensors. If unsure, say N.

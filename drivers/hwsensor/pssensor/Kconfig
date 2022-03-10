@@ -1,0 +1,13 @@
+config SENSORS
+  bool "Sensors Class Support"
+  depends on HUAWEI_PS_SENSOR
+  default y
+  help
+    This option enables the sensor sysfs class in /sys/class/sensors.
+    You'll need this to do anything useful with sensors. If unsure, say N.
+config HUAWEI_TP_PS_SENSOR
+        tristate "Support for ps sensor"
+        depends on HUAWEI_PS_SENSOR
+        default y
+        help
+          Say Y to enable support ps sensor

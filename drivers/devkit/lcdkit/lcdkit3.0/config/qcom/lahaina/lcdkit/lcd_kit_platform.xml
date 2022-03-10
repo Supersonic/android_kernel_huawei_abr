@@ -1,0 +1,241 @@
+<hwlcd>
+	<Version>1.1</Version>
+
+	<!-- any supported lcd Panel, add it here! very important -->
+	<lcdlist>
+		<!-- format: -->
+		<!-- panel-name, gpio, brdid(product_id), product_name, product_floder, version_floder -->
+		<!-- panel-name : must same with panel xml file name -->
+		<!-- product & version folder: must same with the folder name or 'def' -->
+		<lcd>190-207-6p46-qcom,                         0x04,   1000,    abr,    abr,  def     </lcd>
+		<lcd>190-d01-6p46-qcom,                         0x05,   1000,    abr,    abr,  def     </lcd>
+		<lcd>auo-otm1901a-5p2-1080p-video-default,      0x0A,   1000,    abr,    abr,  def     </lcd>
+		<lcd>190-207-6p59-qcom,                         0x04,   2000,    jad,    jad,  def     </lcd>
+		<lcd>100-707-6p59-qcom,                         0x00,   2000,    jad,    jad,  def     </lcd>
+		<lcd>auo-otm1901a-5p2-1080p-video-default,      0x0A,   2000,    jad,    jad,  def     </lcd>
+		<lcd>190-207-7p8-qcom,                         0x00,   3000,    pal,    pal,  def     </lcd>
+		<lcd>auo-otm1901a-5p2-1080p-video-default,      0x0A,   3000,    pal,    pal,  def     </lcd>
+		<lcd>190-207-6p85-qcom,                         0x00,   4000,    bal,    bal,  def     </lcd>
+		<lcd>190-20f-6p85-qcom,                         0x02,   4000,    bal,    bal,  def     </lcd>
+		<lcd>310-207-6p85-qcom,                         0x04,   4000,    bal,    bal,  def     </lcd>
+		<lcd>190-c04-1p04-qcom,                         0x10,   4000,    bal,    bal,  def     </lcd>
+		<lcd>190-c05-1p04-qcom,                         0x14,   4000,    bal,    bal,  def     </lcd>
+		<lcd>190-d02-1p04-qcom,                         0x11,   4000,    bal,    bal,  def     </lcd>
+		<lcd>190-d03-1p04-qcom,                         0x15,   4000,    bal,    bal,  def     </lcd>
+		<lcd>auo-otm1901a-5p2-1080p-video-default,      0x0A,   4000,    bal,    bal,  def     </lcd>
+		<lcd>110-207-6p72-qcom,                         0x08,   6000,    rna,    rna,  def     </lcd>
+		<lcd>310-207-6p72-qcom,                         0x09,   6000,    rna,    rna,  def     </lcd>
+		<lcd>190-207-6p72-qcom,                         0x00,   6000,    rna,    rna,  def     </lcd>
+		<lcd>310-e00-6p72-qcom,                         0x06,   6000,    rna,    rna,  def     </lcd>
+		<lcd>auo-otm1901a-5p2-1080p-video-default,      0x0A,   6000,    rna,    rna,  def     </lcd>
+		<lcd>310-207-6p57-qcom,                         0x08,   6001,    nth,    nth,  def     </lcd>
+		<lcd>310-207-1-6p57-qcom,                       0x01,   6001,    nth,    nth,  def     </lcd>
+		<lcd>190-207-6p57-qcom,                         0x02,   6001,    nth,    nth,  def     </lcd>
+		<lcd>290-207-6p57-qcom,                         0x04,   6001,    nth,    nth,  def     </lcd>
+		<lcd>190-801-6p57-qcom,                         0x06,   6001,    nth,    nth,  def     </lcd>
+		<lcd>310-c06-6p57-qcom,                         0x09,   6001,    nth,    nth,  def     </lcd>
+		<lcd>190-c06-6p57-qcom,                         0x00,   6001,    nth,    nth,  def     </lcd>
+		<lcd>auo-otm1901a-5p2-1080p-video-default,      0x0A,   6001,    nth,    nth,  def     </lcd>
+		<lcd>190-c06-6p57-qcom,                         0x04,   6003,    nth,    nth,  def     </lcd>
+		<lcd>auo-otm1901a-5p2-1080p-video-default,      0x0A,   6003,    nth,    nth,  def     </lcd>
+		<lcd>190-207-6p699-qcom,                        0x00,   7000,    cet,    cet,  def     </lcd>
+		<lcd>auo-otm1901a-5p2-1080p-video-default,      0x0A,   7000,    cet,    cet,  def     </lcd>
+		<lcd>310-207-6p699-qcom,                        0x02,   7000,    cet,    cet,  def     </lcd>
+		<lcd>190-207-6p74-qcom,                         0x04,   8000,    dra,    dra,  def     </lcd>
+		<lcd>auo-otm1901a-5p2-1080p-video-default,      0x0A,   8000,    dra,    dra,  def     </lcd>
+		<lcd>190-502-10p3-qcom,                         0x01,   9000,    bah4,   bah4, def     </lcd>
+		<lcd>190-20d-10p3-qcom,                         0x00,   9000,    bah4,   bah4, def     </lcd>
+		<lcd>290-20d-10p3-qcom,                         0x05,   9000,    bah4,   bah4, def     </lcd>
+		<lcd>auo-otm1901a-5p2-1080p-video-default,      0x0A,   9000,    bah4,   bah4, def     </lcd>
+	</lcdlist>
+
+	<PanelEntry>
+		<!--Panel type:dsi_video_mode-video mode, dsi_cmd_mode-command mode-->
+		<PanelTypeMode>"dsi_video_mode"</PanelTypeMode>
+		<PanelModeSwitch>0</PanelModeSwitch>
+		<PanelPhyWidth>69</PanelPhyWidth>
+		<PanelPhyHeight>154</PanelPhyHeight>
+
+		<!--Dsi ctrl number:1-one dsi ctrl, 2-two dsi ctrl-->
+		<DsiCtrlNum>0</DsiCtrlNum>
+		<!--Dsi phy number:1-one dsi phy, 2-two dsi phy-->
+		<DsiPhyNum>0</DsiPhyNum>
+		<PanelSupplyEntries>"dsi_panel_pwr_supply"</PanelSupplyEntries>
+
+		<!-- Panel Color Information -->
+		<PanelColorFormat>24</PanelColorFormat>
+		<PanelColorOrder>"rgb_swap_rgb"</PanelColorOrder>
+		<PanelUnderFlowColor>0xff</PanelUnderFlowColor>
+		<PanelBorderColor>0</PanelBorderColor>
+
+		<!-- DSI Video Config -->
+		<PanelVirChannelId>0</PanelVirChannelId>
+		<DMASchedLine>1</DMASchedLine>
+		<PanelTrafficMode>"burst_mode"</PanelTrafficMode>
+		<PanelHSyncPulse>0</PanelHSyncPulse>
+		<PanelHFPPowerMode>0</PanelHFPPowerMode>
+		<PanelHBPPowerMode>0</PanelHBPPowerMode>
+		<PanelHSAPowerMode>0</PanelHSAPowerMode>
+		<PanelLastLineInterleave>0</PanelLastLineInterleave>
+		<PanelBLLPEOFPowerMode>1</PanelBLLPEOFPowerMode>
+		<PanelBLLPPowerMode>1</PanelBLLPPowerMode>
+
+		<!-- Lane Config -->
+		<PanelDSILaneMap>"lane_map_0123"</PanelDSILaneMap>
+		<PanelLane0State>1</PanelLane0State>
+		<PanelLane1State>1</PanelLane1State>
+		<PanelLane2State>1</PanelLane2State>
+		<PanelLane3State>1</PanelLane3State>
+
+		<!-- Trigger Config -->
+		<!--none, trigger_te, trigger_sw, trigger_sw_te-->
+		<PanelDsiMDPTrigger>"none"</PanelDsiMDPTrigger>
+		<!--none, trigger_te, trigger_sw, trigger_sw_te, trigger_sw_seof-->
+		<PanelDsiDMATrigger>"trigger_sw"</PanelDsiDMATrigger>
+		<PanelTEPinSelect>0</PanelTEPinSelect>
+
+		<!-- MIPI Host Config -->
+		<DsiTClkPost>0</DsiTClkPost>
+		<DsiTClkPre>0</DsiTClkPre>
+		<DsiRxEotIgnore>0</DsiRxEotIgnore>
+		<DsitxEotAppend>0</DsitxEotAppend>
+		<DsiExtBridgeMode>0</DsiExtBridgeMode>
+		<DsiForceClockLaneHs>0</DsiForceClockLaneHs>
+		<DsiSelectClocks>"mux_byte_clk0", "mux_pixel_clk0", "src_byte_clk0", "src_pixel_clk0", "shadow_byte_clk0", "shadow_pixel_clk0"</DsiSelectClocks>
+		<!-- 0:DPHY  1:CPHY -->
+		<DsiPanelCphyMode>0</DsiPanelCphyMode>
+		<DsiUlpsEnabled>0</DsiUlpsEnabled>
+		<DsiSuspendUlpsEnabled>0</DsiSuspendUlpsEnabled>
+		<DSIStream>0</DSIStream>
+		<DsiTeUsingWd>0</DsiTeUsingWd>
+		<DsiCmdSyncWaitBroadcast>0</DsiCmdSyncWaitBroadcast>
+		<DsiLp11Init>1</DsiLp11Init>
+
+		<!-- Split Link Config -->
+		<DsiSplitLinkEnable>0</DsiSplitLinkEnable>
+		<DsiSublinksCount>2</DsiSublinksCount>
+		<DsiLanesPerSublink>2</DsiLanesPerSublink>
+
+		<!-- HDR Config -->
+		<DsiPanelHdrEnabled>0</DsiPanelHdrEnabled>
+		<HdrColorPrimaries>14500 15500 32000 17000 15500 30000 8000 3000</HdrColorPrimaries>
+		<DsiPanelPeakBrightness>4200000</DsiPanelPeakBrightness>
+		<DsiPanelBlacknessLevel>3230</DsiPanelBlacknessLevel>
+
+		<!-- DMS Config -->
+		<DsiPanelDynamicModeSwitchEnabled>0</DsiPanelDynamicModeSwitchEnabled>
+		<DsiPanelDynamicModeSwitchType>"dynamic-resolution-switch-immediate"</DsiPanelDynamicModeSwitchType>
+
+		<!--Esd enable-->
+		<PanelEsdSupport>1</PanelEsdSupport>
+
+		<!--Project id support-->
+		<PanelProjectIdSupport>0</PanelProjectIdSupport>
+		<!--Tp Project Id-->
+		<PanelDefaultTpProjectId>"G21579250"</PanelDefaultTpProjectId>
+
+		<!--gpio offset number setting-->
+		<PanelGpioOffset>308</PanelGpioOffset>
+		<!--finger unlock state support-->
+		<PanelFingerUnlockStateSupport>0</PanelFingerUnlockStateSupport>
+		<!--bl max type:0-not support, 1-ddic ytpe-->
+		<PanelGetBlMaxNitType>0</PanelGetBlMaxNitType>
+		<PanelGetBlMaxNitOffset>400</PanelGetBlMaxNitOffset>
+		<!--bl max nit-->
+		<PanelBlMaxnit>450</PanelBlMaxnit>
+		<!--bl min brightness setting-->
+		<PanelBlmin>4</PanelBlmin>
+		<!--bl max brightness setting-->
+		<PanelBlmax>255</PanelBlmax>
+		<!--bl def brightness setting-->
+		<PanelBldef>128</PanelBldef>
+		<!--bl ctrl type setting-->
+		<PanelBlIcCtrlType>0</PanelBlIcCtrlType>
+		<!--bias ctrl type setting-->
+		<PanelBiasIcCtrlType>0</PanelBiasIcCtrlType>
+		<!--Running test config start-->
+		<!--Dot/column inversion test support-->
+		<PanelInversionSupport>0</PanelInversionSupport>
+		<!--Check panel power status test support-->
+		<PanelCheckRegSupport>0</PanelCheckRegSupport>
+		<!--Pt station test support-->
+		<PanelPtTestSupport>0</PanelPtTestSupport>
+		<!--sn code support-->
+		<PanelSnCodeSupport>0</PanelSnCodeSupport>
+		<!--Thp Proximity support-->
+		<PanelThpProximitySupport>0</PanelThpProximitySupport>
+		<ThpProximityResetDelayMin>65</ThpProximityResetDelayMin>
+		<!--PanelOnAlwaysNeedReset-->
+		<PanelOnAlwaysNeedReset>0</PanelOnAlwaysNeedReset>
+		<!-- Backlight ctrl config -->
+		<BlPmicControlType>"bl_ctrl_external"</BlPmicControlType>
+		<!--backlight order-->
+		<BacklightOrder>0</BacklightOrder>
+		<BacklightNeedSync>0</BacklightNeedSync>
+
+		<!-- Display dsi timming config -->
+		<DisplayDsiTimmingBegin>1</DisplayDsiTimmingBegin>
+		<DisplayDsiTimming0Begin>1</DisplayDsiTimming0Begin>
+		<DisplayDsiTimming0End>1</DisplayDsiTimming0End>
+		<DisplayDsiTimming1Begin>0</DisplayDsiTimming1Begin>
+		<DisplayDsiTimming1End>0</DisplayDsiTimming1End>
+		<DisplayDsiTimming2Begin>0</DisplayDsiTimming2Begin>
+		<DisplayDsiTimming2End>0</DisplayDsiTimming2End>
+		<DisplayDsiTimmingEnd>1</DisplayDsiTimmingEnd>
+
+		<!-- Display dsi timming0 config -->
+		<PanelXres0>1080</PanelXres0>
+		<PanelYres0>2400</PanelYres0>
+		<HFrontPorch0>94</HFrontPorch0>
+		<HBackPorch0>34</HBackPorch0>
+		<HPulseWidth0>4</HPulseWidth0>
+		<VFrontPorch0>129</VFrontPorch0>
+		<VBackPorch0>125</VBackPorch0>
+		<VPulseWidth0>126</VPulseWidth0>
+		<HSyncSkew0>0</HSyncSkew0>
+		<PanelFrameRate0>60</PanelFrameRate0>
+		<PanelPhyTimings0>"21 1D 07 08 04 02 04 a0
+				21 1D 07 08 04 02 04 a0
+				21 1D 07 08 04 02 04 a0
+				21 1D 07 08 04 02 04 a0
+				21 16 06 07 04 02 04 a0"</PanelPhyTimings0>
+		<DisplayTopology0>1 0 1</DisplayTopology0>
+		<DefaultTopologyIndex0>0</DefaultTopologyIndex0>
+
+		<!--Check panel power status test support-->
+		<PanelCheckRegSupport>0</PanelCheckRegSupport>
+		<PanelCheckRegOnSupport>0</PanelCheckRegOnSupport>
+		<PanelCheckRegOnSupportDsmReport>0</PanelCheckRegOnSupportDsmReport>
+		<PanelCheckAodRegOnSupport>0</PanelCheckAodRegOnSupport>
+		<PanelCheckAodRegOnSupportDsmReport>0</PanelCheckAodRegOnSupportDsmReport>
+		<PanelCheckRegOffSupport>0</PanelCheckRegOffSupport>
+		<PanelCheckRegOffSupportDsmReport>0</PanelCheckRegOffSupportDsmReport>
+		<!-- for mipi check reg on -->
+		<PanelCheckRegOnCommand>"0x06, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x01, 0x0a"</PanelCheckRegOnCommand>
+		<PanelCheckRegOnValue>"0x9c"</PanelCheckRegOnValue>
+		<PanelCheckRegOnCommandState>0</PanelCheckRegOnCommandState>
+		<!-- for mipi check aod on -->
+		<PanelCheckAodRegOnCommand>"0x06, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x01, 0x0a"</PanelCheckAodRegOnCommand>
+		<PanelCheckAodRegOnValue>"0xdc"</PanelCheckAodRegOnValue>
+		<PanelCheckAodRegOnCommandState>0</PanelCheckAodRegOnCommandState>
+		<!-- for mipi check reg off -->
+		<PanelCheckRegOffCommand>"0x06, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x01, 0x0a"</PanelCheckRegOffCommand>
+		<PanelCheckRegOffValue>"0x08"</PanelCheckRegOffValue>
+		<PanelCheckRegOffCommandState>0</PanelCheckRegOffCommandState>
+		<!--event send
+		event, data, delay/sync, no-sync
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI init code, 7-TS early-event, 8-TS later-event, 9-VDD, 10-AOD, 11-BIAS
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<!--Power on timming-->
+		<PowerOnStage>"3, 1, 0
+				4, 1, 0
+				11, 1, 0"</PowerOnStage>
+
+		<!--Power off timming-->
+		<PowerOffStage>"4, 0, 0
+				3, 0, 0"</PowerOffStage>
+
+	</PanelEntry>
+</hwlcd>

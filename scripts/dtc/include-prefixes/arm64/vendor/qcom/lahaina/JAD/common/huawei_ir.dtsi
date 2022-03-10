@@ -1,0 +1,45 @@
+#include <dt-bindings/clock/qcom,gcc-lahaina.h>
+
+&tlmm {
+	ir_clk_pwm_active: ir_clk_pwm_active {
+		mux {
+			pins = "gpio116";
+			function = "gcc_gp2";
+		};
+
+		config {
+			pins = "gpio116";
+			bias-disable;
+			output-high;
+			drive-strength = <2>; /* 2 MA */
+		};
+	};
+
+	ir_clk_pwm_suspend: ir_clk_pwm_suspend {
+		mux {
+			pins = "gpio116";
+			function = "gpio";
+		};
+
+		config {
+			pins = "gpio116";
+			bias-disable;
+			output-low;
+			bias-pull-down; /* PULL DOWN */
+			drive-strength = <2>; /* 2 MA */
+		};
+	};
+};
+
+&soc {
+	huawei_ir_clk_pwm: ir_clk_pwm {
+		compatible = "huawei,ir-pwm";
+		pwm_mode = <1>;
+		pinctrl-names = "default", "pwm_enable";
+		pinctrl-0 = <&ir_clk_pwm_suspend>;
+		pinctrl-1 = <&ir_clk_pwm_active>;
+		clocks = <&clock_gcc GCC_GP2_CLK>;
+		clock-names = "gcc_gp2_clk";
+		status = "ok";
+	};
+};

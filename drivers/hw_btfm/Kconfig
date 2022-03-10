@@ -1,0 +1,3 @@
+config HUAWEI_BT_FM
+        default y
+        bool "huawei bt fm"

@@ -1,0 +1,71 @@
+&huawei_audio_info {
+	product_identifier = "RNA";
+	hardware_info {
+		get_ec_in_hal = "true";
+		voip_ap_algo_enable = "true";
+		voip_scene_support = "true";
+		multi_mic_enable = "true";
+		backmic_record_enable = "true";
+	};
+};
+
+&audio_hw_config {
+	asr_enable = "true";
+	ultrasonic_info {
+		support_ultrasonic = "true";
+	};
+	audio_capability {
+		spk_rcv_concurrent = "true";
+        	accessibility_support = "true";
+	};
+};
+
+&qupv3_se9_i2c {
+	smartpa@5C{
+		compatible = "huawei,smartpakit_i2c";
+		reg = <0x5C>;
+		/* 4:huawei customize */
+		chip_vendor = <4>;
+		/* refer to smartpakit.out_device prop */
+		chip_id = <0>;
+		chip_model = "05-01";
+		reset_debounce_wait_time = <100>;
+		status = "ok";
+
+		/* reg_ctl node: a node contains three data<addr value ctl_type>
+		 * ctl_type: 0 read reg(default), 1 write reg, 2 only time delay
+		 * value:
+		 *     read:  reg number(num >= 1)
+		 *     write: reg value
+		 *     delay: time delay
+		 * time delay unit: msecs */
+		version_regs = <0x03 1 0>;
+		dump_regs = <0 256 0>;
+		hw_reset {
+			gpio_reset = <&tlmm 18 0>; // GPIO_018
+			/* gpio_state node: a node contains two data<state delay>
+			 * time delay unit: msecs */
+			ctl_sequence = <0 1 1 1>;
+		};
+		irq_handler {
+			gpio_irq = <&tlmm 19 0>; // GPIO_019
+			/* 0x0 IRQF_TRIGGER_NONE, 0x1 IRQF_TRIGGER_RISING, 0x2 IRQF_TRIGGER_FALLING, 0x4 IRQF_TRIGGER_HIGH, 0x8 IRQF_TRIGGER_LOW */
+			irq_flags = <2>;
+			/* whether or not need reset chip */
+			need_reset;
+			rw_sequence = <
+				0x01 1 0
+				0x05 1 0
+				0x09 1 0
+				0x03 6 1 // mute chip
+			>;
+		};
+		regmap_cfg {
+			reg_bits = <8>;
+			val_bits = <16>;
+			/* 0 REGCACHE_NONE, 1 REGCACHE_RBTREE, 2 REGCACHE_COMPRESSED, 3 REGCACHE_FLAT */
+			cache_type = <0>;
+			max_register = <0xff>;
+		};
+	};
+};

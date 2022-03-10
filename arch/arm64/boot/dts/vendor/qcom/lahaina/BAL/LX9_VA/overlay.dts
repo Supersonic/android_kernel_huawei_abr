@@ -1,0 +1,68 @@
+/dts-v1/;
+/plugin/;
+
+#include "../common/common.dtsi"
+#include "huawei-nfc.dtsi"
+#include "huawei_camera.dtsi"
+#include "huawei_wifi.dtsi"
+#include "huawei-lcd.dtsi"
+#include "huawei-bt.dtsi"
+/ {
+    /* bsp_replace_info @ model = "Huawei Technologies, Inc. %product_name%"; */
+    model = "Huawei Technologies, Inc. BAL-LX9";
+    compatible = "qcom,lahaina-qrd", "qcom,lahaina", "qcom,qrd";
+    /* bsp_replace_info @ qcom,board-id = <%boardid% 0>; */
+    qcom,board-id = <8394 0>;
+};
+
+&rootparam {
+    /* bsp_replace_info @ qcom,boardid = <%boardid_split%>; */
+    /* auto_key_info @ name: boardid type: uint32 default: 0 */
+    qcom,boardid = <8 3 9 4>;
+    /* bsp_replace_info @ qcom,board_name = "%board_name%"; */
+    qcom,board_name = "BAL_LX9_VA";
+    /* bsp_replace_info @ qcom,product_name = "%product_name%"; */
+    qcom,product_name = "BAL_BID2400";
+    /* bsp_replace_info @ hardware_version = "%hardware_version%"; */
+    hardware_version = "HN2BALIMB";
+    /* bsp_replace_info @ huawei,modem_id = <%modem_id% 0x0>; */
+    huawei,modem_id = <2400 0x0>;
+};
+
+&qupv3_se13_i2c {
+	#address-cells = <1>;
+	#size-cells = <0>;
+	status = "ok";
+
+	smartpa@5F{
+		irq_handler {
+			gpio_irq = <&tlmm 15 0>; // GPIO_015
+			/* 0x0 IRQF_TRIGGER_NONE, 0x1 IRQF_TRIGGER_RISING, 0x2 IRQF_TRIGGER_FALLING, 0x4 IRQF_TRIGGER_HIGH, 0x8 IRQF_TRIGGER_LOW */
+			irq_flags = <2>;
+			/* whether or not need reset chip */
+			need_reset;
+			rw_sequence = <
+				0x01 1 0
+				0x05 1 0
+				0x09 1 0
+				0x03 6 1 // mute chip
+			>;
+		};
+	};
+
+	smartpa@5E{
+		irq_handler {
+			gpio_irq = <&tlmm 179 0>; // GPIO_179
+			/* 0x0 IRQF_TRIGGER_NONE, 0x1 IRQF_TRIGGER_RISING, 0x2 IRQF_TRIGGER_FALLING, 0x4 IRQF_TRIGGER_HIGH, 0x8 IRQF_TRIGGER_LOW */
+			irq_flags = <2>;
+			/* whether or not need reset chip */
+			need_reset;
+			rw_sequence = <
+				0x01 1 0
+				0x05 1 0
+				0x09 1 0
+				0x03 6 1 // mute chip
+			>;
+		};
+	};
+};

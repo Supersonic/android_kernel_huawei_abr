@@ -1,0 +1,46 @@
+diff --git a/qcom/bengal.dtsi b/qcom/bengal.dtsi
+index 8846f36..7bc4541 100755
+--- a/qcom/bengal.dtsi
++++ b/qcom/bengal.dtsi
+@@ -621,6 +621,8 @@
+ 
+ 	huawei_audio_info: huawei_audio_info {
+ 	};
++	fingerprint: fingerprint {
++	};
+ };
+ 
+ &soc {
+diff --git a/qcom/bengal/KON/common/huawei_fp.dtsi b/qcom/bengal/KON/common/huawei_fp.dtsi
+old mode 100644
+new mode 100755
+index 7f9186d..a74b750
+--- a/qcom/bengal/KON/common/huawei_fp.dtsi
++++ b/qcom/bengal/KON/common/huawei_fp.dtsi
+@@ -1,4 +1,15 @@
+ /* fingerprint panel config */
++&fingerprint {
++	fingerprint,product = "jessica";
++	fingerprint,force_storage = <1>;
++	fingerprint,tp_hover_support = <0>;
++	fingerprint,sensor_type = <516>;
++	fingerprint,top_left_corner_x = <444>; /* only for UD */
++	fingerprint,top_left_corner_y = <889>; /* only for UD */
++	fingerprint,bottom_right_corner_x = <556>; /* only for UD */
++	fingerprint,bottom_right_corner_y = <939>; /* only for UD */
++	fingerprint,radius = <95>;
++};
+ &soc {
+ 	huawei_fingerprint {
+ 		compatible = "fpc,fingerprint";
+@@ -8,6 +19,8 @@
+ 		fingerprint,reset_gpio = <&tlmm 104 0>;
+ 		fingerprint,navigation_adjust1 = <0>;
+ 		fingerprint,navigation_adjust2 = <90>;
++		fingerprint,use_tp_irq = <1>; /* 0:using self irq pin; 1:use tp irq pin */
++		fingerprint,custom_timing_scheme = <2>;
+ 		status = "ok";
+ 	};
+-};
+\ No newline at end of file
++};

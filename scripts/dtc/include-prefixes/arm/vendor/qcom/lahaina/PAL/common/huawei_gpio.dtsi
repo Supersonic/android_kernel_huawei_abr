@@ -1,0 +1,13 @@
+&qupv3_se15_i2c {
+	extgpio: pca6416-gpio@20 {
+		compatible = "ti,tca6416";
+		reg = <0x20>;
+		gpio-controller;
+		#gpio-cells = <2>;
+		interrupts = <132 IRQ_TYPE_LEVEL_LOW>; // GPIO_132;
+		interrupt-parent = <&tlmm>;
+		interrupt-controller;
+		init_gpio = <1 1 1 1 0 0 2 1 1 1 1 1 2 2 2 1>; // 0:DI 1:DOL 2:DOH
+		status = "ok";
+	};
+};

@@ -1,0 +1,13 @@
+<hwlcd>
+<PanelEntry>
+	<PanelCompatible>"190_505_10p8"</PanelCompatible>
+	<PanelName>"'190_505 0 10.8' 1600 x 2560"</PanelName>
+	<PanelType>0x01</PanelType>
+
+	<!-- Panel Command information -->
+	<PanelOnCommandState0>"dsi_lp_mode"</PanelOnCommandState0>
+	<PanelOffCommandState0>"dsi_lp_mode"</PanelOffCommandState0>
+
+</PanelEntry>
+</hwlcd>
+

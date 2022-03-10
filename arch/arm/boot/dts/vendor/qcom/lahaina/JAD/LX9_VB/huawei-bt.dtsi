@@ -1,0 +1,8 @@
+&huawei_bt_info{
+	compatible = "huawei,hw_bt_info";
+	status = "ok";
+	bt,fw_ver = "QCOM_WCN6851_1.0.0-00858";
+	bt,chiptype = "BT_FM_QUALCOMM_WCN6851";
+	bt,nv_path = "jade_lx9_hpnv10.bin";
+	gnss,chiptype = "qcom";
+};

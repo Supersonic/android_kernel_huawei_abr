@@ -1,0 +1,41 @@
+#include "../../common/common.dtsi"
+#include "huawei_audio.dtsi"
+#include "huawei_tp.dtsi"
+#include "huawei_bsp.dtsi"
+#include "huawei-lcd.dtsi"
+#include "huawei_charger.dtsi"
+#include "huawei_usb.dtsi"
+#include "huawei-sensor.dtsi"
+#include "huawei_bt.dtsi"
+#include "huawei_fp.dtsi"
+#include "huawei_sd.dtsi"
+#include "huawei_fac.dtsi"
+&gpio_check {
+        /* 343 : GPIO7  , tlmm BASE = 336 */
+        /* 486 : GPIO150, tlmm BASE = 336 */
+        /* 487 : GPIO151, tlmm BASE = 336 */
+        /* 489 : GPIO153, tlmm BASE = 336 */
+        /* 477 : GPIO141, tlmm BASE = 336 */
+        buckle_num = "343 486 487 489 477";
+        buckle_val = "0 0 0 0 0";
+};
+
+&als_after_sale_tsl2591 {
+	compatible = "tsl2591";
+	als_after_sale_product = <24>;
+	als_after_sale_xl = <706>;
+	als_after_sale_yl = <0>;
+	als_after_sale_xr = <806>;
+	als_after_sale_yr = <97>;
+	als_after_sale_gamma = <0>;
+};
+
+&als_after_sale_ltr311 {
+	compatible = "ltr311";
+	als_after_sale_product = <25>;
+	als_after_sale_xl = <706>;
+	als_after_sale_yl = <0>;
+	als_after_sale_xr = <806>;
+	als_after_sale_yr = <97>;
+	als_after_sale_gamma = <0>;
+};

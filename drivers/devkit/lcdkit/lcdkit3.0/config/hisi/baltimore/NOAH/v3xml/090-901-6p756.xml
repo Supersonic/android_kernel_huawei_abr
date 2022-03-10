@@ -1,0 +1,5 @@
+<hwlcd>
+	<PanelEntry>
+		<ElvddDetectGpio>81</ElvddDetectGpio>
+	</PanelEntry>
+</hwlcd>

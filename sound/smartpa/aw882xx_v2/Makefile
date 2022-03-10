@@ -1,0 +1,9 @@
+obj-$(CONFIG_SND_SOC_AW882XX_V2) += aw882xx_v2.o
+obj-$(CONFIG_SND_SOC_AW882XX_V2) += aw_calib_v2.o
+obj-$(CONFIG_SND_SOC_AW882XX_V2) += aw_dsp_v2.o
+obj-$(CONFIG_SND_SOC_AW882XX_V2) += aw_monitor_v2.o
+obj-$(CONFIG_SND_SOC_AW882XX_V2) += aw_bin_parse_v2.o
+obj-$(CONFIG_SND_SOC_AW882XX_V2) += aw_device_v2.o
+obj-$(CONFIG_SND_SOC_AW882XX_V2) += aw_init_v2.o
+EXTRA_CFLAGS += -Itechpack/audio/include
+EXTRA_CFLAGS += -Itechpack/audio/include/uapi

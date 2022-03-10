@@ -1,0 +1,184 @@
+/* touch panel config */
+&tlmm {
+	pmx_ts_int_active {
+		ts_int_active: ts_int_active {
+			mux {
+				pins = "gpio26";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio26";
+				drive-strength = <8>;
+				bias-pull-up;
+			};
+		};
+	};
+
+	pmx_ts_int_suspend {
+		ts_int_suspend: ts_int_suspend {
+			mux {
+				pins = "gpio26";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio26";
+				drive-strength = <2>;
+				bias-pull-down;
+			};
+		};
+	};
+
+	pmx_ts_reset_active {
+		ts_reset_active: ts_reset_active {
+			mux {
+				pins = "gpio27";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio27";
+				drive-strength = <8>;
+				bias-pull-up;
+			};
+		};
+	};
+
+	pmx_ts_reset_suspend {
+		ts_reset_suspend: ts_reset_suspend {
+			mux {
+				pins = "gpio27";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio27";
+				drive-strength = <2>;
+				bias-pull-down;
+			};
+		};
+	};
+
+	pmx_ts_release {
+		ts_release: ts_release {
+			mux {
+				pins = "gpio27", "gpio26";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio27", "gpio26";
+				drive-strength = <2>;
+				bias-pull-down;
+			};
+		};
+	};
+};
+
+&soc {
+	spi@998000 {
+		status = "ok";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		qcom,rt = <1>;
+		huawei_thp@10 {
+			compatible = "huawei,thp";
+			status = "ok";
+			/* SPI Config */
+			spi-max-frequency = <20000000>;
+			spi-bus-id = <6>;
+			spi-mode = <0>;
+			reg = <0>;
+			spi_sync_cs_hi_delay_ns = <200>;
+			spi_sync_cs_low_delay_ns = <10>;
+
+			/* Power Config */
+			not_control_power = <1>;
+
+			/* Timing */
+			boot_reset_hi_delay_ms = <1>;
+			boot_reset_low_delay_ms = <0>;
+			boot_reset_after_delay_ms = <0>;
+			resume_reset_after_delay_ms = <1>;
+			suspend_reset_after_delay_ms = <1>;
+			use_mdelay = <1>;
+
+			/* GPIO Config */
+			irq_flag = <0x00004002>;
+			interrupt-parent = <&tlmm>;
+			interrupts = <26 0>;
+			rst_gpio = <&tlmm 27 0x00>;
+			irq_gpio = <&tlmm 26 0x00>;
+			cs_gpio = <&tlmm 31 0x00>;
+
+			/* Feature Config */
+			pt_station_test = <0>;
+			support_gesture_mode = <0>;
+			hide_product_info_en = <1>;
+			supported_func_indicater = <0x00>;
+			fast_booting_solution = <1>;
+			support_fingerprint_switch = <1>;
+			pen_supported = <0>;
+			pen_mt_enable_flag = <0>;
+			project_in_tp = <1>;
+			aod_display_support = <0>;
+			support_factory_mode_extra_cmd = <2>;
+			need_notify_to_roi_algo = <1>;
+			use_ap_gesture = <0>;
+			use_thp_queue = <1>;
+			not_support_ic_change_init_mode = <0>;
+			aptouch_daemon_version = <3>;
+			supported_charger = <1>;
+			thp_input_dev {
+				compatible = "huawei,thp_input";
+				abs_max_x = <2480>;
+				abs_max_y = <2220>;
+			};
+			thp_pen_input_dev {
+				compatible = "huawei,thp_pen_input";
+				max_x = <1224>;
+				max_y = <2700>;
+				max_pressure = <4096>;
+			};
+
+			goodix_thp {
+				status = "ok";
+				project_in_tp = <1>;
+				support_vendor_ic_type = <2>;
+				spi-max-frequency = <20000000>;
+				spi_sync_cs_hi_delay_ns = <100>;
+				spi_sync_cs_low_delay_ns = <100>;
+				spi_cs_clk_delay = <4000>; // add (spi_cs_clk_delay * 2 / spi_clk) delay
+				spi_inter_words_delay = <0>;
+				boot_reset_hi_delay_ms = <1>;
+				boot_reset_low_delay_ms = <1>;
+				boot_reset_after_delay_ms = <100>;
+				resume_reset_after_delay_ms = <2>;
+				delay_work_for_pm = <0>;
+				support_gesture_mode = <0>;
+				support_oem_info = <0>;
+				need_resume_reset = <1>;
+				use_aod_power_ctrl_notify = <1>;
+				suspend_delayms_early_to_before = <150>;
+				suspend_delayms_before_to_later = <15>;
+				resume_delayms_early_to_later = <50>;
+			};
+			ssl {
+				use_default_configuration = <1>;
+				boot_reset_low_delay_ms = <5>;
+				boot_reset_hi_delay_ms = <5>;
+			};
+			ili {
+				use_default_configuration = <1>;
+				boot_reset_low_delay_ms = <5>;
+				boot_reset_hi_delay_ms = <5>;
+			};
+			novat {
+				use_default_configuration = <1>;
+				boot_reset_low_delay_ms = <5>;
+				boot_reset_hi_delay_ms = <5>;
+			};
+		};
+	};
+};

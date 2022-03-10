@@ -1,0 +1,102 @@
+/dts-v1/;
+/plugin/;
+
+#include "../common/common.dtsi"
+#include "huawei-nfc.dtsi"
+#include "huawei_camera.dtsi"
+#include "huawei_wifi.dtsi"
+#include "huawei_dp.dtsi"
+#include "huawei_audio.dtsi"
+#include "huawei-bt.dtsi"
+/ {
+    /* bsp_replace_info @ model = "Huawei Technologies, Inc. %product_name%"; */
+    model = "Huawei Technologies, Inc. JAD-AL00";
+    compatible = "qcom,lahaina-qrd", "qcom,lahaina", "qcom,qrd";
+    /* bsp_replace_info @ qcom,board-id = <%boardid% 0>; */
+    qcom,board-id = <8350 0>;
+};
+
+&rootparam {
+    /* bsp_replace_info @ qcom,boardid = <%boardid_split%>; */
+    /* auto_key_info @ name: boardid type: uint32 default: 0 */
+    qcom,boardid = <8 3 5 0>;
+    /* bsp_replace_info @ qcom,board_name = "%board_name%"; */
+    qcom,board_name = "JAD_AL00_VA";
+    /* bsp_replace_info @ qcom,product_name = "%product_name%"; */
+    qcom,product_name = "JAD_HWID832";
+    /* bsp_replace_info @ hardware_version = "%hardware_version%"; */
+    hardware_version = "HL0JADEM";
+    /* bsp_replace_info @ huawei,modem_id = <%modem_id% 0x0>; */
+    huawei,modem_id = <0000 0>;
+};
+
+&tlmm {
+	rt9426_irq_pins_default {
+		mux {
+			pins = "gpio67";
+			function = "gpio";
+		};
+		config {
+			pins = "gpio67";
+			drive-strength = <2>;
+			bias-pull-up;
+		};
+	};
+};
+
+&qupv3_se0_i2c {
+	rt9426_battery@55 {
+		rt9426,gpio-intb = <&tlmm 67 0>;
+	};
+};
+
+&qupv3_se9_i2c {
+	status = "disabled";
+
+	bq25970@65 {
+		status = "disabled";
+	};
+
+	hi6526_charger@6B {
+		status = "disabled";
+	};
+};
+
+&qupv3_se13_i2c {
+	bq25970@65 {
+		status = "ok";
+	};
+
+	hi6526_charger@6B {
+		status = "ok";
+	};
+};
+
+&usb_short_circuit_protect {
+	status = "disabled";
+};
+
+&direct_charger {
+	min_dc_bat_vol = <3250>;
+};
+
+&direct_charger_sc {
+	min_dc_bat_vol = <3250>;
+};
+
+&direct_charge_ic {
+	vbat_en_gpio_output_value = <1>;
+};
+
+&huawei_pd {
+	src_vconn = <2>; /* 5v-boost */
+	src_vbus = <3>; /* pmic */
+};
+
+&ovp_channel_switch {
+	gpios = <&tlmm 79 0 &tlmm 37 0>;
+	gpio_types = "buck_gpio_en", "sc_gpio_en";
+	gpio_en_status = <0 0>;
+	gpio_restraints = "null", "buck_gpio_en";
+	status = "ok";
+};

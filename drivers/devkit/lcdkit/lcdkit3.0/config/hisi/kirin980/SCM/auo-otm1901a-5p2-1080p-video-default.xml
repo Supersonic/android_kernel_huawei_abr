@@ -1,0 +1,9 @@
+<hwlcd>
+	<PanelEntry>
+	<PanelCompatible>"scm_auo_otm1901a_5p2_1080p_video_default"</PanelCompatible>
+	<PanelXres>1600</PanelXres>
+	<PanelYres>2560</PanelYres>
+	<LcdVsp>"2, 195, 5500000"</LcdVsp>
+	<LcdVsn>"2, 222, 5500000"</LcdVsn>
+	</PanelEntry>
+</hwlcd>

@@ -1,0 +1,1 @@
+obj-y += bootdevice.o proc_boot.o

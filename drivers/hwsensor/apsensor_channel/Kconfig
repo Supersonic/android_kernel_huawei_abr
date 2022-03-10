@@ -1,0 +1,73 @@
+#
+# FLP driver configuration
+#
+
+menu "SMART FLP configuration"
+
+config SMART_SOFTTIMER
+	bool "SMART SOFTTIMER support"
+	default y
+	help
+	  Enable support for softtimer driver
+
+config SMART_FLP
+	bool "SMART FLP support"
+	default y
+	help
+	  Enable support for FLP driver
+
+config SMART_FLP_GEOFENCE
+	bool "SMART FLP GEOFENCE support"
+	default y
+	help
+	  Enable support for GEOFENCE driver
+
+config SMART_FLP_CELLFENCE
+	bool "SMART FLP CELLFENCE support"
+	default y
+	help
+	  Enable support for CELLFENCE driver
+
+config SMART_FLP_WIFIFENCE
+	bool "SMART_FLP_WIFIFENCE support"
+	default y
+	help
+	  Enable support for WIFIFENCE driver
+
+config SMART_FLP_BATCHING
+	bool "SMART_FLP_BATCHING support"
+	default y
+	help
+	  Enable support for BATCHING driver
+
+config SMART_FLP_DIAG
+	bool "SMART_FLP_DIAG support"
+	default y
+	help
+	  Enable support for DIAG driver
+
+config SMART_AR
+	bool "SMART AR support"
+	default n
+	help
+	  Enable support for AR driver
+
+config CONTEXTHUB_UNIFORM_INTERVAL
+	bool "SMART CONTEXTHUB_UNIFORM_INTERVAL support"
+	default n
+	help
+	  Enable support for CONTEXTHUB_UNIFORM_INTERVAL driver
+
+config SMART_TIMER_V500
+	bool "SMART TIMER V500 support"
+	default n
+	help
+	  Enable support for timer driver of v500
+endmenu
+
+menuconfig HUAWEI_SENSOR
+    bool "Huawei sensors info"
+    default n
+    help
+      Say yes if you want device detect driver.
+      This is for device connected version. If unsure, say N here.

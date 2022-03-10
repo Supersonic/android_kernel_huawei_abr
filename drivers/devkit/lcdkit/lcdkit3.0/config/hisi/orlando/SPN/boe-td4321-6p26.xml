@@ -1,0 +1,193 @@
+<hwlcd>
+	<PanelEntry>
+		<!-- Panel Command information -->
+		<PanelOnCommand>"0x29, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x02, 0xB0, 0x00
+		0x29, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x02, 0xC6, 0x00
+		0x29, 0x01, 0x00, 0x00, 0x0D, 0x00, 0x05, 0xDD, 0x31, 0x06, 0x0D, 0x61
+		0x29, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x02, 0xB0, 0x03
+		0x05, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x02, 0x29, 0x00
+		0x05, 0x01, 0x00, 0x00, 0x0a, 0x01, 0x02, 0x11, 0x00"</PanelOnCommand>
+		<!--Ldi config start-->
+		<!--HBP setting-->
+		<HBackPorch>36</HBackPorch>
+		<!--HFP setting-->
+		<HFrontPorch>196</HFrontPorch>
+		<!--HS setting-->
+		<HPulseWidth>16</HPulseWidth>
+		<!--VBP setting-->
+		<VBackPorch>60</VBackPorch>
+		<!--VFP setting-->
+		<VFrontPorch>4</VFrontPorch>
+		<!--VS setting-->
+		<VPulseWidth>4</VPulseWidth>
+		<!--Panel information config start-->
+		<!--Panel Model-->
+		<PanelModel>"SAIP_130 102 0 6.26' 2340 x 1080"</PanelModel>
+		<!--Panel type:8-video mode, 16-command mode-->
+		<PanelCmdType>8</PanelCmdType>
+		<!--Pixel clock-->
+		<PanelPxlClk>192</PanelPxlClk>
+		<!--Pixel clock division ratio-->
+		<PanelPxlClkDiv>1</PanelPxlClkDiv>
+		<!--Ifbc type:0-none, 1-orise2x, 2-orise3x, 3-himax2x,
+		4-rsp2x, 5-rsp3x, 6-vesa2x single, 7-vesa3x single
+		8-vesa2x dual, 9-vesa3x dual, 10-vesa3.75x dual-->
+		<PanelIfbcType>0</PanelIfbcType>
+		<!--DSS low power setting:0-close(video mode), 7-open(command mode)-->
+		<PanelVsynCtrType>0</PanelVsynCtrType>
+		<!--Pt station test support-->
+		<PanelPtTestSupport>1</PanelPtTestSupport>
+		<!--Panel display effect support-->
+		<PanelDisplayOnEffectSupport>0</PanelDisplayOnEffectSupport>
+		<!--Ldo check test-->
+		<LdoCheckSupport>1</LdoCheckSupport>
+		<LdoCheckName>"ldo4"</LdoCheckName>
+		<LdoCheckChannel>2</LdoCheckChannel>
+		<LdoCheckThreshold>250</LdoCheckThreshold>
+		<!--Panel quickly sleep out support-->
+		<PanelQuicklySleepOutSupport>1</PanelQuicklySleepOutSupport>
+		<PanelQuicklySleepOutInterval>62</PanelQuicklySleepOutInterval>
+		<!--Project id -->
+		<PanelProjectIdSupport>1</PanelProjectIdSupport>
+		<PanelDefaultTpProjectId>"B14691130"</PanelDefaultTpProjectId>
+		<!--Dot/column inversion test support-->
+		<PanelInversionSupport>1</PanelInversionSupport>
+		<!-- mipi check -->
+		<PanelMipiCheckSupport>1</PanelMipiCheckSupport>
+		<!--Oem info-->
+		<OemInfoSupport>1</OemInfoSupport>
+		<OemBarcode2DSupport>1</OemBarcode2DSupport>
+		<OemBarcode2DBlockNum>3</OemBarcode2DBlockNum>
+		<PanelBrightnessColorUniformSupport>0</PanelBrightnessColorUniformSupport>
+		<!--rgbw support-->
+		<PanelRgbwSupport>0</PanelRgbwSupport>
+		<!--Esd enable-->
+		<PanelEsdSupport>1</PanelEsdSupport>
+		<PanelFacEsdSupport>1</PanelFacEsdSupport>
+		<!--Local region update support-->
+		<PanelDirtyRegionSupport>0</PanelDirtyRegionSupport>
+		<!--bl type:1-none, 2-pwm, 4-blpwm, 8-mipi, 16-sh blpwm-->
+		<PanelBlType>4</PanelBlType>
+		<!--bl ic type:1-reg only, 2-pwm only, 3-muti-ramp, 4-ramp-muti, 6-i2c only, 7-blpwm-cabc-->
+		<PanelBlIcCtrlType>6</PanelBlIcCtrlType>
+		<!--bl max nit-->
+		<PanelBlMaxnit>500</PanelBlMaxnit>
+		<!-- 0:TP flash  1:DDIC -->
+		<PanelGetBlMaxNitType>1</PanelGetBlMaxNitType>
+		<!--bl min brightness setting-->
+		<PanelBlmin>25</PanelBlmin>
+		<!--bl max brightness setting-->
+		<PanelBlmax>7350</PanelBlmax>
+		<!--bl default brightness setting-->
+		<PanelBlDef>4000</PanelBlDef>
+		<!--blpwm PreciType setting-->
+		<PanelBlPwmPreciType>1</PanelBlPwmPreciType>
+		<!--blpwm intput disable, used for AP-cabc-->
+		<BlPwmInputDisable>1</BlPwmInputDisable>
+		<!--Panel Check Reg Support-->
+		<PanelCheckRegSupport>0</PanelCheckRegSupport>
+		<!--Bl Ic Ctrl Type: 1-REG_ONLY_MODE, 2-PWM_ONLY_MODE, 3-MUTI_THEN_RAMP_MODE, 4-RAMP_THEN_MUTI_MODE, 6-I2C_ONLY_MODE-->
+		<!--Bl Ic Ctrl Type: 7-BLPWM_AND_CABC_MODE, 8-COMMON_IC_MODE, 9-AMOLED_NO_BL_IC_MODE, 10-BLPWM_MODE-->
+		<PanelBlIcCtrlType>6</PanelBlIcCtrlType>
+		<!--Mipi lane number:c-phy:0-1port, 1-2port, 2-3port d-phy:0-1lane, 1-2lane, 2-3lane, 3-4lane-->
+		<MipiLaneNums>3</MipiLaneNums>
+		<!--Mipi clk dynamic update support-->
+		<MipiDsiUptSupport>1</MipiDsiUptSupport>
+		<!--Mipi dsi default clock-->
+		<MipiDsiBitClk>552</MipiDsiBitClk>
+		<!--Mipi burst mode:0-non burst sync pulse, 1-non burst sync event, 2-burst sync pulse1, 3-burst sync pulse2-->
+		<MipiBurstMode>2</MipiBurstMode>
+		<!--Mipi non continue enable:0-continue mode, 1-non continue mode-->
+		<MipiNonContinueEnable>0</MipiNonContinueEnable>
+		<!--Mipi lp11:0-None, 1-little lp11, 2-no lp11-->
+		<MipiLp11Flag>1</MipiLp11Flag>
+		<!--Mipi dynamic clk_1-->
+		<MipiDsiBitClkValA>562</MipiDsiBitClkValA>
+		<!--Mipi dynamic clk_2-->
+		<MipiDsiBitClkValB>552</MipiDsiBitClkValB>
+		<!--Mipi phy mode:0-D-phy, 1-C-phy-->
+		<MipiPhyMode>0</MipiPhyMode>
+		<!--Mipi clk post adjust-->
+		<MipiClkPostAdjust>0</MipiClkPostAdjust>
+		<!--event send
+		event, data, delay
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI, 7-TS early-event, 8-TS later-event, 9-vdd 11-set_bias
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<!--Power on timming-->
+		<PowerOnStage>"2, 1, 0
+				11, 1, 5"</PowerOnStage>
+		<LPOnStage>"0, 0, 2
+				3, 1, 5
+				4, 1, 5
+				7, 1, 2
+				5, 1, 22
+				8, 1, 0
+				0, 0, 10
+				6, 1, 0"</LPOnStage>
+		<HSOnStage>"0, 0, 0"</HSOnStage>
+
+		<!--Power off timming-->
+		<HSOffStage>"6, 0, 0
+				7, 0, 5
+				8, 0, 0"</HSOffStage>
+		<LPOffStage>"0, 0, 0"</LPOffStage>
+		<PowerOffStage>"0, 0, 5
+				5, 0, 0
+				11, 0, 5
+				4, 0, 5
+				3, 0, 5
+				2, 0, 10"</PowerOffStage>
+		<!--Power timming config end-->
+		<!--Tp color support-->
+		<TpColorSupport>1</TpColorSupport>
+		<!--Backlight max nit-->
+		<!--Power timming config start-->
+		<!--event define
+		mode, number, amplitude
+		mode:0-none, 1-regulator, 2-gpio
+		number:gpio num or ldo num
+		amplitude:3100000-3.1v, 1850000-1.85v, 5500000-5.5v
+		-->
+		<LcdIovcc>"1, 4, 1850000"</LcdIovcc>
+		<LcdVsp>"2, 234, 5500000"</LcdVsp>
+		<LcdVsn>"2, 235, 5500000"</LcdVsn>
+		<PowerDownVsp>"2, 234, 4700000"</PowerDownVsp>
+		<PowerDownVsn>"2, 235, 4700000"</PowerDownVsn>
+		<LcdReset>"2, 29, 0"</LcdReset>
+		<TpReset>"2, 228, 0"</TpReset>
+		<LcdTe0>"2, 3, 0"</LcdTe0>
+		<!--event send-->
+		<!--Effect config start-->
+		<!--Cabc support-->
+		<PanelCabcSupport>0</PanelCabcSupport>
+		<!--Gamma support-->
+		<GammaSupport>1</GammaSupport>
+		<!--Gmp support-->
+		<GmpSupport>1</GmpSupport>
+		<!--Gamma calibration support-->
+		<PanelDynamicGammaSupport>0</PanelDynamicGammaSupport>
+		<!--ComformMode support-->
+		<ComformModeSupport>1</ComformModeSupport>
+		<!--Color temperature support-->
+		<ColorTempSupport>1</ColorTempSupport>
+		<!--for hiace parameter-->
+		<HiaceSupport>1</HiaceSupport>
+		<IGlobalHistBlackPos>16</IGlobalHistBlackPos>
+		<IGlobalHistWhitePos>240</IGlobalHistWhitePos>
+		<IGlobalHistBlackWeight>51</IGlobalHistBlackWeight>
+		<IGlobalHistWhiteWeight>51</IGlobalHistWhiteWeight>
+		<IGlobalHistZeroCutRatio>486</IGlobalHistZeroCutRatio>
+		<IGlobalHistSlopeCutRatio>410</IGlobalHistSlopeCutRatio>
+		<IMaxLcdLuminance>500</IMaxLcdLuminance>
+		<IMinLcdLuminance>3</IMinLcdLuminance>
+		<CfgName>"/product/etc/display/effect/algorithm/hdr_engine.xml"</CfgName>
+		<!--Xcc support-->
+		<XccSupport>1</XccSupport>
+		<Arsr1pSharpnessSupport>0</Arsr1pSharpnessSupport>
+		<!--prefix 2D sharpness support-->
+		<PrefixSharpTwoDSupport>1</PrefixSharpTwoDSupport>
+		<!--Effect config end-->
+	</PanelEntry>
+</hwlcd>

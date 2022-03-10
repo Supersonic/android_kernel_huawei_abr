@@ -1,0 +1,39 @@
+<hwlcd>
+<PanelEntry>
+	<PanelCompatible>"190_d00_6p59"</PanelCompatible>
+	<PanelName>"190_D00 6.59' VIDEO 720 x 1600"</PanelName>
+	<!--lcdtype: amoled_2, lcd_1-->
+	<PanelType>0x01</PanelType>
+	<PanelXres>720</PanelXres>
+	<PanelYres>1600</PanelYres>
+	<PanelWidth>68</PanelWidth>
+	<PanelHeight>152</PanelHeight>
+
+	<!-- Panel Command information -->
+	<PanelOnCommand>"0x05, 0x01, 0x00, 0x00, 0x78, 0x01, 0x01, 0x11
+			0x05, 0x01, 0x00, 0x00, 0x28, 0x01, 0x01, 0x29"</PanelOnCommand>
+
+	<PanelOffCommand>"0x05, 0x01, 0x00, 0x00, 0x14, 0x01, 0x01, 0x28
+			0x05, 0x01, 0x00, 0x00, 0x64, 0x01, 0x01, 0x10"</PanelOffCommand>
+
+	<!-- for esd check -->
+	<PanelEsdRegCommand>"0x06, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x01, 0x0a"</PanelEsdRegCommand>
+	<PanelEsdValue>"0x9c"</PanelEsdValue>
+	<PanelEsdRegCommandState>0</PanelEsdRegCommandState>
+
+	<!-- for mipi tr check -->
+	<PanelCheckRegCommand>"0x06, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x01, 0x0a"</PanelCheckRegCommand>
+	<PanelCheckRegValue>"0x9c"</PanelCheckRegValue>
+	<PanelCheckRegCommandState>0</PanelCheckRegCommandState>
+
+	<!-- 2d barcode support -->
+
+	<!-- host projectid support -->
+
+	<!-- for inversion -->
+	<PanelDotInversionCommand>"0x15, 0x01, 0x00, 0x00, 0x00, 0x00, 0x02, 0xc4, 0x80"</PanelDotInversionCommand>
+	<PanelDotInversionCommandState>0</PanelDotInversionCommandState>
+	<PanelColumnInversionCommand>"0x15, 0x01, 0x00, 0x00, 0x00, 0x00, 0x02, 0xc4, 0x84"</PanelColumnInversionCommand>
+	<PanelColumnInversionCommandState>0</PanelColumnInversionCommandState>
+</PanelEntry>
+</hwlcd>

@@ -1,0 +1,14 @@
+<hwlcd>
+	<PanelEntry>
+	<PanelCompatible>"auo_otm1901a_5p2_1080p_video_default"</PanelCompatible>
+	<!--bl type:1-none, 2-pwm, 4-blpwm, 8-mipi, 16-sh blpwm-->
+	<PanelBlType>4</PanelBlType>
+	<!--bl ic type:1-reg only, 2-pwm only, 3-muti-ramp, 4-ramp-muti, 6-i2c only, 7-blpwm-cabc-->
+	<PanelBlIcCtrlType>7</PanelBlIcCtrlType>
+	<BlPwmOutDiv>10</BlPwmOutDiv>
+	<PanelXres>1200</PanelXres>
+	<PanelYres>2000</PanelYres>
+	<LcdVsp>"2, 36, 6000000"</LcdVsp>
+	<LcdVsn>"2, 37, 6000000"</LcdVsn>
+	</PanelEntry>
+</hwlcd>

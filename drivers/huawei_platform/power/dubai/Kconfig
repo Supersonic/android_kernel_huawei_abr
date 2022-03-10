@@ -1,0 +1,9 @@
+config HUAWEI_DUBAI_GPU_STATS
+	bool "Dubai gpu frequency stats"
+	default n
+	depends on HUAWEI_DUBAI && HUAWEI_GPU_OPP_STATS
+
+config HUAWEI_DUBAI_DDR_STATS
+	bool "Dubai ddr stats"
+	default n
+	depends on HUAWEI_DUBAI

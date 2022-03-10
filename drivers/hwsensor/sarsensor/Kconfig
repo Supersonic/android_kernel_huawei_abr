@@ -1,0 +1,6 @@
+config HUAWEI_SAR_SENSOR_ABOV
+        tristate "Support for sar sensor A96T356"
+        depends on HUAWEI_SAR_SENSOR
+        default n
+        help
+          Say Y to enable support A96T356 sar sensor

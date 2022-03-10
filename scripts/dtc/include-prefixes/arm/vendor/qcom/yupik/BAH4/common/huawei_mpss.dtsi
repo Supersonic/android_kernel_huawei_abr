@@ -1,0 +1,4 @@
+&huawei_disable_mpss{
+        compatible = "huawei,hw_disable_mpss";
+        status = "ok";
+};

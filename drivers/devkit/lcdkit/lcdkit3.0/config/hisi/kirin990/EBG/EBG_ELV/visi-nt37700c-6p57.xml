@@ -1,0 +1,8 @@
+<hwlcd>
+	<PanelEntry>
+	<!--prefix 2D sharpness support-->
+	<PrefixSharpTwoDSupport>1</PrefixSharpTwoDSupport>
+	<MaskDelayTimeBeforeFp>0</MaskDelayTimeBeforeFp>
+	<MaskDelayTimeAfterFp>0</MaskDelayTimeAfterFp>
+	</PanelEntry>
+</hwlcd>

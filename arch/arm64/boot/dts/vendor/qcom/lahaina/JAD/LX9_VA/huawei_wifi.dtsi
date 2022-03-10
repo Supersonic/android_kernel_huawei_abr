@@ -1,0 +1,7 @@
+&huawei_wifi_info{
+    compatible = "huawei,hw_wifi_info";
+    status = "ok";
+    wifi,pubfile_id = "jade_lx9_va";
+    wifi,chiptype = "WIFI_QUALCOMM_WCN6851";
+    wifi,ini_type = "jad_lx9";
+};

@@ -1,0 +1,3 @@
+&lahaina_snd {
+	qcom,headphone_low_power_supported = <0>;
+};

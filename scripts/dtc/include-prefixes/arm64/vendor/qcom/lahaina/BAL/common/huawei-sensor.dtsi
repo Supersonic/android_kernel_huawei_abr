@@ -1,0 +1,121 @@
+&qupv3_se0_i2c {
+	status = "ok";
+	aw869xx_haptic@5A {
+		compatible = "awinic,awinic_haptic";
+		reg = < 0x5A >;
+		reset-gpio = <&tlmm 93 0>;
+		irq-gpio = <&tlmm 90 0>;
+		vib_mode = < 0 >; /* mode: RAM mode->0; CONT mode->1 */
+		vib_f0_ref = < 1700 >;
+		vib_f0_cali_percent = < 7 >;
+		vib_cont_drv1_lvl = < 0x7F >;
+		vib_cont_drv2_lvl = < 0x36 >;
+		vib_cont_brk_time = < 0x06 >;
+		vib_cont_tset = < 0x06 >;
+		vib_cont_bemf_set = < 0x02 >;
+		vib_cont_drv_width = < 0x6A >;
+		vib_cont_wait_num = < 0x06 >;
+		vib_cont_bst_brk_gain = < 0x05 >;
+		vib_cont_brk_gain = < 0x08 >;
+		vib_cont_drv1_time = < 0x04 >;
+		vib_cont_drv2_time = < 0x22 >;
+		vib_cont_track_margin = < 0x12 >;
+		vib_sine_array = < 0x05 0xB2 0xFF 0xEF >;
+		vib_d2s_gain = < 0x04 >;
+		vib_bstcfg = < 0x20 0x24 0x9A 0x40 0x11 >;
+		vib_prctmode = < 0x2D 0x3E 0x3F >;
+		vib_trig_config = < 1 0 1 1 1 2 0 0
+							1 0 0 1 0 2 0 0
+							1 0 0 1 0 2 0 0 >;
+		vib_is_enabled_auto_bst;
+		vib_is_enabled_i2s;
+		vib_is_enabled_powerup_f0_cali;
+		status = "okay";
+	};
+	haptic_hv@5B {
+		compatible = "awinic,haptic_hv";
+		reg = < 0x5B>;
+		reset-gpio = <&tlmm 93 0>;
+		irq-gpio = <&tlmm 90 0>;
+		i2c_real_addr = <0x5A>;
+		f0_pre = < 1700 >;
+		mode = /bits/ 8 < 0 >;
+		f0_cali_percent = /bits/ 8 < 7 >;
+		boost_power_on = < 1 >;
+		boost_fw = <0>;	/* power: hardware->0; software->1 */
+		bst_enable = <1>;	/* bst enable: unable->0; enable->1 */
+/*************************86927************************/
+		aw8692x_max_bst_vol = /bits/ 8 < 0x7F >;
+		aw8692x_cont_drv1_lvl = /bits/ 8 < 0xF3 >;
+		aw8692x_cont_drv2_lvl = /bits/ 8 < 0x32 >;
+		aw8692x_cont_drv1_time = /bits/ 8 < 0x04 >;
+		aw8692x_cont_drv2_time = /bits/ 8 < 0x06 >;
+		aw8692x_cont_drv_width = /bits/ 8 < 0x6A >;
+		aw8692x_cont_wait_num = /bits/ 8 < 0x06 >;
+		aw8692x_cont_brk_time = /bits/ 8 < 0x08 >;
+		aw8692x_cont_track_margin = /bits/ 8 < 0x0C >;
+		aw8692x_brk_bst_md = /bits/ 8 < 0 >;
+		aw8692x_cont_tset = /bits/ 8 < 0x06 >;
+		aw8692x_cont_bemf_set = /bits/ 8 < 0x02 >;
+		aw8692x_cont_bst_brk_gain = /bits/ 8 < 0x05 >;
+		aw8692x_cont_brk_gain = /bits/ 8 < 0x08 >;
+		aw8692x_duration_time = /bits/ 8 < 20 30 60 >;
+		aw8692x_d2s_gain = /bits/ 8 < 0x04 >;
+		aw8692x_trig_config = /bits/ 8 < 0 0 0 1 0 2 0 0
+						 0 0 0 1 0 2 0 0
+						 0 0 0 1 0 2 0 0 >;
+		aw8692x_bst_vol_default = /bits/ 8 < 0x58 >;
+		aw8692x_bst_vol_ram = /bits/ 8 < 0x50 >;
+		aw8692x_bst_vol_rtp = /bits/ 8 < 0x50 >;
+		/* aw8692x_is_enabled_auto_bst; */
+		/* aw8692x_is_enabled_one_wire; */
+		status = "okay";
+	};
+	ams_as7341@39 {
+		compatible = "ams,as7341";
+		reg = <0x39>;
+		flicker_support = <1>;
+		algo_support = <1>;
+		status = "ok";
+	};
+};
+&tlmm {
+	ak8789_default: ak8789_default {
+		mux {
+			pins = "gpio80","gpio51";
+			function =  "gpio";
+		};
+		config {
+			pins = "gpio80","gpio51";
+			drive-strength = <2>;
+			bias-pull-up;
+		};
+	};
+};
+&huawei_hall_sensor {
+	compatible = "huawei,hall-ak8789";
+	status = "ok";
+	pinctrl-names = "default";
+	pinctrl-0 = <&ak8789_default>;
+	ext_hall_type = <6>;
+	ext_bit2_comp_val = <1>;
+	ext_bit1_comp_val = <0>;
+	is_support_ext_hall_notify = <1>;
+	ext_hall_boot_up_notify = <1>;
+	hall_int_delay = <0>;
+	huawei,hall_0 {
+		huawei,single-n-pole = <&tlmm 80 0>;
+		huawei,single-s-pole = <&tlmm 51 0>;
+		huawei,id = <0>;
+		huawei,type = <0x03>;
+		huawei,wakeup-flag = <0x4000>;
+		huawei,default-state = "on";
+	};
+};
+
+&hw_sensor_info {
+       compatible = "huawei,sensor_info";
+       is_support_poweroff_charge_fold_notify = <1>;
+       ps_laser_prox_available = <1>;
+       status = "ok";
+};

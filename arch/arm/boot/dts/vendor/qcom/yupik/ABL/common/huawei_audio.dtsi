@@ -1,0 +1,20 @@
+&huawei_audio_info {
+	product_identifier = "RNA";
+	hardware_info {
+		get_ec_in_hal = "true";
+		voip_ap_algo_enable = "true";
+		voip_scene_support = "true";
+		multi_mic_enable = "true";
+		backmic_record_enable = "true";
+	};
+};
+
+&audio_hw_config {
+	asr_enable = "true";
+	ultrasonic_info {
+		support_ultrasonic = "true";
+	};
+	audio_capability {
+		spk_rcv_concurrent = "true";
+	};
+};

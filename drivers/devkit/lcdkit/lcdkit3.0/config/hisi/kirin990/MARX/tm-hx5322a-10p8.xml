@@ -1,0 +1,159 @@
+<hwlcd>
+	<PanelEntry>
+		<MipiDsiUptSupport>1</MipiDsiUptSupport>
+		<MipiDsiBitClk>500</MipiDsiBitClk>
+		<MipiDsiBitClkValA>480</MipiDsiBitClkValA>
+		<MipiDsiBitClkValB>500</MipiDsiBitClkValB>
+		<MipiDsiBitClkValC>0</MipiDsiBitClkValC>
+		<MipiDsiBitClkValD>0</MipiDsiBitClkValD>
+		<MipiDsiBitClkValE>0</MipiDsiBitClkValE>
+
+		<!--Kirin 990 Mipi porch config begin-->
+		<!--Kirin 990 Mipi Dsi Timing Support -->
+		<MipiDsiTimingSupport>1</MipiDsiTimingSupport>
+		<!--Mipi Horizontal sync area -->
+		<MipiHSyncArea>32</MipiHSyncArea>
+		<!--Mipi Horizontal back porch -->
+		<MipiHBackPorch>63</MipiHBackPorch>
+		<!--Mipi Horizontal line time -->
+		<MipiHLineTime>780</MipiHLineTime>
+		<!--Mipi Dpi horizontal size -->
+		<MipiDpiHSize>620</MipiDpiHSize>
+		<!--Mipi Vertical sync area -->
+		<MipiVSyncArea>80</MipiVSyncArea>
+		<!--Mipi Vertical back porch -->
+		<MipiVBackPorch>16</MipiVBackPorch>
+		<!--Mipi Vertical front porch -->
+		<MipiVFrontPorch>16</MipiVFrontPorch>
+		<!--Kirin 990 Mipi porch config end-->
+		<PanelPxlClk>320</PanelPxlClk>
+		<!--Pixel clock division ratio-->
+		<PanelPxlClkDiv>2</PanelPxlClkDiv>
+		<!--Mipi vcm adjust:data&clk hs amplitude-->
+		<MipiRgVcmAdjust>57</MipiRgVcmAdjust>
+
+		<MipiNonContinueEnable>1</MipiNonContinueEnable>
+
+		<PanelVsynCtrType>0</PanelVsynCtrType>
+		<MipiBurstMode>2</MipiBurstMode>
+		<LdiDpi01SetChange>0</LdiDpi01SetChange>
+		<LdiPipeClkRatePreSet>640</LdiPipeClkRatePreSet>
+		<LdiDivPreSet>2</LdiDivPreSet>
+		<PanelLvDetectSupport>0</PanelLvDetectSupport>
+		<PanelCurrentDetectSupport>0</PanelCurrentDetectSupport>
+		<PanelFpsUpdtSupport>0</PanelFpsUpdtSupport>
+		<PanelChecksumSupport>0</PanelChecksumSupport>
+
+		<PanelBlmin>35</PanelBlmin>
+		<PanelBlmax>3560</PanelBlmax>
+		<PanelBlDef>1638</PanelBlDef>
+		<PanelCmdType>32</PanelCmdType>
+
+		<PanelBlType>4</PanelBlType>
+		<PanelBlIcCtrlType>7</PanelBlIcCtrlType>
+		<PanelBlPwmPreciType>3</PanelBlPwmPreciType>
+		<BlPwmOutDiv>10</BlPwmOutDiv>
+
+		<TpColorSupport>1</TpColorSupport>
+		<PanelCabcSupport>0</PanelCabcSupport>
+		<!--blpwm intput disable, used for AP-cabc-->
+		<BlPwmInputDisable>1</BlPwmInputDisable>
+		<PanelCheckRegSupport>0</PanelCheckRegSupport>
+		<PanelDisplayRegionSupport>0</PanelDisplayRegionSupport>
+		<PanelPtTestSupport>0</PanelPtTestSupport>
+		<PanelMipiDetectSupport>0</PanelMipiDetectSupport>
+		<PanelHkadcSupport>0</PanelHkadcSupport>
+		<PanelChecksumSupport>0</PanelChecksumSupport>
+		<PanelFpsFuncSwitch>0</PanelFpsFuncSwitch>
+		<PanelFpsUpdtOnly>0</PanelFpsUpdtOnly>
+		<PanelFpsUpdtSupport>0</PanelFpsUpdtSupport>
+		<PanelSndCmdBeforeFrameSupport>0</PanelSndCmdBeforeFrameSupport>
+		<PanelEsdSupport>1</PanelEsdSupport>
+		<PanelChipEsdDisable>1</PanelChipEsdDisable>
+		<PanelCheckRegOnSupport>1</PanelCheckRegOnSupport>
+		<PanelDsi1SndCmdPanelSupport>1</PanelDsi1SndCmdPanelSupport>
+		<IdPinReadSupport>0</IdPinReadSupport>
+		<SblSupport>0</SblSupport>
+
+		<!-- Panel dirty region Information -->
+		<!--dynamic gamma support-->
+		<PanelDynamicGammaSupport>0</PanelDynamicGammaSupport>
+
+		<BiasPowerCtrlMode>2</BiasPowerCtrlMode>
+		<LcdType>0</LcdType>
+
+		<!--event send
+		event, data, delay
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI, 7-TS early-event, 8-TS later-event, 9-vdd, 10-AOD, 11-bias
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<PowerOnStage>"2, 1, 0
+				9, 1, 5
+				11, 1, 0
+				3, 1, 2
+				4, 1, 5"</PowerOnStage>
+		<LPOnStage>"7, 1, 5
+				5, 1, 2
+				5, 0, 2
+				5, 1, 45
+				6, 1, 0"</LPOnStage>
+		<HSOnStage>"8, 1, 0"</HSOnStage>
+		<HSOffStage>"7, 0, 0
+				6, 0, 0
+				8, 0, 0"</HSOffStage>
+		<LPOffStage>"0, 0, 0"</LPOffStage>
+		<PowerOffStage>"5, 0, 2
+				11, 0, 2
+				4, 0, 2
+				3, 0, 2
+				9, 0, 0
+				2, 0, 0"</PowerOffStage>
+		<!--event define
+		mode, number, amplitude
+		mode:0-none, 1-regulator, 2-gpio
+		number:gpio num or ldo num
+		amplitude:3100000-3.1v, 1850000-1.85v, 5500000-5.5v
+		-->
+		<LcdVci>"2, 0, 0"</LcdVci>
+		<LcdIovcc>"1, 4, 1850000"</LcdIovcc>
+		<LcdVdd>"1, 29, 1295000"</LcdVdd>
+		<LcdVsp>"2, 202, 5500000"</LcdVsp>
+		<LcdVsn>"2, 203, 5500000"</LcdVsn>
+		<PowerDownVsp>"2, 202, 4700000"</PowerDownVsp>
+		<PowerDownVsn>"2, 203, 4700000"</PowerDownVsn>
+		<LcdReset>"2, 286, 0"</LcdReset>
+		<TpReset>"2, 0, 0"</TpReset>
+		<LcdTe0>"2, 0, 0"</LcdTe0>
+		<LcdBacklight>"2, 27, 0"</LcdBacklight>
+		<VddRegulator>ldo29</VddRegulator>
+		<!--event send-->
+
+		<GammaSupport>1</GammaSupport>
+		<CeSupport>0</CeSupport>
+		<DoesLcdPowerOnTp>0</DoesLcdPowerOnTp>
+		<PanelDisplayOnEffectSupport>0</PanelDisplayOnEffectSupport>
+		<SmartColorModeSupport>0</SmartColorModeSupport>
+		<GmpSupport>1</GmpSupport>
+		<ColormodeSupport>0</ColormodeSupport>
+		<ColorTempSupport>1</ColorTempSupport>
+		<ColorTempRectifySupport>0</ColorTempRectifySupport>
+		<XccSupport>1</XccSupport>
+		<!--Post Xcc support-->
+		<PostXccSupport>1</PostXccSupport>
+		<ComformModeSupport>1</ComformModeSupport>
+		<CinemaModeSupport>0</CinemaModeSupport>
+		<HiaceSupport>1</HiaceSupport>
+		<PanelEffectSupport>0</PanelEffectSupport>
+		<PrefixCeSupport>0</PrefixCeSupport>
+		<Arsr1pSharpnessSupport>1</Arsr1pSharpnessSupport>
+		<PrefixSharpOneDSupport>0</PrefixSharpOneDSupport>
+		<PrefixSharpTwoDSupport>1</PrefixSharpTwoDSupport>
+		<!--hdr flw support-->
+		<HdrFlwSupport>1</HdrFlwSupport>
+		<!--ScalingRatioThreshold HD FHD-->
+		<ScalingRatioThreshold>70</ScalingRatioThreshold>
+		<!--Effect config end-->
+	</PanelEntry>
+</hwlcd>
+

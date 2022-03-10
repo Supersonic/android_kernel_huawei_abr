@@ -1,0 +1,30 @@
+&soc {
+	huawei_fingerprint {
+		compatible = "fpc,fingerprint";
+		fingerprint,reset_gpio = <&tlmm 35 0>;
+		avdd-supply = <&pm8350c_l9>;
+		fingerprint,avdd = "avdd";
+		fingerprint,avdd-min-uv = <3300000>;
+		fingerprint,avdd-max-uv = <3300000>;
+		fingerprint,navigation_adjust1 = <0>;
+		fingerprint,navigation_adjust2 = <90>;
+		fingerprint,custom_timing_scheme = <2>; /* 1:vdd->1ms->rst/cs; 2:vdd->10ms->rst/cs; 3:vdd->10ms->cs->600us->rst; 4:vdd->rst1/cs1/rst/cs0 */
+		fingerprint,poweroff_scheme = <1>; /* 1:close ldo ;2:close loadswitch(gpio) */
+		fingerprint,use_tp_irq = <1>; /* 0:using self irq pin; 1:use tp irq pin */
+		status = "ok";
+	};
+};
+
+&fingerprint {
+	spi-max-frequency = <5000000>;
+	fingerprint,product = "nottingham";
+	fingerprint,force_storage_type = <1>;
+	fingerprint,sensor_type = <516>;
+
+	fingerprint,top_left_corner_x = <421>; /* only for UD */
+	fingerprint,top_left_corner_y = <870>; /* only for UD */
+	fingerprint,bottom_right_corner_x = <593>; /* only for UD */
+	fingerprint,bottom_right_corner_y = <949>; /* only for UD */
+	fingerprint,tp_hover_support = <0>;
+	fingerprint,radius = <93>;
+};

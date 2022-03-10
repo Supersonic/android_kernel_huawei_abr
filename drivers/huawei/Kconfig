@@ -1,0 +1,3 @@
+menu "huawei linux device driver support package"
+	source "drivers/huawei/memory/Kconfig"
+endmenu

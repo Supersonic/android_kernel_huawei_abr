@@ -1,0 +1,243 @@
+<hwlcd>
+	<PanelEntry>
+		<!--Ldi config start-->
+		<MipiDsiTimingSupport>1</MipiDsiTimingSupport>
+		<!--Mipi Horizontal sync area -->
+		<MipiHSyncArea>20</MipiHSyncArea>
+		<!--Mipi Horizontal back porch -->
+		<MipiHBackPorch>20</MipiHBackPorch>
+		<!--Mipi Horizontal line time -->
+		<MipiHLineTime>740</MipiHLineTime>
+		<!--Mipi Dpi horizontal size -->
+		<MipiDpiHSize>320</MipiDpiHSize>
+		<!--Mipi Vertical sync area -->
+		<MipiVSyncArea>40</MipiVSyncArea>
+		<!--Mipi Vertical back porch -->
+		<MipiVBackPorch>60</MipiVBackPorch>
+		<!--Mipi Vertical front porch -->
+		<MipiVFrontPorch>80</MipiVFrontPorch>
+		<!--high FPS performance optimize -->
+		<MipiIgnoreHporch>1</MipiIgnoreHporch>
+		<!--Kirin 990 Mipi porch config end-->
+		<!--Panel information config start-->
+		<!--Panel Model-->
+		<PanelModel>"BRQ_190 d00 0 6.72' 1236 x 2676"</PanelModel>
+		<!--Panel type:8-video mode, 16-command mode-->
+		<PanelCmdType>16</PanelCmdType>
+		<!--Pixel clock-->
+		<PanelPxlClk>192</PanelPxlClk>
+		<!--Pixel clock division ratio-->
+		<PanelPxlClkDiv>1</PanelPxlClkDiv>
+		<!--Ifbc type:0-none, 1-orise2x, 2-orise3x, 3-himax2x,
+		4-rsp2x, 5-rsp3x, 6-vesa2x single, 7-vesa3x single
+		8-vesa2x dual, 9-vesa3x dual, 10-vesa3.75x dual-->
+		<PanelIfbcType>15</PanelIfbcType>
+		<!--Vesa parameters-->
+		<VesaSliceWidth>1235</VesaSliceWidth>
+		<VesaSliceHeight>11</VesaSliceHeight>
+		<!--DSS low power setting:0-close(video mode), 7-open(command mode)-->
+		<PanelVsynCtrType>7</PanelVsynCtrType>
+		<!--Pt station test support-->
+		<PanelPtTestSupport>1</PanelPtTestSupport>
+		<!--Ldo check test-->
+		<LdoCheckSupport>0</LdoCheckSupport>
+		<LdoCheckName>"ldo4"</LdoCheckName>
+		<LdoCheckChannel>2</LdoCheckChannel>
+		<LdoCheckThreshold>250</LdoCheckThreshold>
+		<!--Amoled Power ic check-->
+		<AmoledPowerIcCheckSupport>0</AmoledPowerIcCheckSupport>
+		<AmoledPowerIcCheckGpio>228</AmoledPowerIcCheckGpio>
+		<AmoledPowerIcCheckExpectValue>1</AmoledPowerIcCheckExpectValue>
+		<!--sn code support-->
+		<!--Sn code is read when phone is powered on every time-->
+		<PanelSnCodeSupport>1</PanelSnCodeSupport>
+		<!--Oem info-->
+		<OemInfoSupport>1</OemInfoSupport>
+		<OemBarcode2DSupport>1</OemBarcode2DSupport>
+		<!--Pre camera position-->
+		<PreCameraPositionSupport>0</PreCameraPositionSupport>
+		<PreCameraPositionEndY>140</PreCameraPositionEndY>
+		<!--Esd/BTB enable-->
+		<PanelEsdSupport>0</PanelEsdSupport>
+		<PanelFacEsdSupport>1</PanelFacEsdSupport>
+		<!--Sensorhub aod support-->
+		<SensorhubAodSupport>1</SensorhubAodSupport>
+		<!--AodBlLevel:0-two level, 1-three level, 2-four level-->
+		<AodBlLevel>1</AodBlLevel>
+		<UpdateCoreClkSupport>1</UpdateCoreClkSupport>
+		<!--PQ fingerprint support-->
+		<LeftTimeThUs>9000</LeftTimeThUs>
+		<RightTimeThUs>12000</RightTimeThUs>
+		<TeInervalTimeUs>16667</TeInervalTimeUs>
+		<MaskDelayTimeBeforeFp>0</MaskDelayTimeBeforeFp>
+		<MaskDelayTimeAfterFp>0</MaskDelayTimeAfterFp>
+		<!--Local region update support-->
+		<PanelDirtyRegionSupport>1</PanelDirtyRegionSupport>
+		<DirtyLeftAlign>0xffff</DirtyLeftAlign>
+		<DirtyRightAlign>0xffff</DirtyRightAlign>
+		<DirtyTopAlign>12</DirtyTopAlign>
+		<DirtyBottAlign>0xffff</DirtyBottAlign>
+		<DirtyWidthAlign>0xffff</DirtyWidthAlign>
+		<DirtyHeightAlign>12</DirtyHeightAlign>
+		<DirtyWidthMin>1236</DirtyWidthMin>
+		<DirtyHeightMin>12</DirtyHeightMin>
+		<DirtyTopStart>0xffff</DirtyTopStart>
+		<DirtyBottStart>0xffff</DirtyBottStart>
+		<!--bl type:1-none, 2-pwm, 4-blpwm, 8-mipi, 16-sh blpwm-->
+		<PanelBlType>8</PanelBlType>
+		<!--bl ic type:1-reg only, 2-pwm only, 3-muti-ramp, 4-ramp-muti, 6-i2c only, 7-blpwm-cabc-->
+		<PanelBlIcCtrlType>1</PanelBlIcCtrlType>
+		<!--bl min brightness setting-->
+		<PanelBlmin>80</PanelBlmin>
+		<!--bl max brightness setting-->
+		<PanelBlmax>10000</PanelBlmax>
+		<PanelDbvmax>4095</PanelDbvmax>
+		<!--bl default brightness setting-->
+		<PanelBlDef>2237</PanelBlDef>
+		<!--bl fastboot brightness setting-->
+		<PanelBlBoot>40</PanelBlBoot>
+		<!--Mipi lane number:c-phy:0-1port, 1-2port, 2-3port d-phy:0-1lane, 1-2lane, 2-3lane, 3-4lane-->
+		<MipiLaneNums>3</MipiLaneNums>
+		<!--mipi dsi support-->
+		<MipiDsiUptSupport>0</MipiDsiUptSupport>
+		<!--Mipi dsi default clock-->
+		<MipiDsiBitClk>548</MipiDsiBitClk>
+		<!--Mipi dynamic clk_1-->
+		<MipiDsiBitClkValA>548</MipiDsiBitClkValA>
+		<!--Mipi dynamic clk_2-->
+		<MipiDsiBitClkValB>548</MipiDsiBitClkValB>
+		<!--Mipi phy mode:0-D-phy, 1-C-phy-->
+		<MipiPhyMode>0</MipiPhyMode>
+		<!--Mipi clk post adjust-->
+		<MipiClkPostAdjust>60</MipiClkPostAdjust>
+		<!--Fps fuction-->
+		<PanelFpsUpdtSupport>1</PanelFpsUpdtSupport>
+		<!--MMI test fps func switch-->
+		<FpsSwitchTestSupport>1</FpsSwitchTestSupport>
+		<FpsEffectDelayFrameCnt>13000</FpsEffectDelayFrameCnt>
+		<!--hsa->hbp->dpi_hsize->hline_time->vsa->vbp->vfp->mipi_clk-->
+		<FpsTo60DsiTimming>"20, 20, 320, 740, 40, 60, 80, 548"</FpsTo60DsiTimming>
+		<!--hsa->hbp->dpi_hsize->hline_time->vsa->vbp->vfp->mipi_clk-->
+		<FpsTo120DsiTimming>"20, 20, 320, 385, 40, 60, 80, 548"</FpsTo120DsiTimming>
+		<!--frame rate 1->delay->...->frame rate n->delay-->
+		<FpsSwitchOrder>"120, 200, 60, 200"</FpsSwitchOrder>
+		<!--frame rate 1->...->frame rate n-->
+		<PanelSupportFpsList>"60, 120"</PanelSupportFpsList>
+		<!--panel version support-->
+		<PanelVersionSupport>0</PanelVersionSupport>
+		<!--Hbm support-->
+		<PanelHbmCtrlSupport>1</PanelHbmCtrlSupport>
+		<PanelHbmFpCaptureSupport>0</PanelHbmFpCaptureSupport>
+		<PanelHbmFpPrepareSupport>0</PanelHbmFpPrepareSupport>
+		<PanelHbmLevelMax>1</PanelHbmLevelMax>
+		<!--horizontal/vertical line test-->
+		<VtcLineSupport>0</VtcLineSupport>
+		<HorLineSupport>0</HorLineSupport>
+		<HorLineDuration>600</HorLineDuration>
+		<!--ddic low voltage detect test-->
+		<DdicLVDetectSupport>1</DdicLVDetectSupport>
+		<!--pcd errflag check support-->
+		<PanelPcdErrflagCheckSupport>0</PanelPcdErrflagCheckSupport>
+		<!--pcd cmd check support-->
+		<PcdCmdsSupport>0</PcdCmdsSupport>
+		<PcdCmdsSupportCompareMode>1</PcdCmdsSupportCompareMode>
+		<!--backlight delay adjust support-->
+		<BacklightDelayAdjustSupport>1</BacklightDelayAdjustSupport>
+		<BacklightDelayAdjust>0</BacklightDelayAdjust>
+		<!--This configuration is enabled.
+		You must first confirm the address of the platform of the hard reset time.
+		The default configuration query address of 990 is 0x2e9, which is configured in PwrKeyLPressConfAddr.
+		-->
+		<PwrKeyLPressPwrOffSupport>1</PwrKeyLPressPwrOffSupport>
+		<PanelQuiPwrOffCommand>"0x05, 0x01, 0x00, 0x00, 0x22, 0x01, 0x01, 0x22
+			0x05, 0x01, 0x00, 0x00, 0x0a, 0x01, 0x01, 0x28
+			0x05, 0x01, 0x00, 0x00, 0x78, 0x01, 0x01, 0x10"</PanelQuiPwrOffCommand>
+		<!--Power timming config start-->
+		<!--event send
+		event, data, delay
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI, 7-TS early-event, 8-TS later-event, 9-vdd
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<!--Power on timming-->
+		<PowerOnStage>"2, 1, 0
+				1, 1, 10
+				9, 1, 10"</PowerOnStage>
+		<LPOnStage>"0, 1, 10
+				5, 1, 5
+				5, 2, 1
+				5, 1, 32
+				7, 1, 0
+				6, 1, 0
+				8, 1, 0"</LPOnStage>
+		<HSOnStage>"0, 0, 0"</HSOnStage>
+
+		<!--Power off timming-->
+		<HSOffStage>"7, 0, 0
+				6, 0, 0
+				8, 0, 0"</HSOffStage>
+		<LPOffStage>"0, 0, 0"</LPOffStage>
+		<PowerOffStage>"5, 0, 1
+				9, 0, 10
+				1, 0, 0
+				2, 0, 10"</PowerOffStage>
+		<!--Power timming config end-->
+		<!--Tp color support-->
+		<TpColorSupport>1</TpColorSupport>
+		<!--event define
+		mode, number, amplitude
+		mode:0-none, 1-regulator, 2-gpio
+		number:gpio num or ldo num
+		amplitude:3100000-3.1v, 1850000-1.85v, 5500000-5.5v
+		-->
+		<LcdVci>"1, 9, 3100000"</LcdVci>
+		<LcdIovcc>"1, 4, 1850000"</LcdIovcc>
+		<LcdVdd>"1, 43, 1230000"</LcdVdd>
+		<LcdVsp>"0, 0, 0"</LcdVsp>
+		<LcdVsn>"0, 0, 0"</LcdVsn>
+		<LcdReset>"2, 42, 0"</LcdReset>
+		<LcdTe0>"2, 2, 0"</LcdTe0>
+		<LcdBacklight>"0, 0, 0"</LcdBacklight>
+		<!--vci regulator-->
+		<VciRegulator>ldo9</VciRegulator>
+		<!--vdd regulator-->
+		<VddRegulator>ldo43</VddRegulator>
+		<!--event send-->
+		<!--Effect config start-->
+		<!--Gamma calibration support-->
+		<PanelDynamicGammaSupport>0</PanelDynamicGammaSupport>
+		<!--Dither support-->
+		<DitherSupport>1</DitherSupport>
+		<!--Gamma support-->
+		<GammaSupport>1</GammaSupport>
+		<!--Gmp support-->
+		<GmpSupport>1</GmpSupport>
+		<!--for hiace parameter-->
+		<HiaceSupport>1</HiaceSupport>
+		<!--Xcc support-->
+		<XccSupport>1</XccSupport>
+		<!--Post Xcc support-->
+		<PostXccSupport>1</PostXccSupport>
+		<Arsr1pSharpnessSupport>1</Arsr1pSharpnessSupport>
+		<!--prefix 2D sharpness support-->
+		<PrefixSharpTwoDSupport>1</PrefixSharpTwoDSupport>
+		<!--EffectColorSupport-->
+		<EffectColorSupport>1</EffectColorSupport>
+		<EffectColorMode>2147483648</EffectColorMode>
+		<!--ScalingRatioThreshold HD FHD-->
+		<ScalingRatioThreshold>70</ScalingRatioThreshold>
+		<!--Effect config end-->
+		<!--Aod esd mutex support-->
+		<AodEsdMutexSupport>1</AodEsdMutexSupport>
+		<!--for hwc get panel support fps capacity, e.g. 0:60fps; 1:90fps; 2:120fps-->
+		<FpsDfrSupportValue>2</FpsDfrSupportValue>
+		<!--elvdd detect-->
+		<PanelElvddDetectSupport>1</PanelElvddDetectSupport>
+		<!--elvdd detect type-->
+		<ElvddDetectType>2</ElvddDetectType>
+		<ElvddDetectGpio>227</ElvddDetectGpio>
+		<ElvddDetectValue>0x01</ElvddDetectValue>
+		<!--Ocean M536:1 Ocean bal lite:2 other products:0-->
+		<DiffProductType>1</DiffProductType>
+	</PanelEntry>
+</hwlcd>

@@ -1,0 +1,11 @@
+config HWDPS
+	bool "hwdps System"
+	default n
+	help
+	Huawei Application Authentication System
+
+config HWDPS_ENG_DEBUG
+	bool "application authentication for eng debug"
+	default n
+	help
+		Say yes here to support application authentication eng debug.

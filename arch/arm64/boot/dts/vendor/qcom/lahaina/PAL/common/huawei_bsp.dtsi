@@ -1,0 +1,6 @@
+&soc {
+	card_tray_detect: card_tray_detect {
+		compatible = "huawei,card_tray_detect";
+		card_tray_gpio = <400>;
+	};
+};

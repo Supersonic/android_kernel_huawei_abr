@@ -1,0 +1,15 @@
+#include "lahaina-camera-sensor-bali.dtsi"
+
+&cam_cci0 {
+	/* back main sensor */
+	qcom,cam-sensor0 {
+		csiphy-sd-index = <4>;
+	};
+};
+
+&cam_cci1 {
+	/* front sensor */
+	qcom,cam-sensor2 {
+		csiphy-sd-index = <5>;
+	};
+};

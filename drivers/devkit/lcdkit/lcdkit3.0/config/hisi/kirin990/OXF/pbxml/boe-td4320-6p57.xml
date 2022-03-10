@@ -1,0 +1,6 @@
+<hwlcd>
+	<PanelEntry>
+                <!--video idle mode support-->
+		<VideoIdleModeSupport>1</VideoIdleModeSupport>
+	</PanelEntry>
+</hwlcd>

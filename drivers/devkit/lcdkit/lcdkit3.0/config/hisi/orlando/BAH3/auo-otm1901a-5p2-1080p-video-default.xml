@@ -1,0 +1,12 @@
+<hwlcd>
+	<PanelEntry>
+	<PanelCompatible>"bah3_auo_otm1901a_10p3_1200p_video_default"</PanelCompatible>
+	<PanelXres>1200</PanelXres>
+	<PanelYres>2000</PanelYres>
+	<LcdIovcc>"1, 4, 1850000"</LcdIovcc>
+	<LcdVdd>"0, 0, 0"</LcdVdd>
+	<LcdVsp>"2, 234, 6000000"</LcdVsp>
+	<LcdVsn>"2, 235, 6000000"</LcdVsn>
+	<LcdReset>"2, 29, 0"</LcdReset>
+</PanelEntry>
+</hwlcd>

@@ -1,0 +1,143 @@
+<hwlcd>
+	<PanelEntry>
+		<!--Ldi config start-->
+		<!--HBP setting-->
+		<HBackPorch>18</HBackPorch>
+		<!--HFP setting-->
+		<HFrontPorch>22</HFrontPorch>
+		<!--HS setting-->
+		<HPulseWidth>5</HPulseWidth>
+		<!--VBP setting-->
+		<VBackPorch>114</VBackPorch>
+		<!--VS setting-->
+		<VPulseWidth>2</VPulseWidth>
+		<!--VFP setting-->
+		<VFrontPorch>26</VFrontPorch>
+		<!--Full screen set to 0-->
+		<MipiNonContinueEnable>0</MipiNonContinueEnable>
+		<PanelBlmin>50</PanelBlmin>
+		<PanelBlmax>3932</PanelBlmax>
+		<!--bl default brightness setting-->
+		<PanelBlDef>1638</PanelBlDef>
+		<!-- <PanelScanSupport>1</PanelScanSupport> -->
+		<!-- <PanelPtTestSupport>1</PanelPtTestSupport> -->
+		<PanelPxlClk>160</PanelPxlClk>
+		<!--Esd enable-->
+		<PanelEsdSupport>1</PanelEsdSupport>
+		<TpEsdGpioEvent>1</TpEsdGpioEvent>
+		<EsdGpioDetectSupport>1</EsdGpioDetectSupport>
+		<EsdGpioDetectNum>185</EsdGpioDetectNum>
+		<EsdGpioNormalValue>0</EsdGpioNormalValue>
+		<EsdCheckTimePeriod>1000</EsdCheckTimePeriod>
+
+		<MipiclkUpdtSupportNew>0</MipiclkUpdtSupportNew>
+		<!--Project id -->
+		<PanelProjectIdSupport>1</PanelProjectIdSupport>
+		<TpColorSupport>1</TpColorSupport>
+		<!--Panel type:8-video mode, 16-command mode-->
+		<PanelCmdType>8</PanelCmdType>
+		<!--mipi dsi support-->
+		<MipiDsiUptSupport>1</MipiDsiUptSupport>
+		<!--Mipi dsi default clock-->
+		<MipiDsiBitClk>480</MipiDsiBitClk>
+		<!--Mipi dynamic clk_1-->
+		<MipiDsiBitClkValA>495</MipiDsiBitClkValA>
+		<!--Mipi dynamic clk_2-->
+		<MipiDsiBitClkValB>480</MipiDsiBitClkValB>
+		<!-- <MipiDataTHsTrailAdjust>8</MipiDataTHsTrailAdjust>  -->
+		<!--Mipi lane number:c-phy:0-1port, 1-2port, 2-3port d-phy:0-1lane, 1-2lane, 2-3lane, 3-4lane-->
+		<MipiLaneNums>3</MipiLaneNums>
+		<!--Mipi phy mode:0-D-phy, 1-C-phy-->
+		<MipiPhyMode>0</MipiPhyMode>
+		<!--Mipi clk post adjust-->
+		<MipiClkPostAdjust>0</MipiClkPostAdjust>
+		<!--Full screen set to 0-->
+		<MipiNonContinueEnable>0</MipiNonContinueEnable>
+		<!--Mipi vcm adjust:data&clk hs amplitude-->
+		<MipiRgVcmAdjust>5</MipiRgVcmAdjust>
+		<SupportDeEmphasis>1</SupportDeEmphasis>
+		<DeEmphasisReg>"0x00010056, 0x00010057, 0x00010058, 0x00, 0x00, 0x00, 0x00"</DeEmphasisReg>
+		<DeEmphasisValue>"0x3f, 0xff, 0x03, 0x00, 0x00, 0x00, 0x00"</DeEmphasisValue>
+		<LcdType>1</LcdType>
+		<SblSupport>0</SblSupport>
+		<!--Mipi burst mode:0-non burst sync pulse, 1-non burst sync event, 2-burst sync pulse1, 3-burst sync pulse2-->
+		<MipiBurstMode>2</MipiBurstMode>
+		<UseGpioBlPower>1</UseGpioBlPower>
+		<PanelBlPwmPreciType>3</PanelBlPwmPreciType>
+		<PanelBlpwmOutDivValue>3</PanelBlpwmOutDivValue>
+		<BlPwmInputDisable>1</BlPwmInputDisable>
+		<PanelCheckRegOnSupport>1</PanelCheckRegOnSupport>
+
+		<!--PanelOnAlwaysNeedReset-->
+		<PanelOnAlwaysNeedReset>1</PanelOnAlwaysNeedReset>
+
+		<!--event send
+		event, data, delay
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI, 7-TS early-event, 8-TS later-event, 9-vdd, 10-AOD, 11-bias
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<!--Power on timming-->
+		<PowerOnStage>"2, 1, 0
+				9, 1, 5
+				3, 1, 5
+				4, 1, 10
+				11, 1, 0"</PowerOnStage>
+		<LPOnStage>"7, 1, 5
+				5, 2, 5
+				5, 1, 5
+				5, 2, 5
+				5, 1, 20
+				6, 1, 0"</LPOnStage>
+		<HSOnStage>"8, 1, 0"</HSOnStage>
+		<HSOffStage>"7, 0, 0
+				8, 0, 50
+				6, 0, 0"</HSOffStage>
+		<LPOffStage>"0, 0, 0"</LPOffStage>
+		<PowerOffStage>"5, 0, 5
+				11, 0, 5
+				4, 0, 5
+				3, 0, 10
+				9, 0, 0
+				2, 0, 5"</PowerOffStage>
+		<!--Power timming config end-->
+		<!--event define
+		mode, number, amplitude
+		mode:0-none, 1-regulator, 2-gpio
+		number:gpio num or ldo num
+		amplitude:3100000-3.1v, 1850000-1.85v, 5500000-5.5v
+		-->
+		<LcdVci>"0, 0, 0"</LcdVci>
+		<LcdIovcc>"1, 4, 1900000"</LcdIovcc>
+		<LcdVdd>"0, 0, 0"</LcdVdd>
+		<LcdVsp>"2, 234, 6000000"</LcdVsp>
+		<LcdVsn>"2, 235, 6000000"</LcdVsn>
+		<PowerDownVsp>"2, 234, 5000000"</PowerDownVsp>
+		<PowerDownVsn>"2, 235, 5000000"</PowerDownVsn>
+		<LcdReset>"2, 29, 0"</LcdReset>
+		<LcdBacklight>"2, 30, 0"</LcdBacklight>
+		<!--event send-->
+		<!--Effect config start-->
+		<!--Cabc support-->
+		<PanelCabcSupport>0</PanelCabcSupport>
+		<!--Gamma support-->
+		<GammaSupport>1</GammaSupport>
+		<!--Gmp support-->
+		<GmpSupport>1</GmpSupport>
+		<!--Gamma calibration support-->
+		<PanelDynamicGammaSupport>0</PanelDynamicGammaSupport>
+		<!--ComformMode support-->
+		<ComformModeSupport>1</ComformModeSupport>
+		<!--Color temperature support-->
+		<ColorTempSupport>1</ColorTempSupport>
+		<!--for hiace parameter-->
+		<HiaceSupport>1</HiaceSupport>
+		<!--Xcc support-->
+		<XccSupport>1</XccSupport>
+		<Arsr1pSharpnessSupport>0</Arsr1pSharpnessSupport>
+		<!--prefix 2D sharpness support-->
+		<PrefixSharpTwoDSupport>1</PrefixSharpTwoDSupport>
+		<!--Effect config end-->
+	</PanelEntry>
+
+</hwlcd>

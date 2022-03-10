@@ -1,0 +1,16 @@
+/* fingerprint panel config */
+&soc {
+	huawei_fingerprint {
+		compatible = "fpc,fingerprint";
+		interrupt-parent = <&tlmm>;
+		interrupts = <38 0x0>;
+		fingerprint,irq_gpio = <&tlmm 38 0>;
+		fingerprint,reset_gpio = <&tlmm 39 0>;
+		fingerprint,avdd_en_gpio = <&tlmm 198 0>;
+		vdd-supply = <&pm8350c_l8>;
+		fingerprint,vdd = "vdd";
+		fingerprint,navigation_adjust1 = <0>;
+		fingerprint,navigation_adjust2 = <90>;
+		status = "ok";
+	};
+};

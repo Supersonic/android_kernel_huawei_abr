@@ -1,0 +1,113 @@
+<hwlcd>
+	<PanelEntry>
+
+	<!-- Panel Infomation -->
+	<PanelCompatible>"auo_otm1901a_5p2_1080p_video_default"</PanelCompatible>
+	<PanelName>"AUO_OTM1901A 5.2' VIDEO TFT 1080 x 1920 DEFAULT"</PanelName>
+	<PanelType>0x01</PanelType>
+		<PanelXres>720</PanelXres>
+		<PanelYres>1520</PanelYres>
+		<PanelWidth>65</PanelWidth>
+		<PanelHeight>140</PanelHeight>
+
+		<!--Ldi config start-->
+		<!--HBP setting-->
+		<HBackPorch>70</HBackPorch>
+		<!--HFP setting-->
+		<HFrontPorch>70</HFrontPorch>
+		<!--HS setting-->
+		<HPulseWidth>20</HPulseWidth>
+		<!--VBP setting-->
+		<VBackPorch>24</VBackPorch>
+		<!--VFP setting-->
+		<VFrontPorch>24</VFrontPorch>
+		<!--VS setting-->
+		<VPulseWidth>8</VPulseWidth>
+
+		<!--Mipi lane number:c-phy:0-1port, 1-2port, 2-3port d-phy:0-1lane, 1-2lane, 2-3lane, 3-4lane-->
+		<MipiLaneNums>3</MipiLaneNums>
+		<!--Panel information config start-->
+		<!--Pixel clock-->
+		<PanelPxlClk>0</PanelPxlClk>
+		<!--Pixel clock division ratio-->
+		<PanelPxlClkDiv>0</PanelPxlClkDiv>
+		<!--mipi data rate pixel clock * 2-->
+		<PanelDataRate>669</PanelDataRate>
+		<!--Mipi non continue enable:0-continue mode, 1-non continue mode-->
+		<MipiNonContinueEnable>0</MipiNonContinueEnable>
+		<!--Pt station test support-->
+		<PanelPtTestSupport>1</PanelPtTestSupport>
+		<!--Esd enable-->
+		<PanelEsdSupport>0</PanelEsdSupport>
+		<!--bl max type:0-not support, 1-ddic ytpe-->
+		<PanelGetBlMaxNitType>1</PanelGetBlMaxNitType>
+		<!--bl max nit-->
+		<PanelBlMaxnit>450</PanelBlMaxnit>
+		<!--bl min brightness setting-->
+		<PanelBlmin>2</PanelBlmin>
+		<!--bl max brightness setting-->
+		<PanelBlmax>255</PanelBlmax>
+		<!--bl ctrl type setting-->
+		<PanelBlIcCtrlType>3</PanelBlIcCtrlType>
+		<!--bias ctrl type setting-->
+		<PanelBiasIcCtrlType>3</PanelBiasIcCtrlType>
+		<!--gpio offset number setting-->
+		<PanelGpioOffset>332</PanelGpioOffset>
+		<!--Running test config start-->
+		<!--Dot/column inversion test support-->
+		<PanelInversionSupport>1</PanelInversionSupport>
+		<!--Check panel power status test support-->
+		<PanelCheckRegSupport>1</PanelCheckRegSupport>
+
+		<!--event send
+		event, data, delay
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI, 7-TS early event, 8-TS later event, 9-vdd
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<!--Power on timming-->
+		<PowerOnStage>"5, 0, 2
+				7, 1, 0
+				3, 1, 3
+				4, 1, 10
+				5, 1, 2
+				5, 0, 2
+				5, 1, 12
+				6, 1, 0
+				8, 1, 0"</PowerOnStage>
+		<LPOnStage>"0, 0, 0"</LPOnStage>
+		<HSOnStage>"0, 0, 0"</HSOnStage>
+
+		<!--Power off timming-->
+		<HSOffStage>"0, 0, 0"</HSOffStage>
+		<LPOffStage>"0, 0, 0"</LPOffStage>
+		<PowerOffStage>"6, 0, 0
+				7, 0, 0
+				8, 0, 0
+				5, 0, 2
+				4, 0, 0
+				3, 0, 5"</PowerOffStage>
+		<!--Power timming config end-->
+		<!--Tp color support-->
+		<TpColorSupport>0</TpColorSupport>
+		<!--Backlight max nit-->
+		<!--Power timming config start-->
+		<!--event define
+		mode, number, amplitude
+		mode:0-none, 1-regulator, 2-gpio
+		number:gpio num or ldo num
+		amplitude:3100000-3.1v, 1850000-1.85v, 5500000-5.5v
+		-->
+
+		<LcdReset>"2, 45, 0"</LcdReset>
+		<LcdVsp>"2, 27, 6000000"</LcdVsp>
+		<LcdVsn>"2, 173, 6000000"</LcdVsn>
+		<!--event send-->
+		<!--Mipi clk post adjust-->
+		<MipiClkPostAdjust>0</MipiClkPostAdjust>
+
+		<!--bl max nit-->
+		<PanelBlMaxNitCommand>"0x06, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x01, 0xdb"</PanelBlMaxNitCommand>
+		<PanelBlMaxNitCommandState>0</PanelBlMaxNitCommandState>
+</PanelEntry>
+</hwlcd>

@@ -1,0 +1,68 @@
+&tlmm {
+	ant_cable_det_id0_default:ant_cable_det_id0_default {
+			mux {
+				pins = "gpio13";
+				function =  "gpio";
+			};
+			config {
+				pins = "gpio13";
+				num-grp-pins = <2>;
+				drive-strength = <2>;
+				bias-pull-up;
+				input-enable;
+			};
+	};
+	ant_cable_det_id0_idle:ant_cable_det_id0_idle {
+			mux {
+				pins = "gpio13";
+				function =  "gpio";
+			};
+			config {
+				pins = "gpio13";
+				num-grp-pins = <2>;
+				drive-strength = <2>;
+				bias-pull-up;
+				input-enable;
+			};
+	};
+
+	ant_cable_det_id1_default:ant_cable_det_id1_default {
+			mux {
+				pins = "gpio48";
+				function =  "gpio";
+			};
+			config {
+				pins = "gpio48";
+				num-grp-pins = <2>;
+				drive-strength = <2>;
+				bias-pull-up;
+				input-enable;
+			};
+	};
+	ant_cable_det_id1_idle:ant_cable_det_id1_idle {
+			mux {
+				pins = "gpio48";
+				function =  "gpio";
+			};
+			config {
+				pins = "gpio48";
+				num-grp-pins = <2>;
+				drive-strength = <2>;
+				bias-pull-up;
+				input-enable;
+			};
+	};
+};
+
+&soc {
+	ant_cable_det: ant_cable_det {
+                compatible = "huawei,antenna_cable_detect";
+                pinctrl-names = "default", "idle";
+                pinctrl-0 = <&ant_cable_det_id0_default &ant_cable_det_id1_default>;
+                pinctrl-1 = <&ant_cable_det_id0_idle &ant_cable_det_id1_idle>;
+                gpio_count = <2>;
+                gpios = <&tlmm 13 0>,
+                        <&tlmm 48 0>;
+                debounce-interval = <15>;
+	};
+};

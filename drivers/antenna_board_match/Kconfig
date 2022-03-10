@@ -1,0 +1,3 @@
+config ANTENNA_BOARD_DETECT
+     bool "antenna board detect"
+	 default y

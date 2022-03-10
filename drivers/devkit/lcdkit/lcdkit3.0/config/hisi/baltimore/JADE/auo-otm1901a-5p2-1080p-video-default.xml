@@ -1,0 +1,19 @@
+<hwlcd>
+	<PanelEntry>
+	<PanelCompatible>"jade_auo_otm1901a_5p2_1080p_video_default"</PanelCompatible>
+	<PanelXres>1228</PanelXres>
+	<PanelYres>2700</PanelYres>
+	<!--PMIC setting support-->
+	<PowerIcDetectSupport>1</PowerIcDetectSupport>
+	<!--poweric number-->
+	<PowerIcNum>1</PowerIcNum>
+	<!--PMIC gpio enable list-->
+	<PowerIcGpioEnList>"303"</PowerIcGpioEnList>
+	<!--PMIC gpio enable number list-->
+	<PowerIcGpioEnNumList>"1"</PowerIcGpioEnNumList>
+	<!--PMIC gpio enable value list-->
+	<PowerIcGpioEnVal>"1"</PowerIcGpioEnVal>
+	<!--PMIC detect gpio expect value-->
+	<PowerIcElvddDetectValue>1</PowerIcElvddDetectValue>
+</PanelEntry>
+</hwlcd>

@@ -1,0 +1,107 @@
+<hwlcd>
+	<PanelEntry>
+		<!--Ldi config start-->
+		<!--HBP setting-->
+		<HBackPorch>228</HBackPorch>
+		<!--HFP setting-->
+		<HFrontPorch>225</HFrontPorch>
+		<!--HS setting-->
+		<HPulseWidth>60</HPulseWidth>
+		<!--VBP setting-->
+		<VBackPorch>28</VBackPorch>
+		<!--VFP setting-->
+		<VFrontPorch>144</VFrontPorch>
+		<!--VS setting-->
+		<VPulseWidth>8</VPulseWidth>
+
+		<!--Tp Project Id-->
+		<PanelDefaultTpProjectId>"W1719Q1200"</PanelDefaultTpProjectId>
+		<!--Mipi lane number:c-phy:0-1port, 1-2port, 2-3port d-phy:1-1lane, 2-2lane, 3-3lane, 4-4lane-->
+		<MipiLaneNums>4</MipiLaneNums>
+		<!--Panel information config start-->
+		<!--Pixel clock-->
+		<PanelPxlClk>360</PanelPxlClk>
+		<!--Pixel clock division ratio-->
+		<PanelPxlClkDiv>0</PanelPxlClkDiv>
+		<!--mipi data rate pixel clock * 2-->
+		<PanelDataRate>720</PanelDataRate>
+		<!--Mipi non continue enable:0-continue mode, 1-non continue mode-->
+		<MipiNonContinueEnable>0</MipiNonContinueEnable>
+		<!--Pt station test support-->
+		<PanelPtTestSupport>1</PanelPtTestSupport>
+		<!--Esd enable-->
+		<PanelEsdSupport>1</PanelEsdSupport>
+		<PanelSkipEsdCheckCnt>1</PanelSkipEsdCheckCnt>
+		<!--bl max type:0-not support, 1-ddic ytpe-->
+		<PanelGetBlMaxNitType>1</PanelGetBlMaxNitType>
+		<!--lk bl max brightness setting-->
+		<PanelBlBoot>210</PanelBlBoot>
+		<!--bl min brightness setting-->
+		<PanelBlmin>75</PanelBlmin>
+		<!--bl max brightness setting-->
+		<PanelBlmax>7100</PanelBlmax>
+		<!--bl ctrl type setting-->
+		<PanelBlIcCtrlType>6</PanelBlIcCtrlType>
+		<!--gpio offset number setting-->
+		<PanelGpioOffset>325</PanelGpioOffset>
+		<!--Project id support-->
+		<PanelProjectIdSupport>1</PanelProjectIdSupport>
+		<DoesLcdPowerOnTp>1</DoesLcdPowerOnTp>
+
+		<!--event send
+		event, data, delay
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI, 7-TS early event, 8-TS later event, 9-vdd 10-AOD, 11-BIAS
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<!--Power on timming-->
+		<PowerOnStage>"2, 1, 1
+				7, 1, 1
+				11, 1, 1
+				3, 1, 5
+				4, 1, 5
+				5, 1, 2
+				5, 0, 2
+				5, 1, 55
+				6, 1, 0
+				8, 1, 0"</PowerOnStage>
+		<LPOnStage>"0, 0, 0"</LPOnStage>
+		<HSOnStage>"0, 0, 0"</HSOnStage>
+		<!--Power off timming-->
+		<HSOffStage>"0, 0, 0"</HSOffStage>
+		<LPOffStage>"0, 0, 0"</LPOffStage>
+		<PowerOffStage>"6, 0, 0
+				8, 0, 1
+				5, 0, 2
+				11, 0, 5
+				4, 0, 2
+				3, 0, 2
+				2, 0, 0"</PowerOffStage>
+
+		<!--Power timming config end-->
+		<!--Tp color support-->
+		<TpColorSupport>0</TpColorSupport>
+		<!--Backlight max nit-->
+		<!--Power timming config start-->
+		<!--event define
+		mode, number, amplitude
+		mode:0-none, 1-regulator, 2-gpio
+		number:gpio num or ldo num
+		amplitude:3100000-3.1v, 1850000-1.85v, 5500000-5.5v
+		-->
+		<LcdIovcc>"2, 107, 1800000"</LcdIovcc>
+		<LcdReset>"2, 45, 0"</LcdReset>
+		<TpReset>"2, 23, 0"</TpReset>
+		<LcdVsp>"2, 33, 6000000"</LcdVsp>
+		<LcdVsn>"2, 35, 6000000"</LcdVsn>
+		<PowerDownVsp>"2, 33, 4500000"</PowerDownVsp>
+		<PowerDownVsn>"2, 35, 4500000"</PowerDownVsn>
+		<!--event send-->
+		<!--Mipi clk post adjust-->
+		<MipiClkPostAdjust>0</MipiClkPostAdjust>
+		<!--bl max nit-->
+		<PanelGetBlMaxNitOffset>420</PanelGetBlMaxNitOffset>
+		<PanelBlMaxNitCommand>"0x06, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x01, 0xdb"</PanelBlMaxNitCommand>
+		<PanelBlMaxNitCommandState>0</PanelBlMaxNitCommandState>
+	</PanelEntry>
+</hwlcd>

@@ -1,0 +1,20 @@
+&qupv3_se15_i2c {
+	status = "ok";
+	qcom,clk-freq-out = <400000>;
+	#address-cells = <1>;
+	#size-cells = <0>;
+	nfc@28 {
+		compatible = "qcom,nq-pn547";
+		status = "ok";
+		reg = <0x28>;
+		nxp,nfc_int = <&tlmm 87 0x00>;
+		nxp,nfc_ven = <&tlmm 62 0x00>;
+		nxp,nfc_firm = <&tlmm 86 0x00>;
+		nfc_nxp_conf_name = "libnfc-nxp-sn110.conf";
+		nfc_brcm_conf_name = "libnfc-brcm-sn110.conf";
+		nfc_card_num = <0x2>;
+		nfc_chip_type = "nfc_sz";
+		nfc_single_channel = "false";
+		nfc_ese_type = "p61";
+	};
+};

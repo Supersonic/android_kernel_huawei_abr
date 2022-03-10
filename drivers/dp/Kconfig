@@ -1,0 +1,8 @@
+config HUAWEI_DP_AUX
+	bool "huawei dp aux driver"
+	help
+	  Enable this option to enable the dp aux
+config HUAWEI_DP_SOURCE
+	bool "huawei dp source switch driver"
+	help
+	  Enable this option to enable the dp source switch

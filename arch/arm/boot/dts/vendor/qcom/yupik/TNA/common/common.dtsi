@@ -1,0 +1,5 @@
+#include "../../common/common.dtsi"
+#include "huawei_audio.dtsi"
+#include "huawei_tp.dtsi"
+#include "huawei_bsp.dtsi"
+#include "huawei-lcd.dtsi"

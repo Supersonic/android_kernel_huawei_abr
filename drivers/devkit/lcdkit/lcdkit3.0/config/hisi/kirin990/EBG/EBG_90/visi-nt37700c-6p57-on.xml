@@ -1,0 +1,33 @@
+<hwlcd>
+	<PanelEntry>
+		<PanelName>"VISI_NT37700C 6.57'_90HZ CMD TFT 1080 x 2340"</PanelName>
+		<!--bl min brightness setting-->
+		<PanelBlmin>125</PanelBlmin>
+		<!--mipi dsi support-->
+		<MipiDsiUptSupport>0</MipiDsiUptSupport>
+		<!--Fps fuction-->
+		<PanelFpsUpdtSupport>1</PanelFpsUpdtSupport>
+		<!--MMI test fps func switch-->
+		<FpsSwitchTestSupport>1</FpsSwitchTestSupport>
+		<FpsEffectDelayFrameCnt>0</FpsEffectDelayFrameCnt>
+		<!--panel switch to 60hz code-->
+		<PanelFpsToSixtyCommand>"0x29, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x02, 0x2F, 0x01
+			0x29, 0x01, 0x00, 0x00, 0x02, 0x01, 0x02, 0x26, 0x01"</PanelFpsToSixtyCommand>
+		<FpsTo60CmdState>0</FpsTo60CmdState>
+		<!--panel switch to 90hz code-->
+		<FpsTo90Command>"0x29, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x02, 0x2F, 0x04
+			0x29, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x02, 0x26, 0x02"</FpsTo90Command>
+		<FpsTo90CmdState>0</FpsTo90CmdState>
+		<!--hsa->hbp->dpi_hsize->hline_time->vsa->vbp->vfp->mipi_clk-->
+		<FpsTo60DsiTimming>"20, 20, 300, 740, 40, 60, 80, 480"</FpsTo60DsiTimming>
+		<!--hsa->hbp->dpi_hsize->hline_time->vsa->vbp->vfp->mipi_clk-->
+		<FpsTo90DsiTimming>"20, 20, 300, 510, 40, 60, 80, 480"</FpsTo90DsiTimming>
+		<!--frame rate 1->delay->...->frame rate n->delay-->
+		<FpsSwitchOrder>"90, 200, 60, 200"</FpsSwitchOrder>
+		<!--frame rate 1->...->frame rate n-->
+		<PanelSupportFpsList>"60, 90"</PanelSupportFpsList>
+		<!-- Panel Aod cmd -->
+		<PanelAodHighBrightnessCommand>"0x39, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x05, 0x51, 0x00, 0x00, 0x0F, 0xFE"</PanelAodHighBrightnessCommand>
+		<PanelAodLowBrightnessCommand>"0x39, 0x01, 0x00, 0x00, 0x0a, 0x00, 0x05, 0x51, 0x00, 0x00, 0x02, 0xFF"</PanelAodLowBrightnessCommand>
+	</PanelEntry>
+</hwlcd>

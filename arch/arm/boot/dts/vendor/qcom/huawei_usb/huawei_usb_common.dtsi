@@ -1,0 +1,17 @@
+/{
+	huawei_usb: huawei_usb {
+		compatible = "huawei,huawei_usb";
+		maximum-speed = "super-speed";
+		status = "ok";
+	};
+
+	huawei_pd: huawei_pd {
+		compatible = "huawei,huawei_pd";
+		status = "ok";
+	};
+
+	usb_extra_modem: usb_extra_modem {
+		compatible = "huawei,usb_extra_modem";
+		status = "disabled";
+	};
+};

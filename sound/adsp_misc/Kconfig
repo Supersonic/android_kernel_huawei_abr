@@ -1,0 +1,5 @@
+config HUAWEI_QCOM_ADSP_MISC
+	tristate "adsp_misc driver"
+	default n
+	help
+		Say Y to enable adsp_misc driver support

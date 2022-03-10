@@ -1,0 +1,10 @@
+config RADIO_BUCKBOOST
+	bool "Radio buckboost support"
+	default n
+	help
+	  Buckboost for radio
+
+config RADIO_BUCKBOOST_TPS6381X
+	bool "Enable tps63810 for radio Driver"
+	default n
+

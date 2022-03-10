@@ -1,0 +1,140 @@
+<hwlcd>
+	<PanelEntry>
+		<PanelCompatible>"csot_nt36523_10p9_1080p_video_default"</PanelCompatible>
+		<PanelName>"DBY 10.9' VIDEO TFT 1600 x 2560 DEFAULT"</PanelName>
+		<!--Panel type:dsi_video_mode-video mode, dsi_cmd_mode-command mode-->
+		<PanelTypeMode>"dsi_video_mode"</PanelTypeMode>
+		<PanelModeSwitch>0</PanelModeSwitch>
+
+		<!--Dsi ctrl number:1-one dsi ctrl, 2-two dsi ctrl-->
+		<DsiCtrlNum>0 1</DsiCtrlNum>
+		<!--Dsi phy number:1-one dsi phy, 2-two dsi phy-->
+		<DsiPhyNum>0 1</DsiPhyNum>
+
+		<!-- Lane Config -->
+		<PanelDSILaneMap>"lane_map_0123"</PanelDSILaneMap>
+		<PanelLane0State>1</PanelLane0State>
+		<PanelLane1State>1</PanelLane1State>
+		<PanelLane2State>1</PanelLane2State>
+		<PanelLane3State>0</PanelLane3State>
+
+		<!-- MIPI Host Config -->
+		<DsiSelectClocks>"mux_byte_clk0", "mux_pixel_clk0", "cphy_byte_clk0", "cphy_pixel_clk0"</DsiSelectClocks>
+
+		<!-- Display dsi timming config -->
+		<DisplayDsiTimmingBegin>1</DisplayDsiTimmingBegin>
+		<DisplayDsiTimming0Begin>1</DisplayDsiTimming0Begin>
+		<DisplayDsiTimming0End>1</DisplayDsiTimming0End>
+		<DisplayDsiTimmingEnd>1</DisplayDsiTimmingEnd>
+
+		<!-- Display dsi timming0 config -->
+		<PanelXres0>800</PanelXres0>
+		<PanelYres0>2560</PanelYres0>
+		<HFrontPorch0>22</HFrontPorch0>
+		<HBackPorch0>20</HBackPorch0>
+		<HPulseWidth0>10</HPulseWidth0>
+		<VFrontPorch0>26</VFrontPorch0>
+		<VBackPorch0>237</VBackPorch0>
+		<VPulseWidth0>4</VPulseWidth0>
+		<HSyncSkew0>0</HSyncSkew0>
+		<PanelFrameRate0>120</PanelFrameRate0>
+		<PanelPhyTimings0>"00 1C 08 07 27 2A 0A
+				19 0A 02 04 00 17 0C"</PanelPhyTimings0>
+		<DisplayTopology0>2 0 2</DisplayTopology0>
+		<DefaultTopologyIndex0>0</DefaultTopologyIndex0>
+		<!-- Backlight ctrl config -->
+		<BlPmicControlType>"bl_ctrl_i2c_ic"</BlPmicControlType>
+		<MdssDsiBlMinLevel>1</MdssDsiBlMinLevel>
+		<MdssDsiBlMaxLevel>4095</MdssDsiBlMaxLevel>
+		<DsiPanelCphyMode>1</DsiPanelCphyMode>
+
+		<!--Esd id support-->
+		<EsdEnabled>0</EsdEnabled>
+		<EsdCommand>"0x06, 0x01, 0x00, 0x01, 0x00, 0x00, 0x01, 0x0A"</EsdCommand>
+		<EsdCommandState>"dsi_lp_mode"</EsdCommandState>
+		<EsdCheckMode>"reg_read"</EsdCheckMode>
+		<EsdReadLength>1</EsdReadLength>
+		<EsdValues>"0x1C"</EsdValues>
+		<!--Project id support-->
+		<PanelProjectIdSupport>1</PanelProjectIdSupport>
+		<!--Tp Project Id-->
+		<PanelDefaultTpProjectId>"W2599Z2700"</PanelDefaultTpProjectId>
+
+		<!--bl max nit-->
+		<PanelBlMaxnit>450</PanelBlMaxnit>
+		<!--bl min brightness setting-->
+		<PanelBlmin>75</PanelBlmin>
+		<!--bl max brightness setting-->
+		<PanelBlmax>3932</PanelBlmax>
+		<!--Dot/column inversion test support-->
+		<PanelInversionSupport>0</PanelInversionSupport>
+		<!--Check panel power status test support-->
+		<FactoryCheckRegSupport>0</FactoryCheckRegSupport>
+		<!--Pt station test support-->
+		<PanelPtTestSupport>0</PanelPtTestSupport>
+		<!--gpio offset number setting-->
+		<PanelGpioOffset>1100</PanelGpioOffset>
+		<!--OemInfo support-->
+		<OemInfoSupport>0</OemInfoSupport>
+		<!--OemBarcode2DSupport support-->
+		<OemBarcode2DSupport>0</OemBarcode2DSupport>
+		<!--OemBarcode2DNumOffset-->
+		<OemBarcode2DNumOffset>0</OemBarcode2DNumOffset>
+		<!--sn code support-->
+		<PanelSnCodeSupport>0</PanelSnCodeSupport>
+		<PanelPhyWidth>145</PanelPhyWidth>
+		<PanelPhyHeight>232</PanelPhyHeight>
+		<!--event send
+		event, data, delay
+		event:0-NONE, 1-VCI, 2-IOVCC, 3-VSP, 4-VSN, 5-RESET, 6-MIPI, 7-TS early event, 8-TS later event, 9-vdd 10-AOD, 11-BIAS
+		data:0-power off, 1-power on
+		delay:ms/TS:0-no-sync 1-sync
+		-->
+		<!--Power on timming-->
+		<PowerOnStage>"1, 1, 1
+				2, 1, 2
+				3, 1, 2
+				4, 1, 2
+				11, 1, 10
+				5, 2, 5
+				5, 1, 5
+				5, 2, 5
+				5, 1, 10
+				7, 1, 0"</PowerOnStage>
+
+		<!--Power off timming-->
+		<LPOffStage>"7, 0, 0
+				8, 0, 20"</LPOffStage>
+		<PowerOffStage>"6, 0, 10
+				5, 0, 5
+				11, 0, 2
+				4, 0, 5
+				3, 0, 10
+				2, 0, 0
+				1, 0, 1"</PowerOffStage>
+		<OnlyPowerOffStage>"0, 0, 0"</OnlyPowerOffStage>
+		<!--Power timming config end-->
+		<!--Tp color support-->
+		<TpColorSupport>1</TpColorSupport>
+		<!--Backlight max nit-->
+		<!--Power timming config start-->
+		<!--event define
+		when mode is regulate to set min voltage, max voltage, enable load, disable load
+		mode, number, amplitude, min voltage, max voltage, enable load, disable load
+		mode:0-none, 1-regulator, 2-gpio
+		number:gpio num or ldo num
+		amplitude:3100000-3.1v, 1850000-1.85v, 5500000-5.5v
+		min voltage:1850000-1.85v
+		max voltage:5500000-5.5v
+		enable load:62000
+		disable load:80
+		-->
+		<LcdIovcc>"2, 6, 1900000"</LcdIovcc>
+		<LcdReset>"2, 38, 0"</LcdReset>
+		<LcdVsp>"2, 11, 5700000"</LcdVsp>
+		<LcdVsn>"2, 12, 5700000"</LcdVsn>
+		<!--IOVCC regulator name-->
+		<VciName>"vdd"</VciName>
+		<IovccName>"vddio"</IovccName>
+	</PanelEntry>
+</hwlcd>

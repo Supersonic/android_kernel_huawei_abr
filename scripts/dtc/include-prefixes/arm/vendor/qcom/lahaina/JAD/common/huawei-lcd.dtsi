@@ -1,0 +1,60 @@
+#include "../../../lcdkit3.0/jad/devkit_lcd_kit.dtsi"
+&huawei_lcd_panel {
+	compatible = "huawei,lcd_panel_type";
+	/* auto_key_info @ name: product_id type: uint32 default: 0 */
+	product_id = <2000>;
+	detect_type = <2>;
+	/* auto_key_info @ name: gpio_id[2] type: int default: 0 */
+	gpio_id = <28 29>;
+	support_lcd_type = "LCD_KIT";
+};
+
+&dsi_jad_100_707_6p59_qcom {
+	qcom,mdss-dsi-display-timings {
+		timing@0 {
+			qcom,panel-roi-alignment = <0 0 614 30 614 30>;
+			qcom,partial-update-enabled = "single_roi";
+			qcom,mdss-mdp-transfer-time-us = <15277>;
+			qcom,mdss-dsi-panel-jitter = <0x5 0x1>;
+		};
+		timing@1 {
+			qcom,panel-roi-alignment = <0 0 614 30 614 30>;
+			qcom,partial-update-enabled = "single_roi";
+			qcom,mdss-mdp-transfer-time-us = <10185>;
+			qcom,mdss-dsi-panel-jitter = <0x5 0x1>;
+		};
+		timing@2 {
+			qcom,panel-roi-alignment = <0 0 614 30 614 30>;
+			qcom,partial-update-enabled = "single_roi";
+			qcom,mdss-mdp-transfer-time-us = <7638>;
+			qcom,mdss-dsi-panel-jitter = <0x5 0x1>;
+		};
+	};
+};
+
+&dsi_jad_190_207_6p59_qcom {
+	qcom,mdss-dsi-display-timings {
+		timing@0 {
+			qcom,panel-roi-alignment = <0 0 614 60 1228 60>;
+			qcom,partial-update-enabled = "single_roi";
+			qcom,mdss-mdp-transfer-time-us = <15277>;
+			qcom,mdss-dsi-panel-jitter = <0x5 0x1>;
+		};
+		timing@1 {
+			qcom,panel-roi-alignment = <0 0 614 60 1228 60>;
+			qcom,partial-update-enabled = "single_roi";
+			qcom,mdss-mdp-transfer-time-us = <10185>;
+			qcom,mdss-dsi-panel-jitter = <0x5 0x1>;
+		};
+		timing@2 {
+			qcom,panel-roi-alignment = <0 0 614 60 1228 60>;
+			qcom,partial-update-enabled = "single_roi";
+			qcom,mdss-mdp-transfer-time-us = <7638>;
+			qcom,mdss-dsi-panel-jitter = <0x5 0x1>;
+		};
+	};
+};
+
+&sde_dsi {
+	qcom,dsi-default-panel = <&dsi_jad_auo_otm1901a_5p2_1080p_video_default>;
+};

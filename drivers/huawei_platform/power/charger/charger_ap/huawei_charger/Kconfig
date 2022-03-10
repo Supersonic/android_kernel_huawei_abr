@@ -1,0 +1,7 @@
+config HUAWEI_CHARGER
+        bool "huawei charger"
+        default n
+config FCP_CHARGER
+        bool "fcp charger"
+        default n
+

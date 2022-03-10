@@ -1,0 +1,8 @@
+<hwlcd>
+	<PanelEntry>
+	<PanelModel>"PRCT_170 401 0 5.2' 2280 x 1080"</PanelModel>
+	<PanelCompatible>"pct_auo_otm1901a_5p2_1080p_video_default"</PanelCompatible>
+	<PanelXres>1080</PanelXres>
+	<PanelYres>2310</PanelYres>
+</PanelEntry>
+</hwlcd>

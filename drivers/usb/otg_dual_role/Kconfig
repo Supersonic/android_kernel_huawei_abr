@@ -1,0 +1,5 @@
+config OTG_DUAL_ROLE
+	tristate "OTG_DUAL_ROLE support"
+	default n
+	help
+	  Say Y here to enable dummy otg dual role driver.

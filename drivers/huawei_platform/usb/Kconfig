@@ -1,0 +1,6 @@
+source "drivers/huawei_platform/usb/pd/Kconfig"
+source "drivers/huawei_platform/usb/switch/Kconfig"
+source "drivers/huawei_platform/usb/ulog_trace/Kconfig"
+source "drivers/huawei_platform/usb/cust_attr/Kconfig"
+source "drivers/huawei_platform/usb/function-huawei/Kconfig"
+source "drivers/huawei_platform/usb/usb_extra_modem/Kconfig"

@@ -1,0 +1,3 @@
+obj-$(CONFIG_HUAWEI_VIBRATOR) += aw86907/
+obj-$(CONFIG_HUAWEI_VIBRATOR) += aw01624/
+obj-$(CONFIG_HUAWEI_VIBRATOR) += aw_vibrator/

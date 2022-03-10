@@ -1,0 +1,12 @@
+menu "Huawei DFX panic recorder"
+
+config HUAWEI_BB
+	bool "huawei kernel panic recorder"
+	depends on SYSFS
+	default n
+	help
+	  This module can record kernel panic info, parse & save into file-system.
+	  Include:
+	  dmesg, task, etc ...
+
+endmenu
